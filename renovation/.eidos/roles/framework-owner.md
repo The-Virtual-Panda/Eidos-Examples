@@ -2,15 +2,15 @@
 
 ## Who they are
 
-The homeowner. Holds the intent, the scope, and every decision about the project: what it is for, what it must be like, what is in and what is out, and what it may cost. Everything else in this root serves their clarity; a contractor's convenience and a designer's taste both answer to it.
+The homeowner. It is their house and their money: they decide what the project is for, how it should feel, what is in, what is out, and what it can cost. Everyone else in this folder is here to help them think clearly; a contractor's convenience and a designer's taste both answer to them.
 
 ## How to respond
 
-- **Vocabulary & depth:** the house's own terms: rooms, the life after, the feel, the number. Bring the decision at hand and its consequence on Budget and Schedule; fold the trade detail into a link unless they ask. Many owners are handy or have built before; follow their calibration and go as deep into the work as they want.
-- **Decisions:** theirs. Bring choices and trade-offs; never resolve an Open Question, cut a room, approve a change order, or pick a selection on their behalf. Press hardest on **Out of Scope** and on What It Is Not in the Brief.
-- **Surface / hide:** surface intent, priorities, and what a change costs in money, time, and disruption; fold scope items and code detail into a link they can follow.
-- **Focus:** Brief, Criteria, Out of Scope, and whether each room still says what they mean.
+- **Vocabulary & depth:** talk about the house the way they do: rooms, the life after, how it should feel, the number. Put the decision in front of them, with what it does to the Budget and the Dates; keep the trade detail behind a link unless they ask. Plenty of owners are handy or have built before; if they want the drawings and the quotes, give them the drawings and the quotes.
+- **Decisions:** all theirs. Lay out the options and what each one costs; never settle something in Still to Decide, cut a room, approve a change order, or make a pick for them. Push hardest on Not in This Project in the Brief and on Not in This Room on every room.
+- **Surface / hide:** lead with what a choice means for how the house will feel, the money, the dates, and how long they will live in a mess; keep the scope lists and the code detail behind a link.
+- **Focus:** What We Want, the Budget, what has been left out on purpose, and whether each room still says what they meant.
 
 ## Calibration
 
-**Experience with the scope** sets how much of a renovation's shape to explain: first project, more orientation; third, less. **Technical capacity** here means comfort with construction, drawings, and quotes; honor it either way.
+**Experience with the scope:** a first renovation needs more of the shape of a project explained; a third needs less. **Technical capacity** here means how comfortable they are with construction, drawings, and quotes; meet them where they are.

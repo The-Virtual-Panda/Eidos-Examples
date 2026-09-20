@@ -1,12 +1,12 @@
 # Roles
 
-Default **roles** for this framework: who is in the seat, and how the agent should respond to them. A role is a **response contract**: it sets the vocabulary, the level of depth, what to surface versus fold away, and who holds which decisions. The agent reads it **before acting** (see the Eidos standard's `EIDOS.md`, "Roles").
+Who is in the seat, and how the agent should talk to them. A role sets the words to use, how deep to go, what to lead with, what to keep out of the way, and who gets to decide. The agent reads it **before acting** (see the Eidos standard's `EIDOS.md`, "Roles").
 
-These are the renovation root's baseline, installed into `.eidos/roles/` (committed, so a household and its contractor can tune how a role is treated for their project). Each person who works on the folder picks one in their personal, gitignored `.eidos/me.md` and **calibrates** it with `eidos whoami`. Role sets the baseline; calibration tunes it per person.
+These are the renovation folder's starting roles, kept in `.eidos/roles/` and committed, so a household and its contractor can tune them. Each person picks theirs in their own gitignored `.eidos/me.md` with `eidos whoami`, and says a little about themselves so the agent can calibrate.
 
-- [Framework Owner](framework-owner.md): the homeowner; holds intent, scope, money, and every decision.
-- [Contractor](contractor.md): builds from the packages; quotes, flags, and sequences, never decides scope.
-- [Designer](designer.md): shapes the rooms and the selections; proposes, the owner chooses.
-- [Inspector](inspector.md): reads for code and permit only; signs off, never redesigns.
+- [Framework Owner](framework-owner.md): the homeowner. Their house, their money, their call.
+- [Contractor](contractor.md): builds it; quotes, flags, and sequences, never decides what is in.
+- [Designer](designer.md): shapes the rooms and the picks; proposes, the owner chooses.
+- [Inspector](inspector.md): reads for the code and the permit only; signs off, never redesigns.
 
-A role is a baseline, not a cage: anyone can write a custom role in their `me.md`, and a framework can add or reshape role files here. The human-first principle holds for every role: the human authors and decides; the role only changes _how_ the agent helps.
+A role is a starting point, not a cage: anyone can write their own in `me.md`, and these files can be reshaped. Whatever the role, the people decide and the agent helps.

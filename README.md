@@ -2,27 +2,27 @@
 
 Worked Eidos roots, one per kind of thing: a channel, a venture, an academy, a wedding, a world, a house renovation, an ACE vault. Each installs from the Registry as `@The-Virtual-Panda/<name>`.
 
-Every root here is a complete framework for its kind: the frames it is judged against, a collection per kind of unit with a template per variant, the properties that make a blueprint findable, and the roles that say how an agent responds to each person in the seat. The collections ship empty, on purpose. Eidos frameworks hold what their owner decided, not prose invented for them; install one and fill it.
+Every root is a complete framework for its kind, written in the words of the person who would use it: a few big-picture pages everything else is checked against, a folder per kind of page with a template for each, the handful of properties that make a page findable, the one-page docs that person already keeps, and the roles that tell an agent how to talk to each person in the seat. The page folders ship empty, on purpose: an Eidos root holds what its owner decided, not prose invented for them. Install one and fill it.
 
-| Root | For | Frames | Collections | Roles |
-| --- | --- | --- | --- | --- |
-| [`channel/`](channel) | a video channel, podcast, or stream, and its site | audience, format, voice, market | `Videos` by series, `Posts` by series, `Pages` | the creator, editor, producer, viewer, sponsor |
-| [`venture/`](venture) | a business as it develops: ideas, plans, bets, and the calls made | thesis, market, model, criteria | `Ideas`, `Plans` by line, `Investments` by line, `Decisions` | the founder, CFO, operator, investor, advisor |
-| [`academy/`](academy) | a school of courses, learner first | mission, pedagogy, market, criteria | `Learners`, `Courses` by track, `Paths` | the creator, editor, producer, learner, expert |
-| [`wedding/`](wedding) | a wedding, planned as its run of show | purpose, guests, venue, criteria | `Moments` by day, `Vendors` by category | the couple, planner, vendor, family, guest |
-| [`world/`](world) | a fictional world, for a table or a series | premise, tone, laws, table | `Places` by region, `Factions`, `Characters`, `Arcs` by campaign | the game master, co-writer, player (sees only what is `revealed`) |
-| [`renovation/`](renovation) | a house renovation, room by room and package by package | brief, site, criteria, code | `Rooms` by floor, `Packages` by phase, `Selections` by room | the homeowner, contractor, designer, inspector |
-| [`ace/`](ace) | an Obsidian vault in the ACE shape (Atlas, Calendar, Efforts) | purpose, practice | `Atlas` (flat, with maps), `Calendar` by series, `Efforts` (heat as `status`) | you, and the agent acting alone |
+| Root | For | The big picture | Page folders | One-page docs | Roles |
+| --- | --- | --- | --- | --- | --- |
+| [`channel/`](channel) | a video channel, podcast, or stream, and its site | `The Channel/`: Audience, Formats, Voice, Niche and Money | `Videos` by series, `Posts` by series, `Pages` | Content Calendar, Brand Kit, Rate Card | the creator, editor, producer, viewer, sponsor |
+| [`venture/`](venture) | a business as it develops: ideas, plans, bets, and the calls made | `The Business/`: Thesis, Market, How It Makes Money, Runway and Limits | `Ideas`, `Plans` by line, `Investments` by line, `Decisions` | The Pitch, Roadmap, Team | the founder, CFO, operator, investor, advisor |
+| [`academy/`](academy) | a school of courses, learner first | `The School/`: Mission, How We Teach, Market, Production | `Learners`, `Courses` by track, `Paths` | Catalog, Lesson Style Guide | the instructor, editor, producer, learner, expert |
+| [`wedding/`](wedding) | a wedding, planned as its run of show | `The Big Picture/`: Vision, Guests, Venue, Budget | `Run of Show` by day, `Vendors` by category | The Timeline, Day-Of Contacts | the couple, planner, vendor, family, guest |
+| [`world/`](world) | a fictional world, for a table or a series | `The World/`: Premise, Tone, How It Works, The Table | `Places` by region, `Factions`, `Characters`, `Arcs` by campaign | History, Player's Guide, Names | the game master, co-writer, player (sees only what is `revealed`) |
+| [`renovation/`](renovation) | a house renovation, room by room and job by job | `The Brief/`: What We Want, The House, Budget, Permits | `Rooms` by floor, `The Work` by phase, `Selections` by room | Schedule, Contacts, Change Log | the homeowner, contractor, designer, inspector |
+| [`ace/`](ace) | an Obsidian vault in the ACE shape (Atlas, Calendar, Efforts) | `About This Vault/`: What This Is For, How It Runs | `Atlas` (flat, with maps), `Calendar` by series, `Efforts` (heat as `status`) | Home | you, and the agent acting alone |
 
-Every root uses the Title Case naming convention, since each is meant to be opened in Obsidian as much as in an editor.
+Every root targets Eidos 5.4.0 and uses the Title Case naming convention, since each is meant to be opened in Obsidian as much as in an editor. Each keeps a `Files/` folder for the things that are not pages: contracts, maps, drawings, decks.
 
 ## Installing one
 
 ```bash
-npx eidosmd install @The-Virtual-Panda/wedding --product "Our Wedding" --group "Wedding Day"
+npx eidosmd install @The-Virtual-Panda/wedding --product "The Ungers 2026" --group "Wedding Day"
 ```
 
-Or pull one piece into a root you already have: a collection, a variant, or a role.
+Or pull one piece into a root you already have: a page folder, a page type, a role, or a one-page doc.
 
 ```bash
 npx eidosmd install @The-Virtual-Panda/world --role player
@@ -33,7 +33,7 @@ npx eidosmd install @The-Virtual-Panda/world --role player
 Each root is checked in place with the same CLI the Registry runs.
 
 ```bash
-npx eidosmd@0.4.0 check --root wedding
+npx eidosmd@0.5.0 check --root wedding
 ```
 
 ## Publishing

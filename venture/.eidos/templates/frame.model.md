@@ -1,19 +1,19 @@
 # {{title}}
 
-_The economics: how the business earns, what it costs, and how it scales. The architecture of a business; a plan that breaks it is either a pivot or a mistake._
+_How the business makes money, what it costs to run, and what breaks first as it grows. A plan that breaks this page is either a pivot or a mistake._
 
-## Revenue
+## Where the Money Comes From
 
-_The streams, how each is priced, and which matters most. What a customer pays, how often, and for how long._
+_The revenue streams, how each is priced, and which one matters most. What a customer pays, how often, for how long._
 
-## Costs
+## What It Costs
 
-_What it costs to serve a customer and what it costs to exist: the unit economics and the fixed base. The number the CFO reads first._
+_What it costs to serve one customer and what it costs just to exist: the per-unit numbers and the fixed bills. The number the CFO reads first._
 
-## Margins and Scale
+## What Is Left, and What Scales
 
-_What is left per unit, what changes as volume grows, and what breaks first. Where the leverage is and where it is not._
+_What is left per customer, what changes as volume grows, and what breaks first. Where the leverage is and where it is not._
 
-## Team and Operations
+## Who Does the Work
 
-_Who does the work, what is built versus bought, and what the business depends on that it does not control._
+_The team, what is built versus bought, and what the business depends on that it does not control._

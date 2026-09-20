@@ -1,49 +1,49 @@
 # {{title}}
 
-## Intent
+## Who This Is For
 
-_Why this course exists: what it teaches, to which learners, and why the school should be the one to teach it. One or two paragraphs. This is the stable part: if Intent changes substantially, you probably have a different course, not an edit to this one._
+_Which learners, what it teaches them, and why this school should be the one to teach it. A short paragraph. If this changes a lot, it is a different course._
 
-### Assumptions
+### Taking for Granted
 
-_What you are taking as given about the learner arriving here: what they know, what they have taken, what they believe. Nested under Intent because they frame it. Surface them so a guess does not slip into the outcomes as if it were settled._
+_What you are assuming about the learner arriving here: what they know, what they have taken, what they believe. Write it down so a guess does not become a lesson that loses them._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know about this course and still need answered. Kept high, right after Intent, so uncertainty is seen rather than buried. When one is settled it graduates into an Assumption, an outcome, or a Decision._
+_What you do not know yet. Kept near the top so nothing gets buried; when something is settled it becomes an outcome below, or a decision._
 
-## Outcomes
+## What They Will Be Able to Do
 
-_What a learner can do at the end, as checkable statements. Label each **O1:**, **O2:**, ... (bold, unique within this course). If it is not listed here, the course does not promise it. Every module below serves at least one._
+_At the end, as numbered statements someone could check. If it is not written here, the course is not promising it. Every module below serves at least one._
 
-- **O1:** <!-- the first thing a learner can do afterward -->
+1. <!-- the first thing a learner can do afterward -->
 
-## Modules
+## The Modules
 
-_The outline: modules in order, and the lessons in each, one line per lesson with the outcome it serves. Not the material; the shape of it. Push the syllabus into Assets and link it._
+_The outline: modules in order, and the lessons in each, one line per lesson with the outcome it serves. Not the material; the shape of it. Put the syllabus in Files and link it._
 
 ### Module
 
 _What it covers, and which outcomes it serves._
 
-## Assessment
+## How They Prove It
 
-_How a learner proves each outcome, and how the school checks: the project, the quiz, the review. Judged against the Pedagogy frame._
+_How a learner shows each outcome, and how the school checks: the project, the quiz, the review. Held up against How We Teach._
 
 ## Format and Length
 
-_What the course is made of and how long it takes, against the Pedagogy frame's Format. `duration` at the top is the number; this is the shape._
+_What the course is made of and how long it takes, against The Format on the How We Teach page. `duration` at the top is the number; this is the shape._
 
-## Out of Scope
+## Not This Course
 
-_What this course deliberately does not teach, and which course does. The section the standard leans on hardest, because this is where a catalog holds its shape. A course without it grows into the one next to it._
+_What this course deliberately does not teach, and which course does. This is the section that keeps a catalog in shape; a course without it grows into the one next to it._
 
-## Prerequisites and Sequels
+## Before and After
 
-_Courses a learner must finish first, and courses this leads to. Reference courses as markdown links, never bare names. The `depends_on` property at the top is the prerequisite subset of this._
+_Courses a learner has to finish first, and courses this one leads to. Link them rather than naming them._
 
 ## Notes and Decisions
 
-_Two things under one header. **Notes**: the references, the reviewer, the platform's notes. **Decisions**: an append-only log, one line each, with an optional but recommended date._
+_Notes: the references, the reviewer, the platform's notes. Decisions: one line each, dated, never deleted._
 
 <!-- 2026-04-08: Moved the setup lesson into Module 1; learners quit before reaching it. (Editor) -->

@@ -2,15 +2,15 @@
 
 ## Who they are
 
-The creator. Holds the intent, the scope, and every decision about the channel: what it is for, who it serves, what gets made, and what it will never do. The person Eidos is built for; everything else in this root serves their clarity.
+The creator. It is their channel: they decide what it is for, who it serves, what gets made, and what it will never do. Everyone else in this folder is here to help them think clearly.
 
 ## How to respond
 
-- **Vocabulary & depth:** the channel's own terms: formats, series, the hook, the audience. Bring the decision at hand, not the pipeline behind it, unless they ask. Many creators are their own editor and producer; follow their calibration and go as deep into the craft and the numbers as they want.
-- **Decisions:** theirs. Bring choices and trade-offs; never resolve an Open Question, shelve a video, or accept a sponsor on their behalf. Press hardest on **Out of Scope** and on What the Channel Never Does in the Voice frame.
-- **Surface / hide:** surface intent, the audience a video serves, the format it follows, and what a choice costs in time and cadence; fold the beats and the packaging rules into a link they can follow.
-- **Focus:** Audience, Format, Out of Scope, and whether each video still says what they mean.
+- **Vocabulary & depth:** talk about the channel the way they do: formats, series, the hook, the audience. Put the decision in front of them, not the pipeline behind it, unless they ask. Plenty of creators are their own editor and producer; if they want the craft and the numbers, give them the craft and the numbers.
+- **Decisions:** all theirs. Lay out the options and what each one costs; never settle something in Still to Decide, shelve a video, or take a sponsor for them. Push hardest on What the Channel Never Does on the Voice page and on Not This Video on every video.
+- **Surface / hide:** lead with what a video is for, who it serves, which format it follows, and what a choice does to the schedule; keep the beats and the thumbnail rules behind a link.
+- **Focus:** the Audience, the Formats, what has been left out on purpose, and whether each video still says what they meant.
 
 ## Calibration
 
-**Experience with the scope** sets how much of the channel's shape to restate. **Technical capacity** here means comfort with the craft (editing, analytics, the platform's mechanics); honor it either way.
+**Experience with the scope** sets how much of the channel to recap. **Technical capacity** here means how comfortable they are with editing, analytics, and the platform's machinery; meet them where they are.

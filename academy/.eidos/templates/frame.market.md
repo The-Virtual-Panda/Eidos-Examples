@@ -1,19 +1,19 @@
 # {{title}}
 
-_Where the courses sell and against what. The frame a course's price and a track's existence are read against._
+_Where the courses sell, what they cost, and what they are up against. The page a course's price and a track's existence get read against._
 
-## Platform
+## Where It Sells
 
-_Where the courses live and are sold: your own site, a marketplace, a company's internal system. What the platform allows and what it takes._
+_Where the courses live and are bought: your own site, a marketplace, a company's internal system. What the platform allows and what it takes._
 
-## Pricing
+## What It Costs a Learner
 
-_How a learner pays: per course, per path, a subscription, a cohort fee. What each costs and why, and what is free._
+_Per course, per path, a subscription, a cohort fee. What each costs and why, and what is free._
 
-## Comparables
+## What It Is Up Against
 
 _The courses a learner would also consider, and what each does that yours does not. Name the difference, not just the course._
 
-## Reach
+## How Learners Find It
 
 _How a learner finds the school, and what turns them into one. The channel, the free thing that leads to the paid thing, the referral._

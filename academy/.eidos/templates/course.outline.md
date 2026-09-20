@@ -1,23 +1,23 @@
 # {{title}}
 
-## Intent
+## Who This Is For
 
-_Why this course exists and for whom. One or two paragraphs. An outline is a start; grow it into the full variant once it is in production._
+_Which learners, and what it teaches them, in a short paragraph. Grow it into the full page once it is in production._
 
-## Outcomes
+## What They Will Be Able to Do
 
-_What a learner can do at the end. Label each **O1:**, **O2:**, ... (bold, unique within this course)._
+_At the end, numbered._
 
-- **O1:** <!-- the first thing a learner can do afterward -->
+1. <!-- the first thing a learner can do afterward -->
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know and still need answered. Kept high so uncertainty is seen rather than buried._
+_What you do not know yet._
 
-## Modules
+## The Modules
 
 _The modules in order, one line each, with the outcomes each serves._
 
-## Out of Scope
+## Not This Course
 
-_What this course does not teach, and which course does. An outline carries it too; it is the first thing to write, not the last._
+_What this course does not teach, and which course does. Write this first, not last._

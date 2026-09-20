@@ -1,45 +1,45 @@
 # {{title}}
 
-## Intent
+## What the Money Does
 
-_Why this bet exists: what the money does, in which line, and what the business looks like if it pays off. Whether you are raising it or deploying it is `direction` at the top; the shape of the reasoning is the same. One or two paragraphs._
+_What it buys, in which line, and what the business looks like if it pays off. Whether you are raising it or spending it is `direction` at the top; the thinking is the same. A short paragraph._
 
-### Assumptions
+### Taking for Granted
 
-_What you are taking as given: the valuation, the return, the timing, the counterparty's intent. Nested under Intent because they frame it._
+_What you are assuming and have not confirmed: the valuation, the return, the timing, what the other side actually wants._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know and still need answered before committing. Kept high so uncertainty is seen rather than buried._
+_What you do not know yet and need answered before you commit. Kept near the top so it gets asked._
 
-## Terms
+## The Terms
 
-_The amount, the instrument, the price, the timing, the conditions, and who is on the other side. What is signed and where it lives (link it from Assets). The CFO reads this first._
+_The amount, the instrument, the price, the timing, the conditions, and who is on the other side. What is signed and where it lives (link it from Files). The CFO reads this first._
 
-## Expected Return
+## What It Should Return
 
-_What this is expected to produce, by when, and how you will know. As checkable claims, labeled **K1:**, **K2:**, ... (bold, unique within this investment)._
+_What this is expected to produce, by when, and how you will know, as numbered claims._
 
-- **K1:** <!-- the first thing this money is expected to produce -->
+1. <!-- the first thing this money is expected to produce -->
 
 ## Risks
 
-_What could go wrong, how likely, and what it would cost. The ones you are accepting and the ones you have mitigated._
+_What could go wrong, how likely, and what it would cost. The ones you are accepting and the ones you have covered._
 
-## What Would Make Us Stop
+## What Would Unwind It
 
-_The evidence that would end or unwind this, and the point past which it cannot be unwound._
+_The evidence that would end or reverse this, and the point past which it cannot be reversed._
 
-## Out of Scope
+## Not This Deal
 
-_What this investment does not fund or does not buy, and which does. The section that keeps a round from becoming a plan._
+_What this money does not fund or does not buy, and what does. The section that keeps a round from turning into a plan._
 
-## Dependencies
+## What It Needs First
 
-_Plans this funds, investments it follows, decisions it waits on. Reference blueprints as markdown links, never bare names. The `depends_on` property at the top is the blueprint-only subset of this._
+_The plans this funds, the deals it follows, the decisions it waits on. Link the pages rather than naming them._
 
 ## Notes and Decisions
 
-_Two things under one header. **Notes**: the model, the term sheet, the counterparty's history. **Decisions**: an append-only log, one line each, with an optional but recommended date._
+_Notes: the model, the term sheet, the other side's track record. Decisions: one line each, dated, never deleted._
 
 <!-- 2026-02-17: Took the smaller cheque; the larger one wanted the board seat. (Founder) -->

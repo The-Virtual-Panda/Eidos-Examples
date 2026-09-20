@@ -1,18 +1,18 @@
 # {{title}}
 
-_How the channel sounds: the on-camera persona, the register, and the rules every script and every post keeps._
+_How the channel sounds: who the viewer meets on camera, the register, and the rules every script and every post keeps._
 
-## Persona
+## Who They Meet
 
-_Who the viewer meets: the version of you on camera, in a paragraph. What they are like, what they care about, what they never pretend to be._
+_The version of you on camera, in a paragraph. What they are like, what they care about, what they never pretend to be._
 
-## Register
+## How It Sounds
 
 _Casual or precise, warm or dry, fast or slow. The two or three words a viewer would use, and the one they never would._
 
-## Rules the Script Keeps
+## Rules Every Script Keeps
 
-_Pronouns, tense, how you address the viewer, what you say in the first ten seconds and what you never say. The house style for scripts and captions._
+_How you address the viewer, what you say in the first ten seconds, what you never say. The house style for scripts and captions._
 
 ## What the Channel Never Does
 

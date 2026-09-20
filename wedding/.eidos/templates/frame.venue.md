@@ -1,19 +1,19 @@
 # {{title}}
 
-_The places the day happens in and the limits they set. Every moment fits a place here or names the one it needs._
+_The places the day happens in, and the rules they come with. Every moment happens somewhere on this page._
 
-## Places
+## The Places
 
-_Each place the day uses: ceremony, reception, getting ready, the walk between. One short paragraph each: what it is, what it holds, what it is like at the hour you will use it._
+_Each place the day uses (ceremony, cocktails, reception, getting ready, the walk between) in a short paragraph: what it is, how many it holds, what it is like at the hour you will be using it._
 
-## Layout and Flow
+## Getting Around
 
-_How guests move from one place to the next, and how long that takes. Where the bottlenecks are. A sketch belongs in Assets, linked here._
+_How guests move from one place to the next and how long it takes. Where people will bunch up. Put a sketch in Files and link it here._
 
-## Limits
+## House Rules
 
-_Capacity, curfew, noise, power, parking, weather. The rules the venue sets, and the plan for the one thing you cannot control._
+_Capacity, curfew, noise limits, power, parking, what happens if it rains. The venue's rules, and your plan for the one thing you cannot control._
 
-## Getting There and Away
+## Getting There and Home
 
-_Travel, lodging, transport, the last shuttle. What a guest needs to know to arrive and to leave._
+_Travel, hotels, shuttles, the last ride out. What a guest needs to know to arrive and to leave._

@@ -1,7 +1,7 @@
 # The framework document: the structure this root is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.3.0
+eidos_version: 5.4.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
@@ -11,42 +11,48 @@ top_level:
   - title: README
     path: ../README.md
     description: "the root's front door: what this is, and pointers in."
+  - title: Catalog
+    path: ../Catalog.md
+    description: every course on one page, as a learner sees it
+  - title: Lesson Style Guide
+    path: ../Lesson Style Guide.md
+    description: how a lesson is written and recorded
 
-# Every folder at the root, one entry each, with its type: collection | assets | other.
+# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: Frames
-    type: collection
-    description: "What every learner, course, and path is judged against: what the school teaches and why, how it teaches, where it sells, and what it may cost to make."
+  - name: The School
+    owned_by: "@eidos/collections"
+    description: "The school itself, four pages: what it teaches and why, how it teaches, where it sells, and what it costs to make. Every learner, course, and path gets checked against these."
     variants:
       - { name: mission, template: templates/frame.mission.md, description: "what the school teaches and why, and what it is not", default: true }
-      - { name: pedagogy, template: templates/frame.pedagogy.md, description: "how it teaches: format, length, assessment, and the rules every course keeps" }
-      - { name: market, template: templates/frame.market.md, description: "the platform, the pricing, and the comparable courses" }
-      - { name: criteria, template: templates/frame.criteria.md, description: "production budget, cadence, platform constraints, and the lines you will not cross" }
+      - { name: teaching, template: templates/frame.teaching.md, description: "how it teaches: the format, the length, how learners prove it, the rules every course keeps" }
+      - { name: market, template: templates/frame.market.md, description: "where the courses sell, what they cost, and what they are up against" }
+      - { name: production, template: templates/frame.production.md, description: "what a course costs to make, how often one ships, and what the platform requires" }
   - name: Learners
-    type: collection
-    description: "Who it is for, one persona per blueprint, flat: what they know, what they need, and what done looks like for them. Courses and paths point at these."
+    owned_by: "@eidos/collections"
+    description: "Who it is for: one page per kind of learner, flat. Where they start, what they need, what done looks like for them. Courses and paths point at these."
     variants:
       - { name: persona, template: templates/learner.persona.md, description: "one kind of learner: where they start, what they need, what done looks like", default: true }
   - name: Courses
-    type: collection
-    description: "The catalog, one per course, grouped by track: outcomes, outline, assessment, format, and what a learner leaves with."
+    owned_by: "@eidos/collections"
+    description: "The catalog: one page per course, grouped by track. What learners will be able to do, the modules, how they prove it, the format."
     variants:
-      - { name: full, template: templates/course.full.md, description: "the complete course template", default: true }
-      - { name: outline, template: templates/course.outline.md, description: "Intent, Outcomes, Open Questions, Modules, Out of Scope; grow into full" }
+      - { name: full, template: templates/course.full.md, description: "the full page for a course", default: true }
+      - { name: outline, template: templates/course.outline.md, description: "an outline: who it is for, what they will be able to do, the modules; grow into full" }
     grouping:
       label: Tracks
       property: track
       groups: [] # one entry per track (a subject area), a name and a description, as they accrue
   - name: Paths
-    type: collection
-    description: "Ordered sequences of courses, one per path, flat: for one kind of learner, toward one outcome. The collection that ties the other two together."
+    owned_by: "@eidos/collections"
+    description: "One page per path, flat: a sequence of courses, in order, for one kind of learner, toward one outcome. The pages that tie learners to courses."
     variants:
-      - { name: full, template: templates/path.full.md, description: "the learner, the outcome, and the courses in order", default: true }
-  - name: Assets
-    type: assets
-    description: "Slides, worksheets, recordings, and syllabi the blueprints link to."
+      - { name: full, template: templates/path.full.md, description: "who it is for, where it goes, and the courses in order", default: true }
+  - name: Files
+    description: "Slides, worksheets, recordings, and syllabi the pages link to."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -54,16 +60,16 @@ properties:
   # The standard's. migrate rewrites this block; don't hand-edit it.
   core:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
-    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+    - { name: variant, type: Text, meaning: Which variant this blueprint follows. Absent = the collection's default. }
   # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
   custom:
     - name: status
       type: Text
       applies_to: all
       options: [ Idea, Outlined, In Production, Published, Retired ]
-      meaning: "Where this stands, from an idea to a course learners can take."
+      meaning: "Where this stands: Idea, Outlined, In Production, Published, or Retired."
       eidosmd:
         canvas:
           show: true
@@ -89,11 +95,11 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: track, type: Text, required: true, applies_to: [ Courses ], meaning: "The group: matches the sub-folder, the subject area this course belongs to. An unknown value warns." }
-    - { name: depends_on, type: List, applies_to: [ Courses, Paths ], meaning: "Courses a learner must finish first, each a markdown link." }
-    - { name: for, type: List, applies_to: [ Courses, Paths ], meaning: "The learners this is for, each a markdown link to a Learner." }
-    - { name: level, type: Text, applies_to: [ Courses ], options: [ intro, intermediate, advanced ], meaning: Where a learner should be before starting. }
-    - { name: duration, type: Number, applies_to: [ Courses ], meaning: "Hours of learner time, start to finish." }
+    - { name: track, type: Text, required: true, applies_to: [ Courses ], meaning: "Which track (subject area) the course belongs to. Matches its sub-folder." }
+    - { name: prerequisites, type: List, applies_to: [ Courses, Paths ], meaning: "Courses a learner has to finish first, as links." }
+    - { name: for, type: List, applies_to: [ Courses, Paths ], meaning: "The learners this is for, as links to their pages." }
+    - { name: level, type: Text, applies_to: [ Courses ], options: [ intro, intermediate, advanced ], meaning: "Where a learner should be before starting: intro, intermediate, or advanced." }
+    - { name: duration, type: Number, applies_to: [ Courses ], meaning: "How many hours it takes a learner, start to finish." }
 
 # The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
@@ -101,11 +107,11 @@ vocabulary: []
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  Frames:
-    - id: criteria
-      title: Criteria
+  The School:
+    - id: how-we-teach
+      title: How We Teach
       summary: null
-      path: Criteria.md
+      path: How We Teach.md
     - id: market
       title: Market
       summary: null
@@ -114,11 +120,10 @@ index:
       title: Mission
       summary: null
       path: Mission.md
-    - id: pedagogy
-      title: Pedagogy
+    - id: production
+      title: Production
       summary: null
-      path: Pedagogy.md
-  Specs: []
-  Courses: []
+      path: Production.md
   Learners: []
+  Courses: []
   Paths: []

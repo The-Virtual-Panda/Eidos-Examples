@@ -1,18 +1,18 @@
 # {{title}}
 
-## Context
+## What Was Going On
 
-_The situation that forced a call: what was true, what was at stake, and which idea, plan, or investment it concerns (as markdown links). One or two paragraphs._
+_The situation that forced a call: what was true, what was at stake, and which idea, plan, or deal it was about (linked). A short paragraph._
 
-## Options
+## What You Could Have Done
 
-_What could have been done, each in a line or two, including the option of doing nothing. The record of what was considered is the point._
+_Each option in a line or two, including doing nothing. The record of what was on the table is the point._
 
-## Decision
+## What You Did
 
-_What was decided, in one sentence, and who decided it. Dated in the frontmatter._
+_The call, in one sentence, and who made it. The date is in the frontmatter._
 
-## Consequences
+## What It Changed
 
 _What this closes, what it opens, and what it costs. The plans that change, the ideas that die, the money that moves._
 

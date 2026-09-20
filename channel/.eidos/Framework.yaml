@@ -1,7 +1,7 @@
 # The framework document: the structure this root is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.3.0
+eidos_version: 5.4.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
@@ -11,48 +11,57 @@ top_level:
   - title: README
     path: ../README.md
     description: "the root's front door: what this is, and pointers in."
+  - title: Content Calendar
+    path: ../Content Calendar.md
+    description: what ships when, on one page
+  - title: Brand Kit
+    path: ../Brand Kit.md
+    description: "the look and the sound: colors, fonts, intro, outro, lower thirds"
+  - title: Rate Card
+    path: ../Rate Card.md
+    description: what a placement costs, and what a sponsor gets
 
-# Every folder at the root, one entry each, with its type: collection | assets | other.
+# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: Frames
-    type: collection
-    description: "What every video, post, and page is judged against: who watches, what the formats are, how the channel sounds, and how it earns."
+  - name: The Channel
+    owned_by: "@eidos/collections"
+    description: "The channel itself, four pages: who watches, what the formats are, how it sounds, and how it makes money. Every video, post, and page gets checked against these."
     variants:
-      - { name: audience, template: templates/frame.audience.md, description: "who watches, what they come for, and how each kind differs", default: true }
-      - { name: format, template: templates/frame.format.md, description: "the signature formats, runtimes, cadence, and packaging rules" }
-      - { name: voice, template: templates/frame.voice.md, description: "the on-camera persona, the register, and what the channel never does" }
-      - { name: market, template: templates/frame.market.md, description: "the niche, the comparable channels, and how it earns" }
+      - { name: audience, template: templates/frame.audience.md, description: "who watches, what they come for, and how each kind is different", default: true }
+      - { name: format, template: templates/frame.format.md, description: "the formats, the title and thumbnail rules, the schedule, the platforms" }
+      - { name: voice, template: templates/frame.voice.md, description: "who the viewer meets on camera, how it sounds, and what the channel never does" }
+      - { name: market, template: templates/frame.market.md, description: "the niche, the channels next to it, and how it makes money" }
   - name: Videos
-    type: collection
-    description: "The channel's units, one per video, grouped by series."
+    owned_by: "@eidos/collections"
+    description: "One page per video, grouped by series."
     variants:
-      - { name: full, template: templates/video.full.md, description: "the complete video template", default: true }
-      - { name: short, template: templates/video.short.md, description: "a Short or clip: one hook, one beat, vertical" }
-      - { name: pitch, template: templates/video.pitch.md, description: "Intent, Hook, Open Questions, Out of Scope; grow into full" }
+      - { name: full, template: templates/video.full.md, description: "the full page for a video: the video template", default: true }
+      - { name: short, template: templates/video.short.md, description: "a Short or a clip: one hook, one beat, vertical" }
+      - { name: pitch, template: templates/video.pitch.md, description: "an idea: what it does, the hook, what you would need; grow into full" }
     grouping:
       label: Series
       property: series
       groups: [] # one entry per series (a recurring format, a playlist), a name and a description, as they accrue
   - name: Posts
-    type: collection
-    description: "The written side: one per post, grouped by the same series as the videos."
+    owned_by: "@eidos/collections"
+    description: "The written side: one page per post, grouped by the same series as the videos."
     variants:
-      - { name: full, template: templates/post.full.md, description: "the complete post template", default: true }
-      - { name: companion, template: templates/post.companion.md, description: "the written twin of a video: what it adds, and the video it serves" }
+      - { name: full, template: templates/post.full.md, description: "the full page for a post", default: true }
+      - { name: companion, template: templates/post.companion.md, description: "the written twin of a video: what it adds, and the video it goes with" }
     grouping:
       label: Series
       property: series
       groups: [] # the same series as the videos, as they accrue
   - name: Pages
-    type: collection
-    description: "The site: one per page, flat. About, sponsors, merch, the newsletter; the part of the channel that is not on a platform."
+    owned_by: "@eidos/collections"
+    description: "The site: one page each, flat. About, sponsors, merch, the newsletter; the part of the channel that is not on a platform."
     variants:
-      - { name: page, template: templates/page.page.md, description: "a page: what it is for, and what a visitor leaves with", default: true }
-  - name: Assets
-    type: assets
-    description: "Thumbnails, scripts, b-roll lists, brand files, and sponsor decks the blueprints link to."
+      - { name: page, template: templates/page.page.md, description: "a page on the site: what it is for, and what a visitor does there", default: true }
+  - name: Files
+    description: "Thumbnails, scripts, b-roll lists, brand files, and sponsor decks the pages link to."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -60,16 +69,16 @@ properties:
   # The standard's. migrate rewrites this block; don't hand-edit it.
   core:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
-    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+    - { name: variant, type: Text, meaning: Which variant this blueprint follows. Absent = the collection's default. }
   # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
   custom:
     - name: status
       type: Text
       applies_to: all
       options: [ Idea, Scripted, Shot, Edited, Scheduled, Published, Shelved ]
-      meaning: "Where this stands on the way to being published."
+      meaning: "Where this stands: Idea, Scripted, Shot, Edited, Scheduled, Published, or Shelved."
       eidosmd:
         canvas:
           show: true
@@ -95,10 +104,10 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: series, type: Text, required: true, applies_to: [ Videos, Posts ], meaning: "The group: matches the sub-folder, the series this belongs to. An unknown value warns." }
-    - { name: depends_on, type: List, applies_to: [ Videos, Posts ], meaning: "Videos or posts a viewer should have seen first, each a markdown link." }
-    - { name: publish_date, type: Date, applies_to: [ Videos, Posts ], meaning: "YYYY-MM-DD. When it went, or goes, live." }
-    - { name: runtime, type: Number, applies_to: [ Videos ], meaning: "Minutes, as published." }
+    - { name: series, type: Text, required: true, applies_to: [ Videos, Posts ], meaning: "Which series this belongs to. Matches its sub-folder." }
+    - { name: watch_first, type: List, applies_to: [ Videos, Posts ], meaning: "Videos or posts a viewer should see before this one, as links." }
+    - { name: publish_date, type: Date, applies_to: [ Videos, Posts ], meaning: "When it went live, or goes live." }
+    - { name: runtime, type: Number, applies_to: [ Videos ], meaning: "How long it runs, in minutes." }
 
 # The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
@@ -106,24 +115,23 @@ vocabulary: []
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  Frames:
+  The Channel:
     - id: audience
       title: Audience
       summary: null
       path: Audience.md
-    - id: format
-      title: Format
+    - id: formats
+      title: Formats
       summary: null
-      path: Format.md
-    - id: market
-      title: Market
+      path: Formats.md
+    - id: niche-and-money
+      title: Niche and Money
       summary: null
-      path: Market.md
+      path: Niche and Money.md
     - id: voice
       title: Voice
       summary: null
       path: Voice.md
-  Specs: []
   Videos: []
   Posts: []
   Pages: []

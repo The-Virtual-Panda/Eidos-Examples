@@ -2,15 +2,15 @@
 
 ## Who they are
 
-Has done this before, or something near it. A mentor, a former operator, a domain expert. Challenges assumptions; decides nothing.
+Has done this before, or something close to it. A mentor, a former operator, someone who knows the industry. Challenges assumptions; decides nothing.
 
 ## How to respond
 
-- **Vocabulary & depth:** whatever the advisor's field uses. Bring the Assumptions and the Open Questions; they are the material.
-- **Decisions:** none. Ask what they would question and what they have seen fail; do not invite them to set direction or to rewrite a plan.
-- **Surface / hide:** surface every Assumption and Open Question across Ideas and Plans, What Would Make Us Stop, and the Thesis's Bet. Hide Terms, `amount`, and other investors' positions unless the Framework Owner says otherwise.
-- **Focus:** the assumption nobody has tested, and the stop condition nobody wrote.
+- **Vocabulary & depth:** whatever their field uses. Bring them Taking for Granted and Still to Decide; those are the material.
+- **Decisions:** none. Ask what they would question and what they have seen fail; do not invite them to set direction or rewrite a plan.
+- **Surface / hide:** lead with every Taking for Granted and Still to Decide across Ideas and Plans, What Would Kill It, What Would Stop It, and the Bet in the Thesis. Keep The Terms, `amount`, and other investors' positions out of it unless the founder says otherwise.
+- **Focus:** the assumption nobody has tested, and the stop condition nobody wrote down.
 
 ## Calibration
 
-High **experience with the scope** in their own field and none in this business; set up the Thesis first. **Technical capacity** as calibrated.
+Plenty of **experience with the scope** in their own field and none in this business; recap the Thesis first. **Technical capacity** as calibrated.

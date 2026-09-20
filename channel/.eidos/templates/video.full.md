@@ -1,49 +1,49 @@
 # {{title}}
 
-## Intent
+## What This Video Does
 
-_Why this video exists: the question it answers or the thing it shows, and for which kind of viewer. One or two paragraphs. This is the stable part: if Intent changes substantially, you probably have a different video, not an edit to this one._
+_The question it answers or the thing it shows, and for which kind of viewer. A short paragraph. If this changes a lot, it is a different video._
 
-### Assumptions
+### Taking for Granted
 
-_What you are taking as given: what the viewer already knows, which format this follows, what the last video in the series left behind. Nested under Intent because they frame it. Surface them so a guess does not slip into the beats as if it were settled._
+_What you are assuming and have not checked: what the viewer already knows, which format this follows, what the last video in the series left off with. Write it down so a guess does not get scripted as if it were settled._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know about this video and still need answered: the access, the footage, the claim to verify. Kept high, right after Intent, so uncertainty is seen rather than buried. When one is settled it graduates into an Assumption, a beat, or a Decision._
+_What you do not know yet: the access, the footage, the claim to verify. Kept near the top so it gets sorted before the shoot._
 
-## Hook
+## The Hook
 
-_The first thirty seconds, as they will be spoken or shown. The one promise the video makes and the reason to keep watching. If the hook does not survive being read aloud, the video is not ready._
+_The first thirty seconds, as they will be said or shown. The one promise the video makes and the reason to keep watching. If the hook does not survive being read out loud, the video is not ready._
 
-## Beats
+## The Beats
 
-_What happens, in order, as beats a script and an edit can be checked against. Label each **B1:**, **B2:**, ... (bold, unique within this video). Keep each short; push the full script into Assets and link it. The Editor reads this first._
+_What happens, in order, as beats a script and an edit can be checked against. Numbered so anyone can point at one. Keep each short; put the full script in Files and link it. The Editor reads this first._
 
-- **B1:** <!-- the first thing the viewer sees after the hook -->
+1. <!-- the first thing the viewer sees after the hook -->
 
-## What the Viewer Leaves With
+## What Viewers Take Away
 
-_The checkable outcome: what a viewer can do, know, or feel at the end that they could not at the start. If it is not listed here, this video does not promise it._
+_What a viewer can do, know, or feel at the end that they could not at the start. If it is not written here, this video is not promising it._
 
-## Packaging
+## Title and Thumbnail
 
-_Title candidates (three or more), the thumbnail concept in a sentence, the description's first line, and the tags. Judged against the Format frame's Packaging rules._
+_Three or more title options, the thumbnail idea in a sentence, the first line of the description, the tags. Held up against Titles and Thumbnails on the Formats page._
 
-## Integrations
+## Sponsor and End Screen
 
-_Where the sponsor slot sits and what it says, the end screen, the pinned comment, the companion post it points to. The part of this blueprint the Sponsor role may read._
+_Where the sponsor read sits and what it says, the end screen, the pinned comment, the post it points to. The part of this page the Sponsor role may read._
 
-## Out of Scope
+## Not This Video
 
-_What this video deliberately does not cover, and which video does. The section the standard leans on hardest, because this is where a series holds its shape. A video without it runs long._
+_What this video deliberately does not cover, and which video does. This is the section that keeps a series in shape; a video without it runs long._
 
-## Assets
+## What It Needs
 
-_The footage, b-roll, graphics, guests, and locations this needs. Link what exists in Assets; name what still has to be shot._
+_The footage, b-roll, graphics, guests, and locations. Link what exists in Files; name what still has to be shot._
 
 ## Notes and Decisions
 
-_Two things under one header. **Notes**: the source, the reference video, the reminder. **Decisions**: an append-only log, one line each, with an optional but recommended date._
+_Notes: the source, the reference video, the reminder. Decisions: one line each, dated, never deleted._
 
-<!-- 2026-07-14: Cut the second interview; it repeated B4. (Editor) -->
+<!-- 2026-07-14: Cut the second interview; it repeated beat 4. (Editor) -->

@@ -1,13 +1,13 @@
 # Roles
 
-Default **roles** for this framework: who is in the seat, and how the agent should respond to them. A role is a **response contract**: it sets the vocabulary, the level of depth, what to surface versus fold away, and who holds which decisions. The agent reads it **before acting** (see the Eidos standard's `EIDOS.md`, "Roles").
+Who is in the seat, and how the agent should talk to them. A role sets the words to use, how deep to go, what to lead with, what to keep out of the way, and who gets to decide. The agent reads it **before acting** (see the Eidos standard's `EIDOS.md`, "Roles").
 
-These are the wedding root's baseline, installed into `.eidos/roles/` (committed, so a couple and their planner can tune how a role is treated for their day). Each person who works on the folder picks one in their personal, gitignored `.eidos/me.md` and **calibrates** it with `eidos whoami`. Role sets the baseline; calibration tunes it per person.
+These are the wedding folder's starting roles, kept in `.eidos/roles/` and committed, so a couple and their planner can tune them. Each person picks theirs in their own gitignored `.eidos/me.md` with `eidos whoami`, and says a little about themselves so the agent can calibrate.
 
-- [Framework Owner](framework-owner.md): the couple; holds intent, scope, and decisions.
-- [Planner](planner.md): holds the whole day in one view; surfaces clashes, gaps, and drift.
-- [Vendor](vendor.md): delivers one part of the day; reads their deliverables and the moments that need them.
-- [Family](family.md): weighs in on guests, feel, tradition, and cost; does not decide.
-- [Guest](guest.md): reacts to the day as described; sees only what a guest would.
+- [Framework Owner](framework-owner.md): the couple. It is their day and their call.
+- [Planner](planner.md): holds the whole day in their head; spots clashes, gaps, and costs creeping.
+- [Vendor](vendor.md): delivers one part of the day; reads what they promised and the moments they are on for.
+- [Family](family.md): gets a say on guests, feel, tradition, and cost; does not get the decision.
+- [Guest](guest.md): reads what a guest would see, and nothing else.
 
-A role is a baseline, not a cage: anyone can write a custom role in their `me.md`, and a framework can add or reshape role files here. The human-first principle holds for every role: the human authors and decides; the role only changes _how_ the agent helps.
+A role is a starting point, not a cage: anyone can write their own in `me.md`, and these files can be reshaped. Whatever the role, the people decide and the agent helps.

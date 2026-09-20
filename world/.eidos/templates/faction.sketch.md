@@ -1,19 +1,19 @@
 # {{title}}
 
-## Intent
+## Why It Exists
 
-_Why this faction exists in the world, and what it wants. One or two paragraphs. A sketch is a seed; grow it into the full variant once it matters at the table._
+_What this faction wants, in a short paragraph. Grow it into the full page once it matters at the table._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know about it and still need answered. Kept high so uncertainty is seen rather than buried._
+_What you do not know yet._
 
 ## What Is True
 
-_The few facts already settled. Label each **T1:**, **T2:**, ... (bold, unique within this faction)._
+_The few facts already settled, numbered._
 
-- **T1:** <!-- the first thing that is true -->
+1. <!-- the first thing that is true -->
 
-## Out of Scope
+## Not This Faction
 
-_What this faction is not, and which faction holds that instead. A sketch carries it too; it is the first thing to write, not the last._
+_What this faction is not, and which faction holds that instead. Write this first, not last._

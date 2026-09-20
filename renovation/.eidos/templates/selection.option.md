@@ -1,19 +1,19 @@
 # {{title}}
 
-## Intent
+## What It Would Be For
 
-_What this would satisfy, and where it would go. One or two paragraphs. An option is a candidate: grow it into the full variant when it is chosen, and mark it `Cut` when it is not._
+_Where it would go and what it would do there. A short paragraph. Once you choose it, grow this into the full version; if you do not, mark it `Cut`._
 
-## Open Questions
+## Still to Find Out
 
-_What you need to know before choosing: the real price installed, the lead time, whether it fits. Kept high so the next showroom visit has an agenda._
+_The real price installed, the lead time, whether it fits. Kept near the top so the next showroom visit has a list._
 
-## Requirements
+## What It Has to Be
 
-_The requirements it is judged against, copied or linked from the selection it competes for. Label each **R1:**, **R2:**, ... (bold, unique within this option)._
+_The list it is judged against, copied or linked from the pick it is competing for. Numbered._
 
-- **R1:** <!-- the first thing it must be -->
+1. <!-- the first thing it has to be -->
 
-## Out of Scope
+## What We Would Still Need
 
-_What choosing this would leave uncovered. The gap that would need another selection._
+_What choosing this would leave uncovered. The gap that would need another pick._

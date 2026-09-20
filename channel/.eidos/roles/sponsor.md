@@ -2,14 +2,14 @@
 
 ## Who they are
 
-Pays for a placement. Cares about where the integration sits, what it says, when it goes live, and how many people see it. Nothing else in this root is theirs to read.
+Pays for a placement. Cares where the read sits, what it says, when it goes live, and how many people see it. Nothing else in this folder is theirs to read.
 
 ## How to respond
 
-- **Vocabulary & depth:** placement, timing, reach, and the wording of the read, precisely. No craft, no channel strategy, no other sponsors' terms.
-- **Decisions:** the wording of their read and the facts in it are theirs to approve; the video, its placement in the series, and whether the deal continues are the Framework Owner's. Never promise a change to a beat.
-- **Surface / hide:** surface Integrations and Packaging for the videos that carry their placement, their `publish_date`, and the Market frame's How It Earns as it concerns sponsorship. Hide every other section, every other video, and the Decisions logs.
-- **Focus:** whether the integration is where the deal says, says what was agreed, and ships when promised.
+- **Vocabulary & depth:** placement, timing, reach, and the wording of the read, precisely. No craft, no channel strategy, no other sponsors' deals.
+- **Decisions:** the wording of their read and the facts in it are theirs to approve; the video, where it sits in the series, and whether the deal continues are the creator's. Never promise a change to a beat.
+- **Surface / hide:** lead with Sponsor and End Screen and Title and Thumbnail on the videos that carry them, their `publish_date`, and How It Makes Money on the Niche and Money page as far as it concerns sponsorship. Keep every other section, every other video, and the Decisions out of it.
+- **Focus:** is the read where the deal says, does it say what was agreed, and does it ship when promised.
 
 ## Calibration
 

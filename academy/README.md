@@ -1,27 +1,25 @@
 # {{Product}}
 
-> **Start here.** This is the root for **{{Product}}**: the source of truth for what the school
-> teaches, learner by learner and course by course, true whether or not a lesson has been recorded.
+> **Start here.** This folder is the one place that says what the school **teaches**, learner by learner
+> and course by course: who each course is for, what they will be able to do, and how it is built. It stays true whether or not a lesson has been recorded.
 
 {{One line: what the school teaches, to whom, and what a graduate can do.}}
 
 ## Where things are
 
-- **[Frames](Frames/)**: what the school teaches and why, how it teaches, where it sells, and what it may cost to make.
-- **[Learners](Learners/)**: one file per kind of learner: where they start, what they need, what done looks like.
-- **[Courses](Courses/)**: one file per course, grouped by track: outcomes, outline, assessment, format.
-- **[Paths](Paths/)**: one file per ordered sequence of courses, for one learner toward one outcome.
-- **[Assets](Assets/)**: slides, worksheets, recordings, and syllabi the blueprints link to.
+- **[The School](<The School/>)**: four pages: what it teaches and why, how it teaches, where it sells, and what it costs to make. Everything else gets checked against them.
+- **[Learners](Learners/)**: one page per kind of learner: where they start, what they need, what done looks like.
+- **[Courses](Courses/)**: one page per course, grouped by track: what they will be able to do, the modules, how they prove it, the format.
+- **[Paths](Paths/)**: one page per sequence of courses, for one kind of learner, toward one outcome.
+- **[Files](Files/)**: slides, worksheets, recordings, and syllabi the pages link to.
 
-## Top-level documents
+## The one-page docs
 
-_Your own one-of-a-kind docs: a Catalog page, a Style Guide for lessons, a Certification Policy. Add them here as you write them._
-
-The full index, every folder, its variants, and the Properties table, is in
-[`.eidos/Framework.yaml`](.eidos/Framework.yaml).
+- **[Catalog](Catalog.md)**: every course on one page, as a learner sees it.
+- **[Lesson Style Guide](<Lesson Style Guide.md>)**: how a lesson is written and recorded.
 
 ## How to use it
 
-A course here describes what the course **is**: why it exists, what a learner can do afterward, the shape of its modules, and what it does not teach. It is not the material and not a task. Learners come first: a course points at the personas it serves with `for`, and a path strings courses together for one of them. Write the blueprint before the recording, and keep it true after: a course you retire stays here, marked `Retired`, so the reasoning survives.
+A course's page says what the course **is**: who it is for, what they will be able to do afterward, the shape of its modules, and what it does not teach. It is not the material and not a task. Learners come first: a course points at the learners it serves with `for`, and a path strings courses together for one of them. Write the page before the recording, and keep it true after: a course you retire stays here, marked `Retired`, so the reasoning survives.
 
-_A root. Its framework lives in [`.eidos/`](.eidos/); see [`.eidos/Framework.yaml`](.eidos/Framework.yaml) for the full index._
+_Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos/); `eidos check` keeps it honest._

@@ -1,23 +1,23 @@
 # {{title}}
 
-_Who is coming, and how each kind of guest moves through the day differently. Not the guest list; that is a spreadsheet. This is the shape of the crowd._
+_Who is coming, and how different kinds of guests will experience the day. Not the guest list (that is a spreadsheet). This is the shape of the crowd._
 
-## Guests
+## Who Is Coming
 
-_The whole population in a paragraph or two: how many, from where, how they know you. The answer to "who is this day for" after the two of you._
+_A paragraph or two: roughly how many, from where, how they know the couple._
 
-## Kinds
+## Kinds of Guests
 
-_How each kind of guest differs in what they need and what they come for. One short block of prose per kind, never a table. A kind earns a place here only when it needs something the others do not._
+_A short paragraph for each kind of guest who needs something different: the wedding party, the out-of-towners, the kids, the grandparents, the plus-ones who know nobody. Only add a kind if they will need something the others will not._
 
-### Kind
+### Kind of guest
 
-_What this kind of guest is here for, and how they move through the day: where they sit, when they arrive, what they will not know._
+_What they are here for, and how their day goes: where they sit, when they arrive, what nobody will have told them._
 
-### Kind
+### Kind of guest
 
-_The next kind, described by how it differs from the one above._
+_The next kind, and how their day is different._
 
-## Needs
+## What Guests Will Need
 
-_Access, dietary, language, travel, children, elders: what the day must provide so every kind above can be present for it._
+_Step-free access, dietary needs, translation, travel help, childcare, a quiet room. Whatever the day has to provide so everyone above can actually be there._

@@ -1,28 +1,27 @@
 # {{Product}}
 
-> **Start here.** This is the root for **{{Product}}**: the source of truth for what the business
-> is and where it is going, idea by idea, plan by plan, bet by bet, true whether or not a dollar has moved.
+> **Start here.** This folder is the one place that says what the business **is** and where it is going:
+> every idea, every plan, every bet, every call, with the reasons attached. It stays true whether or not a dollar has moved.
 
 {{One line: what the business does, for whom, and why now.}}
 
 ## Where things are
 
-- **[Frames](Frames/)**: what the business is and why now, who pays, how it earns, and what would make you stop.
-- **[Ideas](Ideas/)**: one file per opportunity, flat: a spark grows into a case.
-- **[Plans](Plans/)**: one file per plan to develop a line of business, grouped by line.
-- **[Investments](Investments/)**: one file per capital bet, grouped by line, raised or deployed.
-- **[Decisions](Decisions/)**: one file per call made: context, options, the decision, what it closed.
-- **[Assets](Assets/)**: decks, models, term sheets, contracts, and research the blueprints link to.
+- **[The Business](<The Business/>)**: four pages: what it is and why now, who pays, how it makes money, and how long you have. Everything else gets checked against them.
+- **[Ideas](Ideas/)**: one page per opportunity you are weighing. A spark grows into a case.
+- **[Plans](Plans/)**: one page per plan to grow a line of business, grouped by line.
+- **[Investments](Investments/)**: one page per bet with money on it, grouped by line, raised or spent.
+- **[Decisions](Decisions/)**: one page per call you made: what was going on, what you could have done, what you did, what it closed.
+- **[Files](Files/)**: decks, models, term sheets, contracts, and research the pages link to.
 
-## Top-level documents
+## The one-page docs
 
-_Your own one-of-a-kind docs: a Financial Model, a Cap Table, a Roadmap. Add them here as you write them._
-
-The full index, every folder, its variants, and the Properties table, is in
-[`.eidos/Framework.yaml`](.eidos/Framework.yaml).
+- **[The Pitch](<The Pitch.md>)**: the thirty-second version of the business.
+- **[Roadmap](Roadmap.md)**: the next twelve months on one page.
+- **[Team](Team.md)**: who does what, and which seats are empty.
 
 ## How to use it
 
-Business development is mostly decisions, so this root keeps three things a business usually loses: the ideas it considered and why they died, the plans as they were meant before they were changed, and the calls made with the reasons attached. Every idea, plan, and investment carries `decide_by`, the day a call on it is due; the CFO and the Operator read the root by that date. Nothing here is a task list. Write the blueprint before the money moves, and keep it true after: an idea you kill stays here, marked `Killed`, so nobody proposes it again without the reasons.
+Building a business is mostly making calls, so this folder keeps the three things a company usually loses: the ideas it considered and why they died, the plans as they were meant before they got changed, and the calls it made with the reasons attached. Every idea, plan, and deal carries `decide_by`, the day you have to make a call on it; the CFO and the Operator read the folder by that date. None of it is a to-do list. Write the page before the money moves, and keep it true after: an idea you kill stays here, marked `Killed`, so nobody pitches it again without the reasons.
 
-_A root. Its framework lives in [`.eidos/`](.eidos/); see [`.eidos/Framework.yaml`](.eidos/Framework.yaml) for the full index._
+_Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos/); `eidos check` keeps it honest._

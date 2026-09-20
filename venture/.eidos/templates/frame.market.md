@@ -1,19 +1,19 @@
 # {{title}}
 
-_Who pays, who else is selling to them, and how you reach them. The frame a plan's moves and an idea's customer are read against._
+_Who pays, who else is selling to them, and how you reach them. The page a plan's moves and an idea's customer get read against._
 
-## Customers
+## Who Pays
 
-_Who pays, in a paragraph or two, and then one short block per kind of customer that buys differently. The kinds are the ones a plan targets; a kind earns a place here only when it buys in a way the others do not._
+_A paragraph or two on who buys, then a short block for each kind of customer that buys differently. Only add a kind if they buy in a way the others do not._
 
-## Competitors
+## Who Else Is Selling to Them
 
-_Who else serves them and what each does that you do not. Name the difference, not just the company._
+_The competitors, and what each one does that you do not. Name the difference, not just the company._
 
-## Reach
+## How You Reach Them
 
-_How a customer finds you and what turns them into one: the channel, the sale, the price they see. What it costs to get one._
+_How a customer finds you and what turns them into one: the channel, the sale, the price they see. What it costs to win one._
 
-## Size
+## How Many There Are
 
-_How many of them there are, how much they spend, and how much of that is reachable. Honest ranges, with the source linked from Assets._
+_How many of them there are, what they spend, and how much of that you can actually reach. Honest ranges, with the source linked from Files._

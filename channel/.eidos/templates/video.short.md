@@ -1,23 +1,23 @@
 # {{title}}
 
-## Intent
+## What This Short Does
 
-_Why this Short exists: the one thing it shows, and the video or series it feeds. A line or two._
+_The one thing it shows, and the video or series it feeds. A line or two._
 
-## Hook
+## The Hook
 
-_The first two seconds, as spoken or shown. There is no second chance in a vertical feed._
+_The first two seconds, as said or shown. There is no second chance in a vertical feed._
 
 ## The Beat
 
-_The single beat, and the last frame. Label it **B1:**._
+_The one thing that happens, and the last frame._
 
-- **B1:** <!-- the one thing that happens -->
+1. <!-- the one thing that happens -->
 
-## Packaging
+## Title and Thumbnail
 
-_The on-screen text, the caption's first line, and the video it points to._
+_The on-screen text, the first line of the caption, and the video it points to._
 
-## Out of Scope
+## Not This Short
 
 _What this Short is not trying to do. Usually: everything the full video does._

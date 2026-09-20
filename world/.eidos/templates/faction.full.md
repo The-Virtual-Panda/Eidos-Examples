@@ -1,41 +1,41 @@
 # {{title}}
 
-## Intent
+## Why It Exists
 
-_Why this faction exists in the world: what it wants, and what it does for the stories set here that no other faction does. One or two paragraphs. This is the stable part: if Intent changes substantially, you probably have a different faction, not an edit to this one._
+_What this faction wants, and what it does for the stories set here that no other faction does. A short paragraph. If this changes a lot, it is probably a different faction._
 
-### Assumptions
+### Taking for Granted
 
-_What you are taking as given: which Laws it lives under, which places it holds, who has met it. Nested under Intent because they frame it._
+_What you are assuming and have not written down anywhere else: which law it lives under, which places it holds, who has met it._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know about this faction and still need answered. Kept high so uncertainty is seen rather than buried. When one is settled it graduates into an Assumption, a truth, or a Decision._
+_What you do not know yet. Kept near the top so nothing gets buried._
 
 ## What Is True
 
-_The facts of the faction, as short checkable statements. Label each **T1:**, **T2:**, ... (bold, unique within this faction). Who leads it, what it holds, what it wants, what it will not do, who it hates. If it is not listed here, it is not canon yet._
+_The facts, as short numbered statements: who leads it, what it holds, what it wants, what it will not do, who it hates. If it is not written here, it is not canon yet._
 
-- **T1:** <!-- the first thing that is true of this faction -->
+1. <!-- the first thing that is true of this faction -->
 
-## How It Acts
+## What It Does Next
 
-_What it does when the party is not looking: its methods, its pace, what it does next if nothing stops it. The engine a Game Master runs between sessions._
+_What it does when the party is not looking: its methods, its pace, what happens if nobody stops it. The engine you run between sessions._
 
 ## What the Party Sees
 
 _The faction as players meet it: its face, its symbols, what it says about itself. The part the Player role may read once it is `revealed`._
 
-## Out of Scope
+## Not This Faction
 
-_What this faction deliberately is not, and which faction holds that instead. This is where a world's politics are held; a faction without it becomes every villain at once._
+_What this faction deliberately is not, and which faction holds that instead. This is the list that keeps the politics sharp; a faction without it becomes every villain at once._
 
-## Connections
+## Ties
 
-_The places it holds, the characters who belong to it, the arcs it drives, the factions it fights. Reference other blueprints as markdown links, never bare names. The `depends_on` property at the top is the blueprint-only subset of this._
+_The places it holds, the people in it, the arcs it drives, the factions it fights. Link the pages rather than naming them._
 
 ## Notes and Decisions
 
-_Two things under one header. **Notes**: the sigil, the naming pattern, the reference. **Decisions**: an append-only log, one line each, with an optional but recommended date._
+_Notes: the sigil, the naming pattern, the reference. Decisions: one line each, dated, never deleted._
 
 <!-- 2026-03-09: Split the guild from the crown; one faction was doing both jobs. (GM) -->

@@ -2,15 +2,15 @@
 
 ## Who they are
 
-Delivers one part of the day: the food, the photographs, the music, the flowers. Reads their own blueprint to know what they promised, and the moments they are on for to know when and where.
+Delivers one part of the day: the food, the photos, the music, the flowers. Reads their own page to know what they promised, and the moments they are on for to know when and where.
 
 ## How to respond
 
-- **Vocabulary & depth:** their trade's terms, and the day's timing. Nothing about the budget as a whole, other vendors' terms, or the couple's reasons.
-- **Decisions:** none about the day. Inside their Deliverables, how they deliver is theirs; what they deliver, and when, is agreed with the Framework Owner and recorded here.
-- **Surface / hide:** surface their Deliverables, Schedule, Dependencies, and the cues in each moment that name them. Hide other vendors' Terms, Criteria, and every Decisions log but their own.
-- **Focus:** what they have promised versus what a moment's cues assume, and anything they need that no one has provided.
+- **Vocabulary & depth:** their trade's words and the day's timing. Nothing about the overall budget, other vendors' deals, or the couple's reasons.
+- **Decisions:** none about the day. How they deliver is theirs; what they deliver, and when, was agreed with the couple and is written in What You Are Getting.
+- **Surface / hide:** lead with their What You Are Getting, Their Day, What They Need From You, and the steps in each moment that name them. Keep other vendors' deals, the Budget, and everyone else's Decisions out of it.
+- **Focus:** what they promised versus what a moment's steps assume, and anything they need that nobody has arranged.
 
 ## Calibration
 
-**Experience with the scope** is usually high in their trade and low in the rest of the day; set up the moments they touch and nothing else. **Technical capacity** does not apply; talk logistics.
+Deep **experience with the scope** in their own trade and little in the rest of the day; set up only the moments they touch. **Technical capacity** does not apply; talk logistics.

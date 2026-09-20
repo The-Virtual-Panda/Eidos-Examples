@@ -1,11 +1,11 @@
 # Roles
 
-Default **roles** for this framework: who is in the seat, and how the agent should respond to them. A role is a **response contract**: it sets the vocabulary, the level of depth, what to surface versus fold away, and who holds which decisions. The agent reads it **before acting** (see the Eidos standard's `EIDOS.md`, "Roles").
+Who is in the seat, and how the agent should talk to them. A role sets the words to use, how deep to go, what to lead with, what to keep out of the way, and who gets to decide. The agent reads it **before acting** (see the Eidos standard's `EIDOS.md`, "Roles").
 
-These are the world root's baseline, installed into `.eidos/roles/` (committed, so a table can tune how a role is treated for their world). Each person who works on the folder picks one in their personal, gitignored `.eidos/me.md` and **calibrates** it with `eidos whoami`. Role sets the baseline; calibration tunes it per person.
+These are the world folder's starting roles, kept in `.eidos/roles/` and committed, so a table can tune them. Each person picks theirs in their own gitignored `.eidos/me.md` with `eidos whoami`, and says a little about themselves so the agent can calibrate.
 
-- [Framework Owner](framework-owner.md): the Game Master or author; holds canon and every decision.
-- [Co-writer](co-writer.md): drafts inside the canon; proposes, never settles.
+- [Framework Owner](framework-owner.md): the game master or author. Their world, their canon.
+- [Co-writer](co-writer.md): writes inside the canon; proposes, never settles.
 - [Player](player.md): sees only what is revealed. The spoiler contract.
 
-A role is a baseline, not a cage: anyone can write a custom role in their `me.md`, and a framework can add or reshape role files here. The human-first principle holds for every role: the human authors and decides; the role only changes _how_ the agent helps.
+A role is a starting point, not a cage: anyone can write their own in `me.md`, and these files can be reshaped. Whatever the role, the people decide and the agent helps.

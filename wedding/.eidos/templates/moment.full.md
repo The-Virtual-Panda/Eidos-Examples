@@ -1,41 +1,41 @@
 # {{title}}
 
-## Intent
+## What This Is For
 
-_Why this moment is in the day: what it does for the couple and the guests that no other moment does. One or two paragraphs. This is the stable part: if Intent changes substantially, you probably have a different moment, not an edit to this one._
+_Why this moment is part of the day: what it does for the couple and the guests that nothing else does. A short paragraph. If this changes a lot, it is probably a different moment._
 
-### Assumptions
+### Taking for Granted
 
-_What you are taking as given: the venue's rules, who will be present, what the moment before leaves behind. Nested under Intent because they frame it. Surface them so a guess does not slip into the cues as if it were settled._
+_The things you are assuming and have not confirmed: the venue allows it, the right people will be there, the moment before ends on time. Write them down so a guess does not get planned around as if it were settled._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know about this moment and still need answered. Kept high, right after Intent, so uncertainty is seen rather than buried. When one is settled it graduates into an Assumption, a cue, or a Decision._
+_What you do not know yet and need answered. Kept near the top so nothing gets buried. When something is decided, it moves down into the plan._
 
-## What Happens
+## How It Goes
 
-_The moment as cues, in order: what happens, who does it, and what it needs. Label each **C1:**, **C2:**, ... (bold, unique within this moment). Keep each short and checkable against the day; push detail into a table or sub-section it points to. This is the run of show for this moment; the Planner reads it first._
+_Step by step, in order: what happens, who makes it happen, what it needs. Number the steps so anyone can point at one, and keep each one short. This is the run of show for this moment; the planner reads it first._
 
-- **C1:** <!-- the first thing that happens, and who makes it happen -->
+1. <!-- the first thing that happens, and who makes it happen -->
 
-## What Guests Leave With
+## What Guests Take Away
 
-_The checkable outcome: what a guest has seen, felt, eaten, or been told by the end that they had not at the start. If it is not listed here, this moment does not promise it._
+_What a guest has seen, felt, eaten, or been told by the end. If it is not written here, this moment is not promising it._
 
-## Out of Scope
+## Not Part of This
 
-_What this moment deliberately does not do, and which moment does it instead. The section the standard leans on hardest, because this is where a day's shape is held. A moment without it tends to swallow its neighbors._
+_What this moment deliberately does not do, and which moment does it instead. This is the section that keeps moments from bleeding into each other; a moment without it always runs long._
 
-## People and Vendors
+## Who Is On
 
-_Who is on for this moment: the wedding party and family with a part, and the vendors who deliver it. Reference vendors as markdown links, `[Photographer](../../Vendors/Photo/Photographer.md)`, never bare names. The `depends_on` property at the top is the blueprint-only subset of this._
+_The wedding party and family with a part to play, and the vendors delivering it. Link vendors, `[Photographer](../../Vendors/Photo/Photographer.md)`, rather than just naming them._
 
-## Needs
+## What It Needs
 
-_Space, sound, light, power, props, timing, the weather plan. What the venue or a vendor must have in place before the first cue._
+_Space, sound, lighting, power, props, timing, a rain plan. What has to be in place before step one._
 
 ## Notes and Decisions
 
-_Two things under one header. **Notes**: the reading, the song, the reminder specific to this moment. **Decisions**: an append-only log, one line each, with an optional but recommended date._
+_Notes: the reading, the song, the reminder. Decisions: one line each, with the date, never deleted, so nobody reopens a settled question in month eleven._
 
 <!-- 2026-05-02: Moved speeches before dinner so the kitchen has a fixed serve time. (Planner) -->

@@ -1,33 +1,33 @@
 # {{title}}
 
-## Intent
+## What This Room Is For
 
-_Why this room is in the project: what it will be for, for whom, and what is wrong with it now. One or two paragraphs. This is the stable part: if Intent changes substantially, you probably have a different room, not an edit to this one._
+_What it will be for, for whom, and what is wrong with it now. A short paragraph. If this changes a lot, it is probably a different room._
 
-### Assumptions
+### Taking for Granted
 
-_What you are taking as given: that the wall is not load-bearing, that the plumbing stays where it is, that the window is kept. Nested under Intent because they frame it. Surface them so a guess does not slip into the requirements as if it were confirmed._
+_The things you are assuming and have not confirmed: the wall is not load-bearing, the plumbing stays where it is, the window is kept. Write them down so a guess does not get built as if it were settled._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know about this room and still need answered. Kept high so uncertainty is seen rather than buried. When one is settled it graduates into an Assumption, a requirement, or a Decision._
+_What you do not know yet and need answered. Kept near the top so nothing gets buried. When something is decided, it moves down into the list below._
 
-## What It Must Do
+## What It Has to Do
 
-_The requirements, as observable outcomes. Label each **R1:**, **R2:**, ... (bold, unique within this room). Layout, light, storage, power, water, sound, how it connects to the next room. Keep each short and checkable in the finished room; push the plan into Assets and link it. If it is not listed here, it is not promised._
+_The finished room, as things you can check standing in it: the layout, the light, the storage, the outlets, the water, the sound, how it connects to the next room. Number them so anyone can point at one. Put the drawing in Files and link it. If it is not written here, it is not promised._
 
-- **R1:** <!-- the first thing the finished room must do -->
+1. <!-- the first thing the finished room has to do -->
 
-## Out of Scope
+## Not in This Room
 
-_What this room deliberately does not get, and which room or later project gets it instead. The section the standard leans on hardest, because this is where a renovation's scope is held. A room without it grows a wing._
+_What this room deliberately does not get, and which room or which later project gets it instead. This is the list that keeps a renovation from growing a wing._
 
-## Packages and Selections
+## The Work and the Picks
 
-_The work packages that touch this room and the selections that go in it. Reference them as markdown links, `[Kitchen Electrical](../../Packages/Rough-In/Kitchen%20Electrical.md)`, never bare names. The `depends_on` property at the top is the blueprint-only subset of this._
+_The jobs that touch this room and the selections that go in it, as links: `[Kitchen Electrical](<../../The Work/Rough-In/Kitchen Electrical.md>)`, not just the name._
 
 ## Notes and Decisions
 
-_Two things under one header. **Notes**: measurements, the reference photo, the thing the contractor said on site. **Decisions**: an append-only log, one line each, with an optional but recommended date._
+_Notes: measurements, the reference photo, the thing the contractor said on site. Decisions: one line each, with the date, never deleted, so nobody reopens a settled question in month four._
 
 <!-- 2026-02-11: Kept the window; moving it cost more than the view was worth. (Homeowner) -->

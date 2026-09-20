@@ -1,6 +1,6 @@
 # {{title}}
 
-## Intent
+## Today
 
 _What today is for, in a line or two. Written in the morning, or not at all._
 

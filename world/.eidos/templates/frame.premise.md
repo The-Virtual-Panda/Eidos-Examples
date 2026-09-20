@@ -1,19 +1,19 @@
 # {{title}}
 
-_What this world is about. This frame and Tone are the two that decide what belongs: a place, a faction, or an arc that serves nothing here is one to question, however good the idea._
+_What this world is about. This page and Tone decide what belongs: a place, a faction, or an arc that serves nothing here is one to question, however good the idea._
 
 ## The World in a Breath
 
-_In a few sentences: what kind of world this is, what is happening in it, and what the stories set here are about. If it needs a list, it is not a premise yet._
+_A few sentences: what kind of world this is, what is happening in it, and what the stories set here are about. If it needs a list, it is not a premise yet._
 
-## Why It Has to Exist
+## Why It Exists
 
-_The story, the game, or the feeling you could not get from an existing setting. The itch this world scratches._
+_The story, the game, or the feeling you could not get from a setting off the shelf. The itch this world scratches._
 
 ## The Shape of It
 
-_How the whole hangs together: the scale (a city, a continent, a cosmos), the age it is in, the central tension every region feels. Not a gazetteer; the logic behind one._
+_How the whole thing hangs together: the scale (a city, a continent, a cosmos), the age it is in, the one tension every region feels. Not a gazetteer; the logic behind one._
 
-## What It Is Not
+## Not This World
 
-_The adjacent world you are deliberately not building: the genre next door, the trope you refuse. This is where the world's scope is held._
+_The world next door that you are deliberately not building: the genre you are avoiding, the trope you refuse. Writing it down here is what keeps the setting from sprawling._

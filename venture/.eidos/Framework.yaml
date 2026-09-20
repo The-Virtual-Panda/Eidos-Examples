@@ -1,7 +1,7 @@
 # The framework document: the structure this root is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.3.0
+eidos_version: 5.4.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
@@ -11,53 +11,62 @@ top_level:
   - title: README
     path: ../README.md
     description: "the root's front door: what this is, and pointers in."
+  - title: The Pitch
+    path: ../The Pitch.md
+    description: the thirty-second version of the business
+  - title: Roadmap
+    path: ../Roadmap.md
+    description: the next twelve months on one page
+  - title: Team
+    path: ../Team.md
+    description: who does what, and which seats are empty
 
-# Every folder at the root, one entry each, with its type: collection | assets | other.
+# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: Frames
-    type: collection
-    description: "What every idea, plan, investment, and decision is judged against: what the business is and why now, who pays, how it earns, and what would make you stop."
+  - name: The Business
+    owned_by: "@eidos/collections"
+    description: "The business itself, four pages: what it is and why now, who pays, how it makes money, and how long you have. Every idea, plan, deal, and decision gets checked against these."
     variants:
-      - { name: thesis, template: templates/frame.thesis.md, description: "what the business is, why now, and what it is not", default: true }
-      - { name: market, template: templates/frame.market.md, description: "customers, competitors, and how it reaches them" }
-      - { name: model, template: templates/frame.model.md, description: "the economics: how it earns, what it costs, and how it scales" }
-      - { name: criteria, template: templates/frame.criteria.md, description: "runway, targets, timeline, and the lines you will not cross" }
+      - { name: thesis, template: templates/frame.thesis.md, description: "what the business is, why now, the bet, and what it is not", default: true }
+      - { name: market, template: templates/frame.market.md, description: "who pays, who else is selling to them, and how you reach them" }
+      - { name: model, template: templates/frame.model.md, description: "how it makes money, what it costs, and what breaks first as it grows" }
+      - { name: runway, template: templates/frame.runway.md, description: "cash, targets, what matters most, and what would make you stop" }
   - name: Ideas
-    type: collection
-    description: "The opportunities under consideration, one per blueprint, flat: a spark grows into a case, and a case becomes a plan or a decision to stop."
+    owned_by: "@eidos/collections"
+    description: "One page per opportunity you are weighing, flat. A spark grows into a case; a case becomes a plan, or a decision to stop."
     variants:
-      - { name: case, template: templates/idea.case.md, description: "the business case: problem, customer, economics, risks, kill criteria", default: true }
+      - { name: case, template: templates/idea.case.md, description: "the case: the problem, who pays, the numbers, the risks, what would kill it", default: true }
       - { name: spark, template: templates/idea.spark.md, description: "a paragraph: what, who would pay, why now; grow into case" }
   - name: Plans
-    type: collection
-    description: "The plans to develop a line of business, one per blueprint, grouped by line: objective, moves, milestones, and what would make you stop."
+    owned_by: "@eidos/collections"
+    description: "One page per plan to grow a line of business, grouped by line: the goal, the moves, the milestones, and what would stop it."
     variants:
-      - { name: full, template: templates/plan.full.md, description: "the complete plan template", default: true }
-      - { name: brief, template: templates/plan.brief.md, description: "Intent, Open Questions, Moves, Out of Scope; grow into full" }
+      - { name: full, template: templates/plan.full.md, description: "the full page for a plan", default: true }
+      - { name: brief, template: templates/plan.brief.md, description: "a brief: what it is for, what is still to decide, the moves; grow into full" }
     grouping:
       label: Lines
       property: line
       groups: [] # one entry per line of business, a name and a description, as they accrue
   - name: Investments
-    type: collection
-    description: "The capital bets, one per blueprint, grouped by line: a round you raise or a cheque you write, with direction telling them apart."
+    owned_by: "@eidos/collections"
+    description: "One page per bet with money on it, grouped by line: a round you raise or a cheque you write, with direction telling them apart."
     variants:
-      - { name: full, template: templates/investment.full.md, description: "the complete investment template", default: true }
-      - { name: brief, template: templates/investment.brief.md, description: "Intent, Open Questions, Terms, Out of Scope; grow into full" }
+      - { name: full, template: templates/investment.full.md, description: "the full page for a deal", default: true }
+      - { name: brief, template: templates/investment.brief.md, description: "a brief: what the money does, what is still to decide, the terms so far; grow into full" }
     grouping:
       label: Lines
       property: line
       groups: [] # the same lines as the plans, as they accrue
   - name: Decisions
-    type: collection
-    description: "The calls made, one per blueprint, flat: what was decided, why, and what it closed. Business development is mostly decisions; the record of the no is worth as much as the plan."
+    owned_by: "@eidos/collections"
+    description: "One page per call you made, flat: what was going on, what you could have done, what you did, and what it closed. The record of the no is worth as much as the plan."
     variants:
-      - { name: full, template: templates/decision.full.md, description: "context, options, the decision, and its consequences", default: true }
-  - name: Assets
-    type: assets
-    description: "Decks, models, term sheets, contracts, and research the blueprints link to."
+      - { name: full, template: templates/decision.full.md, description: "what was going on, the options, the call, what it changed", default: true }
+  - name: Files
+    description: "Decks, models, term sheets, contracts, and research the pages link to."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -65,16 +74,16 @@ properties:
   # The standard's. migrate rewrites this block; don't hand-edit it.
   core:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
-    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+    - { name: variant, type: Text, meaning: Which variant this blueprint follows. Absent = the collection's default. }
   # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
   custom:
     - name: status
       type: Text
       applies_to: all
       options: [ Draft, Active, Done, Parked, Killed ]
-      meaning: "Where this stands. Parked can come back; Killed is a decision."
+      meaning: "Where this stands: Draft, Active, Done, Parked (can come back), or Killed (a decision)."
       eidosmd:
         canvas:
           show: true
@@ -100,11 +109,11 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: line, type: Text, required: true, applies_to: [ Plans, Investments ], meaning: "The group: matches the sub-folder, the line of business this serves. An unknown value warns." }
-    - { name: depends_on, type: List, applies_to: [ Plans, Investments ], meaning: "Plans or investments this one needs in place first, each a markdown link." }
-    - { name: amount, type: Number, applies_to: [ Investments ], meaning: "The size of the bet, in your currency." }
+    - { name: line, type: Text, required: true, applies_to: [ Plans, Investments ], meaning: "Which line of business this serves. Matches its sub-folder." }
+    - { name: needs, type: List, applies_to: [ Plans, Investments ], meaning: "Plans or deals that have to be in place first, as links." }
+    - { name: amount, type: Number, applies_to: [ Investments ], meaning: "How big the bet is, in your currency." }
     - { name: direction, type: Text, applies_to: [ Investments ], options: [ raise, deploy ], meaning: "Which way the money moves: raise brings it in, deploy sends it out." }
-    - { name: decide_by, type: Date, applies_to: [ Ideas, Plans, Investments ], meaning: YYYY-MM-DD. The day a call on this is due. }
+    - { name: decide_by, type: Date, applies_to: [ Ideas, Plans, Investments ], meaning: The day you have to make a call on this. }
 
 # The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
@@ -112,25 +121,24 @@ vocabulary: []
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  Frames:
-    - id: criteria
-      title: Criteria
+  The Business:
+    - id: how-it-makes-money
+      title: How It Makes Money
       summary: null
-      path: Criteria.md
+      path: How It Makes Money.md
     - id: market
       title: Market
       summary: null
       path: Market.md
-    - id: model
-      title: Model
+    - id: runway-and-limits
+      title: Runway and Limits
       summary: null
-      path: Model.md
+      path: Runway and Limits.md
     - id: thesis
       title: Thesis
       summary: null
       path: Thesis.md
-  Specs: []
-  Plans: []
   Ideas: []
+  Plans: []
   Investments: []
   Decisions: []

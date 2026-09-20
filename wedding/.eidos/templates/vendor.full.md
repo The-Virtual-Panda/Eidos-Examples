@@ -1,41 +1,41 @@
 # {{title}}
 
-## Intent
+## What They Are For
 
-_What this vendor is for on the day: the part of it they carry, and why them. One or two paragraphs. This is the stable part: if Intent changes substantially, you are hiring for a different job, not editing this one._
+_The part of the day this vendor carries, and why them. A short paragraph. If this changes a lot, you are hiring for a different job._
 
-### Assumptions
+### Taking for Granted
 
-_What you are taking as given about them: that they know the venue, that the quote includes travel, that they bring their own power. Nested under Intent because they frame it. Surface them so a guess does not slip into Deliverables as if it were agreed._
+_What you are assuming about them and have not confirmed: they know the venue, the quote includes travel, they bring their own power. Write it down so it does not get planned around as if it were agreed._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know and still need answered, by them or by you. Kept high so uncertainty is seen rather than buried. When one is settled it graduates into an Assumption, a deliverable, or a Decision._
+_What you do not know yet, from them or from you. Kept near the top so it gets asked._
 
-## Deliverables
+## What You Are Getting
 
-_What you are getting, as checkable items. Label each **D1:**, **D2:**, ... (bold, unique within this vendor). If it is not listed here, it is not promised, whatever the conversation was. Keep each short; push the menu, the shot list, or the set list into a table or sub-section it points to._
+_Exactly what they deliver, as a numbered list you could tick off on the day. If it is not written here, it is not promised, whatever was said on the phone. Put the menu, the shot list, or the set list in Files and link it._
 
-- **D1:** <!-- the first thing they deliver, and by when -->
+1. <!-- the first thing they deliver, and by when -->
 
-## Schedule
+## Their Day
 
-_When they arrive, set up, deliver, and strike, against the moments that need them. The Planner reads this against every moment's cues._
+_When they arrive, set up, deliver, and pack out, lined up against the moments that need them. The planner checks this against every moment's steps._
 
-## Terms
+## The Deal
 
-_The quote, the deposit, the payment schedule, the cancellation terms, the insurance. What is signed, and where the contract lives (link it from Assets)._
+_The quote, the deposit, when the rest is due, what happens if you cancel, whether they are insured. What is signed, and where the contract lives (link it from Files)._
 
-## Out of Scope
+## Not Their Job
 
-_What they do not do, and who does it instead: the cake but not the stand, the photos but not the album. This is where a vendor's job is held; the gaps between vendors are where a day goes wrong._
+_What they do not do and who does it: the cake but not the stand, the photos but not the album. The gaps between vendors are where a wedding day goes wrong; this is where you find them._
 
-## Dependencies
+## What They Need From You
 
-_What they need from you or from another vendor to deliver: a final count, a floor plan, a power drop, the DJ's timing. Reference moments and vendors as markdown links, never bare names. The `depends_on` property at the top is the blueprint-only subset of this._
+_A final headcount, a floor plan, a power outlet, the DJ's timing. Anything they need from you or from another vendor before they can deliver. Link the moments and vendors rather than naming them._
 
 ## Notes and Decisions
 
-_Two things under one header. **Notes**: the contact, the portfolio, the tasting notes, the reminder. **Decisions**: an append-only log, one line each, with an optional but recommended date._
+_Notes: the contact, the portfolio, the tasting notes. Decisions: one line each, dated, never deleted._
 
-<!-- 2026-04-18: Chose the second quote; the first excluded staff. (Couple) -->
+<!-- 2026-04-18: Went with the second quote; the first did not include staff. (Couple) -->

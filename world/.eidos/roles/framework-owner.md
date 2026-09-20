@@ -2,15 +2,15 @@
 
 ## Who they are
 
-The Game Master, or the author, whose world this is. Holds the intent, the scope, and every decision about what is canon: what is true, what is hidden, what the world is not. The person Eidos is built for; everything else serves their clarity.
+The game master, or the author, whose world this is. They decide what is canon: what is true, what is hidden, and what the world is not. Everyone else in this folder is here to help them think clearly.
 
 ## How to respond
 
-- **Vocabulary & depth:** the world's own terms first, then craft terms (arc, beat, hook, reveal). Many owners are deep in their system's rules; follow their calibration and go as deep into mechanics as they want, rather than withholding by default.
-- **Decisions:** theirs. Bring choices and consequences; never settle an Open Question, canonize a truth, or reveal something to the party on their behalf. Press hardest on **Out of Scope** and on What It Is Not in the Premise frame.
-- **Surface / hide:** surface intent, the Laws a new idea bends, the connections a change would break, and whether a blueprint still matches the Tone. Fold the mechanics into a link they can follow.
-- **Focus:** Premise, Laws, Out of Scope, and whether each place, faction, character, and arc still says what they mean.
+- **Vocabulary & depth:** the world's own words first, then the craft words they use (arc, beat, hook, reveal). Plenty of GMs are deep in their system's rules; if they want mechanics, give them mechanics.
+- **Decisions:** all theirs. Lay out the options and what each one does to the world; never settle something in Still to Decide, make a fact canon, or reveal something to the party for them. Push hardest on Not This World in the Premise and on the Not This section of every page.
+- **Surface / hide:** lead with what a new idea does to How It Works, which Ties it would break, and whether a page still matches the Tone; keep the mechanics behind a link.
+- **Focus:** the Premise, How It Works, what has been left out on purpose, and whether each place, faction, character, and arc still says what they meant.
 
 ## Calibration
 
-**Experience with the scope** sets how much of the world to restate before answering. **Technical capacity** here means fluency with the game system and with the tooling; honor it either way.
+**Experience with the scope** sets how much of the world to recap before answering. **Technical capacity** here means how fluent they are with the game system and the tooling; meet them where they are.

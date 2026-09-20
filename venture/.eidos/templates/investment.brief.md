@@ -1,17 +1,17 @@
 # {{title}}
 
-## Intent
+## What the Money Would Do
 
-_What the money would do, and which way it moves. One or two paragraphs. A brief is a start; grow it into the full variant once terms are on the table._
+_What it would buy, and which way it moves. A short paragraph. Grow it into the full page once terms are on the table._
 
-## Open Questions
+## Still to Find Out
 
-_What you would need to know before committing. Kept high so the next conversation has an agenda._
+_What you would need to know before committing. Kept near the top so the next conversation has an agenda._
 
-## Terms
+## The Terms So Far
 
 _What is known of the amount, the instrument, and the timing._
 
-## Out of Scope
+## Not This Deal
 
 _What this would not fund or buy._

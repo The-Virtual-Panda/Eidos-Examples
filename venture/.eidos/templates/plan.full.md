@@ -1,45 +1,45 @@
 # {{title}}
 
-## Intent
+## What This Plan Is For
 
-_Why this plan exists: the objective, in which line of business, and what the business looks like if it works. One or two paragraphs. This is the stable part: if Intent changes substantially, you have a different plan, not an edit to this one._
+_The goal, in which line of business, and what the business looks like if it works. A short paragraph. If this changes a lot, it is a different plan._
 
-### Assumptions
+### Taking for Granted
 
-_What you are taking as given: the market claim it rests on, the resources it assumes, the plan before it that must have landed. Nested under Intent because they frame it._
+_What you are assuming and have not confirmed: the market claim it rests on, the people it assumes you have, the plan before it that has to have landed._
 
-## Open Questions
+## Still to Decide
 
-_What you do not yet know and still need answered. Kept high so uncertainty is seen rather than buried. When one is settled it graduates into an Assumption, a move, or a Decision._
+_What you do not know yet. Kept near the top so nothing gets buried; when something is settled it becomes a move, or a decision._
 
-## Moves
+## The Moves
 
-_What the plan does, as moves a team can execute and an owner can check. Label each **M1:**, **M2:**, ... (bold, unique within this plan). Each names an outcome, not an activity. Push the detail into a sub-section it points to._
+_What the plan does, as numbered moves a team can carry out and you can check. Each one names a result, not an activity. Put the detail in its own section below._
 
-- **M1:** <!-- the first move, and what it produces -->
+1. <!-- the first move, and what it produces -->
 
 ## Milestones
 
-_The dated points where the plan is judged: what must be true by when. The Operator reads these against the moves; the CFO reads them against Runway._
+_The dated points where the plan gets judged: what has to be true by when. The Operator reads these against the moves; the CFO reads them against Runway._
 
-## Budget
+## What It Costs
 
-_What the plan costs, in money and in people, and where that comes from. Judged against Criteria._
+_In money and in people, and where that comes from. Held up against Runway._
 
-## What Would Make Us Stop
+## What Would Stop It
 
 _The evidence that would end this plan early, named now. A plan without it runs until the money does._
 
-## Out of Scope
+## Not This Plan
 
-_What this plan deliberately does not attempt, and which plan does. The section the standard leans on hardest, because this is where a line of business holds its shape._
+_What this plan deliberately does not try, and which plan does. This is the section that keeps a line of business in shape._
 
-## Dependencies
+## What It Needs First
 
-_Other plans, investments, hires, or decisions this needs first. Reference blueprints as markdown links, never bare names. The `depends_on` property at the top is the blueprint-only subset of this._
+_Other plans, deals, hires, or decisions that have to happen before this one can. Link the pages rather than naming them._
 
 ## Notes and Decisions
 
-_Two things under one header. **Notes**: the model, the deck, the partner conversation. **Decisions**: an append-only log, one line each, with an optional but recommended date._
+_Notes: the model, the deck, the partner conversation. Decisions: one line each, dated, never deleted._
 
-<!-- 2026-02-03: Moved M3 after the round; it needs the hire. (Founder) -->
+<!-- 2026-02-03: Moved move 3 after the round; it needs the hire. (Founder) -->
