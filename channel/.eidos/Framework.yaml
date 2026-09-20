@@ -1,0 +1,129 @@
+# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# the `eidos` CLI edits this file. Every path is relative to this folder.
+
+eidos_version: 5.3.0
+
+# kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
+naming: Title Case
+
+# Every file at the root, one entry each.
+top_level:
+  - title: README
+    path: ../README.md
+    description: "the root's front door: what this is, and pointers in."
+
+# Every folder at the root, one entry each, with its type: collection | assets | other.
+folders:
+  # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
+  # not a failure.
+  - name: Frames
+    type: collection
+    description: "What every video, post, and page is judged against: who watches, what the formats are, how the channel sounds, and how it earns."
+    variants:
+      - { name: audience, template: templates/frame.audience.md, description: "who watches, what they come for, and how each kind differs", default: true }
+      - { name: format, template: templates/frame.format.md, description: "the signature formats, runtimes, cadence, and packaging rules" }
+      - { name: voice, template: templates/frame.voice.md, description: "the on-camera persona, the register, and what the channel never does" }
+      - { name: market, template: templates/frame.market.md, description: "the niche, the comparable channels, and how it earns" }
+  - name: Videos
+    type: collection
+    description: "The channel's units, one per video, grouped by series."
+    variants:
+      - { name: full, template: templates/video.full.md, description: "the complete video template", default: true }
+      - { name: short, template: templates/video.short.md, description: "a Short or clip: one hook, one beat, vertical" }
+      - { name: pitch, template: templates/video.pitch.md, description: "Intent, Hook, Open Questions, Out of Scope; grow into full" }
+    grouping:
+      label: Series
+      property: series
+      groups: [] # one entry per series (a recurring format, a playlist), a name and a description, as they accrue
+  - name: Posts
+    type: collection
+    description: "The written side: one per post, grouped by the same series as the videos."
+    variants:
+      - { name: full, template: templates/post.full.md, description: "the complete post template", default: true }
+      - { name: companion, template: templates/post.companion.md, description: "the written twin of a video: what it adds, and the video it serves" }
+    grouping:
+      label: Series
+      property: series
+      groups: [] # the same series as the videos, as they accrue
+  - name: Pages
+    type: collection
+    description: "The site: one per page, flat. About, sponsors, merch, the newsletter; the part of the channel that is not on a platform."
+    variants:
+      - { name: page, template: templates/page.page.md, description: "a page: what it is for, and what a visitor leaves with", default: true }
+  - name: Assets
+    type: assets
+    description: "Thumbnails, scripts, b-roll lists, brand files, and sponsor decks the blueprints link to."
+
+# The property contract, one block per owner. A property applies to `all` collections or a list; a required
+# one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
+properties:
+  # The standard's. migrate rewrites this block; don't hand-edit it.
+  core:
+    - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
+    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+  custom:
+    - name: status
+      type: Text
+      applies_to: all
+      options: [ Idea, Scripted, Shot, Edited, Scheduled, Published, Shelved ]
+      meaning: "Where this stands on the way to being published."
+      eidosmd:
+        canvas:
+          show: true
+          styles:
+            Draft:
+              color: "#8b9099"
+            Intake:
+              color: "#d3a53c"
+            In Progress:
+              color: "#5f80cf"
+            Done:
+              color: "#7fae6c"
+            Archived:
+              color: "#8b9099"
+            Deprecated:
+              color: "#cf7b8f"
+            needs-clarification:
+              color: "#5f80cf"
+            maybe:
+              color: "#e08a63"
+            visionary:
+              color: "#4aa39f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+    - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
+    - { name: series, type: Text, required: true, applies_to: [ Videos, Posts ], meaning: "The group: matches the sub-folder, the series this belongs to. An unknown value warns." }
+    - { name: depends_on, type: List, applies_to: [ Videos, Posts ], meaning: "Videos or posts a viewer should have seen first, each a markdown link." }
+    - { name: publish_date, type: Date, applies_to: [ Videos, Posts ], meaning: "YYYY-MM-DD. When it went, or goes, live." }
+    - { name: runtime, type: Number, applies_to: [ Videos ], meaning: "Minutes, as published." }
+
+# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# Starts empty; Eidos declares none.
+vocabulary: []
+
+# Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
+index:
+  Frames:
+    - id: audience
+      title: Audience
+      summary: null
+      path: Audience.md
+    - id: format
+      title: Format
+      summary: null
+      path: Format.md
+    - id: market
+      title: Market
+      summary: null
+      path: Market.md
+    - id: voice
+      title: Voice
+      summary: null
+      path: Voice.md
+  Specs: []
+  Videos: []
+  Posts: []
+  Pages: []

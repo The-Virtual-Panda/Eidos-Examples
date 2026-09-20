@@ -1,0 +1,124 @@
+# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# the `eidos` CLI edits this file. Every path is relative to this folder.
+
+eidos_version: 5.3.0
+
+# kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
+naming: Title Case
+
+# Every file at the root, one entry each.
+top_level:
+  - title: README
+    path: ../README.md
+    description: "the root's front door: what this is, and pointers in."
+
+# Every folder at the root, one entry each, with its type: collection | assets | other.
+folders:
+  # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
+  # not a failure.
+  - name: Frames
+    type: collection
+    description: "What every learner, course, and path is judged against: what the school teaches and why, how it teaches, where it sells, and what it may cost to make."
+    variants:
+      - { name: mission, template: templates/frame.mission.md, description: "what the school teaches and why, and what it is not", default: true }
+      - { name: pedagogy, template: templates/frame.pedagogy.md, description: "how it teaches: format, length, assessment, and the rules every course keeps" }
+      - { name: market, template: templates/frame.market.md, description: "the platform, the pricing, and the comparable courses" }
+      - { name: criteria, template: templates/frame.criteria.md, description: "production budget, cadence, platform constraints, and the lines you will not cross" }
+  - name: Learners
+    type: collection
+    description: "Who it is for, one persona per blueprint, flat: what they know, what they need, and what done looks like for them. Courses and paths point at these."
+    variants:
+      - { name: persona, template: templates/learner.persona.md, description: "one kind of learner: where they start, what they need, what done looks like", default: true }
+  - name: Courses
+    type: collection
+    description: "The catalog, one per course, grouped by track: outcomes, outline, assessment, format, and what a learner leaves with."
+    variants:
+      - { name: full, template: templates/course.full.md, description: "the complete course template", default: true }
+      - { name: outline, template: templates/course.outline.md, description: "Intent, Outcomes, Open Questions, Modules, Out of Scope; grow into full" }
+    grouping:
+      label: Tracks
+      property: track
+      groups: [] # one entry per track (a subject area), a name and a description, as they accrue
+  - name: Paths
+    type: collection
+    description: "Ordered sequences of courses, one per path, flat: for one kind of learner, toward one outcome. The collection that ties the other two together."
+    variants:
+      - { name: full, template: templates/path.full.md, description: "the learner, the outcome, and the courses in order", default: true }
+  - name: Assets
+    type: assets
+    description: "Slides, worksheets, recordings, and syllabi the blueprints link to."
+
+# The property contract, one block per owner. A property applies to `all` collections or a list; a required
+# one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
+properties:
+  # The standard's. migrate rewrites this block; don't hand-edit it.
+  core:
+    - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
+    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+  custom:
+    - name: status
+      type: Text
+      applies_to: all
+      options: [ Idea, Outlined, In Production, Published, Retired ]
+      meaning: "Where this stands, from an idea to a course learners can take."
+      eidosmd:
+        canvas:
+          show: true
+          styles:
+            Draft:
+              color: "#8b9099"
+            Intake:
+              color: "#d3a53c"
+            In Progress:
+              color: "#5f80cf"
+            Done:
+              color: "#7fae6c"
+            Archived:
+              color: "#8b9099"
+            Deprecated:
+              color: "#cf7b8f"
+            needs-clarification:
+              color: "#5f80cf"
+            maybe:
+              color: "#e08a63"
+            visionary:
+              color: "#4aa39f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+    - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
+    - { name: track, type: Text, required: true, applies_to: [ Courses ], meaning: "The group: matches the sub-folder, the subject area this course belongs to. An unknown value warns." }
+    - { name: depends_on, type: List, applies_to: [ Courses, Paths ], meaning: "Courses a learner must finish first, each a markdown link." }
+    - { name: for, type: List, applies_to: [ Courses, Paths ], meaning: "The learners this is for, each a markdown link to a Learner." }
+    - { name: level, type: Text, applies_to: [ Courses ], options: [ intro, intermediate, advanced ], meaning: Where a learner should be before starting. }
+    - { name: duration, type: Number, applies_to: [ Courses ], meaning: "Hours of learner time, start to finish." }
+
+# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# Starts empty; Eidos declares none.
+vocabulary: []
+
+# Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
+index:
+  Frames:
+    - id: criteria
+      title: Criteria
+      summary: null
+      path: Criteria.md
+    - id: market
+      title: Market
+      summary: null
+      path: Market.md
+    - id: mission
+      title: Mission
+      summary: null
+      path: Mission.md
+    - id: pedagogy
+      title: Pedagogy
+      summary: null
+      path: Pedagogy.md
+  Specs: []
+  Courses: []
+  Learners: []
+  Paths: []

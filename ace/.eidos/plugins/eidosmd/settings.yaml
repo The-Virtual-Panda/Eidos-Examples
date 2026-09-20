@@ -1,0 +1,21 @@
+# eidosmd settings shared by everyone in this root. Edit by hand, with eidos setup, or from the browser.
+# features.git: whether the browser reads git (history, authors, versions) when the root is in a repository.
+# users: the people who work here: { name, alias (for @mentions, no spaces), role (from .eidos/roles/), email (ties to git) }.
+# on_save: rules applied to a blueprint's frontmatter on every save from the browser: { property, set: today | now }.
+# versions.tag_prefix: what a recorded version's git tag starts with (eidos version record --tag), blueprints/ by default.
+# check.strict: whether a warning fails eidos check as an error does; the framework owner's decision for this root (eidos check --strict / --no-strict override one run).
+# installed: what eidos install brought in from a Registry package: { package, ref, pieces, date }, written by the command, read to say what came from where.
+features:
+  git: true
+users: []
+on_save: []
+versions:
+  tag_prefix: blueprints/
+check:
+  strict: false
+installed:
+  - package: "@BuildableWorks/software"
+    ref: v5.3.1
+    pieces:
+      - root
+    date: 2026-09-19

@@ -1,0 +1,136 @@
+# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# the `eidos` CLI edits this file. Every path is relative to this folder.
+
+eidos_version: 5.3.0
+
+# kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
+naming: Title Case
+
+# Every file at the root, one entry each.
+top_level:
+  - title: README
+    path: ../README.md
+    description: "the root's front door: what this is, and pointers in."
+
+# Every folder at the root, one entry each, with its type: collection | assets | other.
+folders:
+  # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
+  # not a failure.
+  - name: Frames
+    type: collection
+    description: "What every place, faction, character, and arc is judged against: what the world is about, how it feels, how it works, and who plays in it."
+    variants:
+      - { name: premise, template: templates/frame.premise.md, description: "what the world is about, and what it is not", default: true }
+      - { name: tone, template: templates/frame.tone.md, description: "how it feels, and the rules the table and the prose keep" }
+      - { name: laws, template: templates/frame.laws.md, description: "how the world works, and what cannot happen" }
+      - { name: table, template: templates/frame.table.md, description: "who plays, how sessions run, and what the players know" }
+  - name: Places
+    type: collection
+    description: "The world's places, one per blueprint, grouped by region."
+    variants:
+      - { name: full, template: templates/place.full.md, description: "the complete place template", default: true }
+      - { name: sketch, template: templates/place.sketch.md, description: "Intent, Open Questions, What Is True, Out of Scope; grow into full" }
+    grouping:
+      label: Regions
+      property: region
+      groups: [] # one entry per region, a name and a description, as they accrue
+  - name: Factions
+    type: collection
+    description: "The powers in the world, one per blueprint: what each wants, holds, and does next."
+    variants:
+      - { name: full, template: templates/faction.full.md, description: "the complete faction template", default: true }
+      - { name: sketch, template: templates/faction.sketch.md, description: "Intent, Open Questions, What Is True, Out of Scope; grow into full" }
+  - name: Characters
+    type: collection
+    description: "The people the party may meet, one per blueprint."
+    variants:
+      - { name: full, template: templates/character.full.md, description: "the complete character template", default: true }
+      - { name: sketch, template: templates/character.sketch.md, description: "Intent, Open Questions, What Is True, Out of Scope; grow into full" }
+  - name: Arcs
+    type: collection
+    description: "The stories run in the world, one per arc, grouped by campaign."
+    variants:
+      - { name: full, template: templates/arc.full.md, description: "the complete arc template", default: true }
+      - { name: sketch, template: templates/arc.sketch.md, description: "Intent, Open Questions, Beats, Out of Scope; grow into full" }
+    grouping:
+      label: Campaigns
+      property: campaign
+      groups: [] # one entry per campaign run in this world, a name and a description, as they accrue
+  - name: Assets
+    type: assets
+    description: "Maps, handouts, reference images, and character sheets the blueprints link to."
+
+# The property contract, one block per owner. A property applies to `all` collections or a list; a required
+# one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
+properties:
+  # The standard's. migrate rewrites this block; don't hand-edit it.
+  core:
+    - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
+    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+  custom:
+    - name: status
+      type: Text
+      applies_to: all
+      options: [ Seed, Drafted, Canon, Retired ]
+      meaning: "How settled this is: a seed is an idea, canon is true at the table."
+      eidosmd:
+        canvas:
+          show: true
+          styles:
+            Draft:
+              color: "#8b9099"
+            Intake:
+              color: "#d3a53c"
+            In Progress:
+              color: "#5f80cf"
+            Done:
+              color: "#7fae6c"
+            Archived:
+              color: "#8b9099"
+            Deprecated:
+              color: "#cf7b8f"
+            needs-clarification:
+              color: "#5f80cf"
+            maybe:
+              color: "#e08a63"
+            visionary:
+              color: "#4aa39f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+    - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
+    - { name: region, type: Text, required: true, applies_to: [ Places ], meaning: "The group: matches the sub-folder, the region this place lies in. An unknown value warns." }
+    - { name: depends_on, type: List, applies_to: [ Places, Factions, Characters, Arcs ], meaning: "Blueprints this one needs to make sense, each a markdown link." }
+    - { name: campaign, type: Text, applies_to: [ Arcs ], required: true, meaning: "The group: matches the sub-folder, one per campaign run in this world. An unknown value warns." }
+    - { name: revealed, type: Checkbox, applies_to: [ Places, Factions, Characters, Arcs ], meaning: Whether the players have met this. The Player role reads only what is revealed. }
+
+# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# Starts empty; Eidos declares none.
+vocabulary: []
+
+# Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
+index:
+  Frames:
+    - id: laws
+      title: Laws
+      summary: null
+      path: Laws.md
+    - id: premise
+      title: Premise
+      summary: null
+      path: Premise.md
+    - id: table
+      title: Table
+      summary: null
+      path: Table.md
+    - id: tone
+      title: Tone
+      summary: null
+      path: Tone.md
+  Specs: []
+  Places: []
+  Factions: []
+  Characters: []
+  Arcs: []

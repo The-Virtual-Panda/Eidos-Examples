@@ -1,0 +1,117 @@
+# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# the `eidos` CLI edits this file. Every path is relative to this folder.
+
+eidos_version: 5.3.0
+
+# kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
+naming: Title Case
+
+# Every file at the root, one entry each.
+top_level:
+  - title: README
+    path: ../README.md
+    description: "the root's front door: what this is, and pointers in."
+
+# Every folder at the root, one entry each, with its type: collection | assets | other.
+folders:
+  # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
+  # not a failure.
+  - name: Frames
+    type: collection
+    description: "What the vault is judged against: what it is for, and how it runs. Two frames, kept short."
+    variants:
+      - { name: purpose, template: templates/frame.purpose.md, description: "what the vault is for, and what it is not", default: true }
+      - { name: practice, template: templates/frame.practice.md, description: "how it runs: capture, cadence, naming and linking, what the agent may do" }
+  - name: Atlas
+    type: collection
+    description: "What you know: one note per idea, source, or thing, and maps that gather them. Flat; a note finds its place by linking up to a map."
+    variants:
+      - { name: note, template: templates/note.note.md, description: "a title and nothing more, on purpose", default: true }
+      - { name: map, template: templates/note.map.md, description: "a map of content: the notes it gathers, as links in reading order" }
+  - name: Calendar
+    type: collection
+    description: "When: dated entries, grouped by series. Daily, Weekly, and Yearly ship as the idea; add a series for any other dated run (meetings, sermons, a trip)."
+    variants:
+      - { name: day, template: templates/entry.day.md, description: "a day: what it is for, and what happened", default: true }
+      - { name: week, template: templates/entry.week.md, description: "a week: the review, and what is ahead" }
+      - { name: year, template: templates/entry.year.md, description: "a year: its themes, and the review as it closes" }
+      - { name: log, template: templates/entry.log.md, description: "a dated entry in any other series: notes, and what to carry forward" }
+    grouping:
+      label: Series
+      property: series
+      groups: [] # one entry per series (Daily, Weekly, Yearly, or one of your own), a name and a description, as they accrue
+  - name: Efforts
+    type: collection
+    description: "What you are doing: one file per effort, its heat in status. The working notes live in Atlas; the effort says what they are for."
+    variants:
+      - { name: full, template: templates/effort.full.md, description: "the complete effort template", default: true }
+      - { name: quick, template: templates/effort.quick.md, description: "Intent and Outcome; grow into full when it earns a finish line" }
+  - name: Assets
+    type: assets
+    description: "Images, PDFs, and files the notes link to."
+
+# The property contract, one block per owner. A property applies to `all` collections or a list; a required
+# one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
+properties:
+  # The standard's. migrate rewrites this block; don't hand-edit it.
+  core:
+    - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
+    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+  custom:
+    - name: status
+      type: Text
+      applies_to:
+        - Efforts
+      options: [ On, Ongoing, Simmering, Sleeping, Archived ]
+      meaning: "The effort's heat, the way ACE reads it: On is this week, Sleeping is not now, Archived is over."
+      eidosmd:
+        canvas:
+          show: true
+          styles:
+            Draft:
+              color: "#8b9099"
+            Intake:
+              color: "#d3a53c"
+            In Progress:
+              color: "#5f80cf"
+            Done:
+              color: "#7fae6c"
+            Archived:
+              color: "#8b9099"
+            Deprecated:
+              color: "#cf7b8f"
+            needs-clarification:
+              color: "#5f80cf"
+            maybe:
+              color: "#e08a63"
+            visionary:
+              color: "#4aa39f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+    - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
+    - { name: series, type: Text, required: true, applies_to: [ Calendar ], meaning: "The group: matches the sub-folder, the series this entry belongs to (Daily, Weekly, Yearly, or one of your own). An unknown value warns." }
+    - { name: up, type: List, applies_to: [ Atlas, Efforts ], meaning: "The maps this sits under, each a markdown link. The way up the vault." }
+    - { name: date, type: Date, applies_to: [ Calendar ], required: true, meaning: "YYYY-MM-DD. The day, week, or year this entry is for." }
+
+# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# Starts empty; Eidos declares none.
+vocabulary: []
+
+# Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
+index:
+  Frames:
+    - id: practice
+      title: Practice
+      summary: null
+      path: Practice.md
+    - id: purpose
+      title: Purpose
+      summary: null
+      path: Purpose.md
+  Specs: []
+  Calendar: []
+  Atlas: []
+  Efforts: []

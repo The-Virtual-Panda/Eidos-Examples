@@ -1,0 +1,136 @@
+# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# the `eidos` CLI edits this file. Every path is relative to this folder.
+
+eidos_version: 5.3.0
+
+# kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
+naming: Title Case
+
+# Every file at the root, one entry each.
+top_level:
+  - title: README
+    path: ../README.md
+    description: "the root's front door: what this is, and pointers in."
+
+# Every folder at the root, one entry each, with its type: collection | assets | other.
+folders:
+  # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
+  # not a failure.
+  - name: Frames
+    type: collection
+    description: "What every idea, plan, investment, and decision is judged against: what the business is and why now, who pays, how it earns, and what would make you stop."
+    variants:
+      - { name: thesis, template: templates/frame.thesis.md, description: "what the business is, why now, and what it is not", default: true }
+      - { name: market, template: templates/frame.market.md, description: "customers, competitors, and how it reaches them" }
+      - { name: model, template: templates/frame.model.md, description: "the economics: how it earns, what it costs, and how it scales" }
+      - { name: criteria, template: templates/frame.criteria.md, description: "runway, targets, timeline, and the lines you will not cross" }
+  - name: Ideas
+    type: collection
+    description: "The opportunities under consideration, one per blueprint, flat: a spark grows into a case, and a case becomes a plan or a decision to stop."
+    variants:
+      - { name: case, template: templates/idea.case.md, description: "the business case: problem, customer, economics, risks, kill criteria", default: true }
+      - { name: spark, template: templates/idea.spark.md, description: "a paragraph: what, who would pay, why now; grow into case" }
+  - name: Plans
+    type: collection
+    description: "The plans to develop a line of business, one per blueprint, grouped by line: objective, moves, milestones, and what would make you stop."
+    variants:
+      - { name: full, template: templates/plan.full.md, description: "the complete plan template", default: true }
+      - { name: brief, template: templates/plan.brief.md, description: "Intent, Open Questions, Moves, Out of Scope; grow into full" }
+    grouping:
+      label: Lines
+      property: line
+      groups: [] # one entry per line of business, a name and a description, as they accrue
+  - name: Investments
+    type: collection
+    description: "The capital bets, one per blueprint, grouped by line: a round you raise or a cheque you write, with direction telling them apart."
+    variants:
+      - { name: full, template: templates/investment.full.md, description: "the complete investment template", default: true }
+      - { name: brief, template: templates/investment.brief.md, description: "Intent, Open Questions, Terms, Out of Scope; grow into full" }
+    grouping:
+      label: Lines
+      property: line
+      groups: [] # the same lines as the plans, as they accrue
+  - name: Decisions
+    type: collection
+    description: "The calls made, one per blueprint, flat: what was decided, why, and what it closed. Business development is mostly decisions; the record of the no is worth as much as the plan."
+    variants:
+      - { name: full, template: templates/decision.full.md, description: "context, options, the decision, and its consequences", default: true }
+  - name: Assets
+    type: assets
+    description: "Decks, models, term sheets, contracts, and research the blueprints link to."
+
+# The property contract, one block per owner. A property applies to `all` collections or a list; a required
+# one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
+properties:
+  # The standard's. migrate rewrites this block; don't hand-edit it.
+  core:
+    - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
+    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+  custom:
+    - name: status
+      type: Text
+      applies_to: all
+      options: [ Draft, Active, Done, Parked, Killed ]
+      meaning: "Where this stands. Parked can come back; Killed is a decision."
+      eidosmd:
+        canvas:
+          show: true
+          styles:
+            Draft:
+              color: "#8b9099"
+            Intake:
+              color: "#d3a53c"
+            In Progress:
+              color: "#5f80cf"
+            Done:
+              color: "#7fae6c"
+            Archived:
+              color: "#8b9099"
+            Deprecated:
+              color: "#cf7b8f"
+            needs-clarification:
+              color: "#5f80cf"
+            maybe:
+              color: "#e08a63"
+            visionary:
+              color: "#4aa39f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+    - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
+    - { name: line, type: Text, required: true, applies_to: [ Plans, Investments ], meaning: "The group: matches the sub-folder, the line of business this serves. An unknown value warns." }
+    - { name: depends_on, type: List, applies_to: [ Plans, Investments ], meaning: "Plans or investments this one needs in place first, each a markdown link." }
+    - { name: amount, type: Number, applies_to: [ Investments ], meaning: "The size of the bet, in your currency." }
+    - { name: direction, type: Text, applies_to: [ Investments ], options: [ raise, deploy ], meaning: "Which way the money moves: raise brings it in, deploy sends it out." }
+    - { name: decide_by, type: Date, applies_to: [ Ideas, Plans, Investments ], meaning: YYYY-MM-DD. The day a call on this is due. }
+
+# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# Starts empty; Eidos declares none.
+vocabulary: []
+
+# Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
+index:
+  Frames:
+    - id: criteria
+      title: Criteria
+      summary: null
+      path: Criteria.md
+    - id: market
+      title: Market
+      summary: null
+      path: Market.md
+    - id: model
+      title: Model
+      summary: null
+      path: Model.md
+    - id: thesis
+      title: Thesis
+      summary: null
+      path: Thesis.md
+  Specs: []
+  Plans: []
+  Ideas: []
+  Investments: []
+  Decisions: []

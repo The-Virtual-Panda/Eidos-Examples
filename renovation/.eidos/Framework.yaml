@@ -1,0 +1,135 @@
+# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# the `eidos` CLI edits this file. Every path is relative to this folder.
+
+eidos_version: 5.3.0
+
+# kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
+naming: Title Case
+
+# Every file at the root, one entry each.
+top_level:
+  - title: README
+    path: ../README.md
+    description: "the root's front door: what this is, and pointers in."
+
+# Every folder at the root, one entry each, with its type: collection | assets | other.
+folders:
+  # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
+  # not a failure.
+  - name: Frames
+    type: collection
+    description: "What every room, package, and selection is judged against: what the owner wants, the house as it stands, what it may cost, and what the code requires."
+    variants:
+      - { name: brief, template: templates/frame.brief.md, description: "what the owner wants and why, and what the project is not", default: true }
+      - { name: site, template: templates/frame.site.md, description: "the house as it stands: what is there, what stays, what the work lives with" }
+      - { name: criteria, template: templates/frame.criteria.md, description: "budget, schedule, priorities, and the lines you will not cross" }
+      - { name: code, template: templates/frame.code.md, description: "permits, inspections, and the rules the work must meet" }
+  - name: Rooms
+    type: collection
+    description: "The rooms the project touches, one per blueprint, grouped by floor: what the finished room must do."
+    variants:
+      - { name: full, template: templates/room.full.md, description: "the complete room template", default: true }
+      - { name: sketch, template: templates/room.sketch.md, description: "Intent, Open Questions, What It Must Do, Out of Scope; grow into full" }
+    grouping:
+      label: Floors
+      property: floor
+      groups: [] # one entry per floor (basement, main, upper, outside), a name and a description, as they accrue
+  - name: Packages
+    type: collection
+    description: "The work, one package per blueprint, grouped by phase: what is done, in what order, and what each waits on."
+    variants:
+      - { name: full, template: templates/package.full.md, description: "the complete package template", default: true }
+      - { name: sketch, template: templates/package.sketch.md, description: "Intent, Open Questions, Scope of Work, Out of Scope; grow into full" }
+    grouping:
+      label: Phases
+      property: phase
+      groups: [] # one entry per phase in the order the work runs (demolition, rough-in, finishes), a name and a description, as they accrue
+  - name: Selections
+    type: collection
+    description: "The fixtures, finishes, and materials, one per blueprint, grouped by room: what each must be, and what was chosen."
+    variants:
+      - { name: full, template: templates/selection.full.md, description: "the complete selection template, for one that is chosen", default: true }
+      - { name: option, template: templates/selection.option.md, description: "a candidate not yet chosen: Intent, Open Questions, Requirements, Out of Scope; grow into full" }
+    grouping:
+      label: Rooms
+      property: room
+      groups: [] # one entry per room that takes selections, a name and a description, as they accrue
+  - name: Assets
+    type: assets
+    description: "Drawings, permits, quotes, spec sheets, and site photos the blueprints link to."
+
+# The property contract, one block per owner. A property applies to `all` collections or a list; a required
+# one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
+properties:
+  # The standard's. migrate rewrites this block; don't hand-edit it.
+  core:
+    - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
+    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+  custom:
+    - name: status
+      type: Text
+      applies_to: all
+      options: [ Idea, Planned, Approved, In Progress, Done, Cut ]
+      meaning: "Where this stands, from an idea to finished work."
+      eidosmd:
+        canvas:
+          show: true
+          styles:
+            Draft:
+              color: "#8b9099"
+            Intake:
+              color: "#d3a53c"
+            In Progress:
+              color: "#5f80cf"
+            Done:
+              color: "#7fae6c"
+            Archived:
+              color: "#8b9099"
+            Deprecated:
+              color: "#cf7b8f"
+            needs-clarification:
+              color: "#5f80cf"
+            maybe:
+              color: "#e08a63"
+            visionary:
+              color: "#4aa39f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+    - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
+    - { name: floor, type: Text, required: true, applies_to: [ Rooms ], meaning: "The group: matches the sub-folder, the floor the room is on. An unknown value warns." }
+    - { name: depends_on, type: List, applies_to: [ Rooms, Packages, Selections ], meaning: "Rooms, packages, or selections this one needs done or decided first, each a markdown link." }
+    - { name: phase, type: Text, applies_to: [ Packages ], required: true, meaning: "The group: matches the sub-folder, the order the work runs in (demolition, rough-in, finishes). An unknown value warns." }
+    - { name: room, type: Text, applies_to: [ Selections ], required: true, meaning: "The group: matches the sub-folder, the room this goes in. An unknown value warns." }
+    - { name: trade, type: Text, applies_to: [ Packages ], meaning: "Who does the work: electrical, plumbing, framing, finishes." }
+    - { name: cost, type: Number, applies_to: [ Packages, Selections ], meaning: "Estimated or quoted, in your currency." }
+
+# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# Starts empty; Eidos declares none.
+vocabulary: []
+
+# Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
+index:
+  Frames:
+    - id: brief
+      title: Brief
+      summary: null
+      path: Brief.md
+    - id: code
+      title: Code
+      summary: null
+      path: Code.md
+    - id: criteria
+      title: Criteria
+      summary: null
+      path: Criteria.md
+    - id: site
+      title: Site
+      summary: null
+      path: Site.md
+  Specs: []
+  Rooms: []
+  Packages: []
+  Selections: []

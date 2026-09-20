@@ -1,0 +1,124 @@
+# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# the `eidos` CLI edits this file. Every path is relative to this folder.
+
+eidos_version: 5.3.0
+
+# kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
+naming: Title Case
+
+# Every file at the root, one entry each.
+top_level:
+  - title: README
+    path: ../README.md
+    description: "the root's front door: what this is, and pointers in."
+
+# Every folder at the root, one entry each, with its type: collection | assets | other.
+folders:
+  # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
+  # not a failure.
+  - name: Frames
+    type: collection
+    description: "What every moment and vendor is judged against: what the day is for, who is coming, where it happens, and what it may cost."
+    variants:
+      - { name: purpose, template: templates/frame.purpose.md, description: "what the day is for, what it must feel like, and what it is not", default: true }
+      - { name: guests, template: templates/frame.guests.md, description: "who is coming, and how each kind of guest differs" }
+      - { name: venue, template: templates/frame.venue.md, description: "the places, their layout, and their limits" }
+      - { name: criteria, template: templates/frame.criteria.md, description: "budget, date, priorities, and the lines you will not cross" }
+  - name: Moments
+    type: collection
+    description: "The day's units, one per moment, grouped by day. Together they are the run of show."
+    variants:
+      - { name: full, template: templates/moment.full.md, description: "the complete moment template", default: true }
+      - { name: beat, template: templates/moment.beat.md, description: "Intent, Open Questions, What Happens, Out of Scope; grow into full" }
+    grouping:
+      label: Days
+      property: day
+      groups: [] # one entry per day (the rehearsal, the wedding day, the morning after), a name and a description, as they accrue
+  - name: Vendors
+    type: collection
+    description: "Everyone hired for the day, one per vendor, grouped by category: what they deliver, when, and on what terms."
+    variants:
+      - { name: full, template: templates/vendor.full.md, description: "the complete vendor template, for one that is booked", default: true }
+      - { name: lead, template: templates/vendor.lead.md, description: "a candidate not yet booked: Intent, Open Questions, Terms, Out of Scope; grow into full" }
+    grouping:
+      label: Categories
+      property: category
+      groups: [] # one entry per category (venue, catering, photo, music, flowers, attire), a name and a description, as they accrue
+  - name: Assets
+    type: assets
+    description: "Contracts, floor plans, playlists, and photos the blueprints link to."
+
+# The property contract, one block per owner. A property applies to `all` collections or a list; a required
+# one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
+properties:
+  # The standard's. migrate rewrites this block; don't hand-edit it.
+  core:
+    - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
+    - { name: title, type: Text, required: true, meaning: "Human-readable name." }
+    - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the collection's default." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+  custom:
+    - name: status
+      type: Text
+      applies_to: all
+      options: [ Idea, Planned, Booked, Confirmed, Done, Cut ]
+      meaning: "Where this stands on the way to the day."
+      eidosmd:
+        canvas:
+          show: true
+          styles:
+            Draft:
+              color: "#8b9099"
+            Intake:
+              color: "#d3a53c"
+            In Progress:
+              color: "#5f80cf"
+            Done:
+              color: "#7fae6c"
+            Archived:
+              color: "#8b9099"
+            Deprecated:
+              color: "#cf7b8f"
+            needs-clarification:
+              color: "#5f80cf"
+            maybe:
+              color: "#e08a63"
+            visionary:
+              color: "#4aa39f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+    - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
+    - { name: day, type: Text, required: true, applies_to: [ Moments ], meaning: "The group: matches the sub-folder, the day this moment happens on. An unknown value warns." }
+    - { name: depends_on, type: List, applies_to: [ Moments, Vendors ], meaning: "Moments or vendors this one needs in place first, each a markdown link." }
+    - { name: category, type: Text, applies_to: [ Vendors ], required: true, meaning: "The group: matches the sub-folder (catering, photo, music). An unknown value warns." }
+    - { name: starts, type: Date & time, applies_to: [ Moments ], meaning: When the moment begins on the day. }
+    - { name: duration, type: Number, applies_to: [ Moments ], meaning: "Minutes, from the first cue to the last." }
+    - { name: cost, type: Number, applies_to: [ Vendors ], meaning: "The quoted total, in your currency." }
+
+# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# Starts empty; Eidos declares none.
+vocabulary: []
+
+# Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
+index:
+  Frames:
+    - id: criteria
+      title: Criteria
+      summary: null
+      path: Criteria.md
+    - id: guests
+      title: Guests
+      summary: null
+      path: Guests.md
+    - id: purpose
+      title: Purpose
+      summary: null
+      path: Purpose.md
+    - id: venue
+      title: Venue
+      summary: null
+      path: Venue.md
+  Specs: []
+  Moments: []
+  Vendors: []
