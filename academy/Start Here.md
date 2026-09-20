@@ -7,11 +7,11 @@
 
 ## Where things are
 
-- **[The School](<The School/>)**: four pages: what it teaches and why, how it teaches, where it sells, and what it costs to make. Everything else gets checked against them.
-- **[Learners](Learners/)**: one page per kind of learner: where they start, what they need, what done looks like.
-- **[Courses](Courses/)**: one page per course, grouped by track: what they will be able to do, the modules, how they prove it, the format.
-- **[Paths](Paths/)**: one page per sequence of courses, for one kind of learner, toward one outcome.
-- **[Files](Files/)**: slides, worksheets, recordings, and syllabi the pages link to.
+- **[The School](<The School>)**: four pages: what it teaches and why, how it teaches, where it sells, and what it costs to make. Everything else gets checked against them.
+- **[Learners](Learners)**: one page per kind of learner: where they start, what they need, what done looks like.
+- **[Courses](Courses)**: one page per course, grouped by track: what they will be able to do, the modules, how they prove it, the format.
+- **[Paths](Paths)**: one page per sequence of courses, for one kind of learner, toward one outcome.
+- **[Files](Files)**: slides, worksheets, recordings, and syllabi the pages link to.
 
 ## The one-page docs
 
@@ -22,4 +22,4 @@
 
 A course's page says what the course **is**: who it is for, what they will be able to do afterward, the shape of its modules, and what it does not teach. It is not the material and not a task. Learners come first: a course points at the learners it serves with `for`, and a path strings courses together for one of them. Write the page before the recording, and keep it true after: a course you retire stays here, marked `Retired`, so the reasoning survives.
 
-_Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos/); `eidos check` keeps it honest._
+_Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos); `eidos check` keeps it honest._

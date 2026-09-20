@@ -8,9 +8,9 @@ naming: Title Case
 
 # Every file at the root, one entry each.
 top_level:
-  - title: README
-    path: ../README.md
-    description: "the root's front door: what this is, and pointers in."
+  - title: Start Here
+    path: ../Start Here.md
+    description: "where to start: what this is, and where things are"
   - title: The Pitch
     path: ../The Pitch.md
     description: the thirty-second version of the business

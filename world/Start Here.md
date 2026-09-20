@@ -7,12 +7,12 @@
 
 ## Where things are
 
-- **[The World](<The World/>)**: four pages: what it is about, how it feels, how it works, and who plays in it. Everything else gets checked against them.
-- **[Places](Places/)**: one page per place, grouped by region.
-- **[Factions](Factions/)**: one page per power: what it wants, what it holds, what it does next.
-- **[Characters](Characters/)**: one page per person the party may meet.
-- **[Arcs](Arcs/)**: one page per story arc, grouped by campaign.
-- **[Files](Files/)**: maps, handouts, reference art, and character sheets the pages link to.
+- **[The World](<The World>)**: four pages: what it is about, how it feels, how it works, and who plays in it. Everything else gets checked against them.
+- **[Places](Places)**: one page per place, grouped by region.
+- **[Factions](Factions)**: one page per power: what it wants, what it holds, what it does next.
+- **[Characters](Characters)**: one page per person the party may meet.
+- **[Arcs](Arcs)**: one page per story arc, grouped by campaign.
+- **[Files](Files)**: maps, handouts, reference art, and character sheets the pages link to.
 
 ## The one-page docs
 
@@ -24,4 +24,4 @@
 
 A page here says what a thing **is** in the world: why it exists, what is true of it, what the party sees, and what it is not. It is not a session plan and not a wiki. Write the page before the session, and keep it true after: a fact the players changed is a dated decision, and a faction you retire stays here, marked `Retired`, so the reasoning survives. The `revealed` property is the line between what the GM knows and what the Player role may read.
 
-_Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos/); `eidos check` keeps it honest._
+_Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos); `eidos check` keeps it honest._

@@ -8,12 +8,9 @@ naming: Title Case
 
 # Every file at the root, one entry each.
 top_level:
-  - title: README
-    path: ../README.md
-    description: "the root's front door: what this is, and pointers in."
   - title: Home
     path: ../Home.md
-    description: "the front page of the vault: where you start every day"
+    description: "where you start: the front page of the vault"
 
 # Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
 # blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
