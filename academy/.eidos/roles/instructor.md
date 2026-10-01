@@ -1,4 +1,4 @@
-# Framework Owner
+# Instructor
 
 ## Who they are
 

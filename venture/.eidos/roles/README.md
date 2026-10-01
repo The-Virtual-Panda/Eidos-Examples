@@ -4,7 +4,7 @@ Who is in the seat, and how the agent should talk to them. A role sets the words
 
 These are the venture folder's starting roles, kept in `.eidos/roles/` and committed, so a founding team can tune them. Each person picks theirs in their own gitignored `.eidos/me.md` with `eidos whoami`, and says a little about themselves so the agent can calibrate.
 
-- [Framework Owner](framework-owner.md): the founder. Their company, their call.
+- [Founder](founder.md): their company, their call.
 - [CFO](cfo.md): holds the numbers; owns the finance mechanics, never direction.
 - [Operator](operator.md): carries out the plans; flags what is vague or blocked.
 - [Investor](investor.md): weighs in on the bet and the return; advisory, except their own terms.

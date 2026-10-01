@@ -14,7 +14,7 @@ Every root is a complete framework for its kind, written in the words of the per
 | [`renovation/`](renovation) | a house renovation, room by room and job by job | `The Brief/`: What We Want, The House, Budget, Permits | `Rooms` by floor, `The Work` by phase, `Selections` by room | Schedule, Contacts, Change Log | the homeowner, contractor, designer, inspector |
 | [`ace/`](ace) | an Obsidian vault in the ACE shape (Atlas, Calendar, Efforts) | `About This Vault/`: What This Is For, How It Runs | `Atlas` (flat, with maps), `Calendar` by series, `Efforts` (heat as `status`) | Home | you, and the agent acting alone |
 
-Every root targets Eidos 5.4.0 and uses the Title Case naming convention, since each is meant to be opened in Obsidian as much as in an editor. Each keeps a `Files/` folder for the things that are not pages: contracts, maps, drawings, decks.
+Every root targets Eidos 5.5.0 and uses the Title Case naming convention, since each is meant to be opened in Obsidian as much as in an editor. Each keeps a `Files/` folder for the things that are not pages: contracts, maps, drawings, decks.
 
 ## Installing one
 

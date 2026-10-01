@@ -4,7 +4,7 @@ Who is in the seat, and how the agent should talk to them. A role sets the words
 
 These are the academy folder's starting roles, kept in `.eidos/roles/` and committed, so a school can tune them. Each person picks theirs in their own gitignored `.eidos/me.md` with `eidos whoami`, and says a little about themselves so the agent can calibrate.
 
-- [Framework Owner](framework-owner.md): the instructor. Their school, their call.
+- [Instructor](instructor.md): their school, their call.
 - [Editor](editor.md): the instructional designer; reads structure against outcomes.
 - [Producer](producer.md): holds the pipeline; spots what will miss its date.
 - [Learner](learner.md): reacts as someone who might sign up; sees only what a learner would.

@@ -4,7 +4,7 @@ Who is in the seat, and how the agent should talk to them. A role sets the words
 
 These are the channel folder's starting roles, kept in `.eidos/roles/` and committed, so a creator and their team can tune them. Each person picks theirs in their own gitignored `.eidos/me.md` with `eidos whoami`, and says a little about themselves so the agent can calibrate.
 
-- [Framework Owner](framework-owner.md): the creator. Their channel, their call.
+- [Creator](creator.md): their channel, their call.
 - [Editor](editor.md): cuts the video; owns the cut inside the beats, never the beats.
 - [Producer](producer.md): holds the pipeline; spots what will miss its date.
 - [Viewer](viewer.md): reacts to the hook and the thumbnail; sees only what a viewer would.

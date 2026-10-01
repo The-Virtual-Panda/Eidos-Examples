@@ -1,4 +1,4 @@
-# Framework Owner
+# Founder
 
 ## Who they are
 

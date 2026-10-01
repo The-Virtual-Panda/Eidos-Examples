@@ -4,7 +4,7 @@ Who is in the seat, and how the agent should talk to them. A role sets the words
 
 These are the world folder's starting roles, kept in `.eidos/roles/` and committed, so a table can tune them. Each person picks theirs in their own gitignored `.eidos/me.md` with `eidos whoami`, and says a little about themselves so the agent can calibrate.
 
-- [Framework Owner](framework-owner.md): the game master or author. Their world, their canon.
+- [Game Master](game-master.md): the game master or author. Their world, their canon.
 - [Co-writer](co-writer.md): writes inside the canon; proposes, never settles.
 - [Player](player.md): sees only what is revealed. The spoiler contract.
 

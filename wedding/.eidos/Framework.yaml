@@ -1,7 +1,7 @@
 # The framework document: the structure this root is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.4.0
+eidos_version: 5.5.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
@@ -62,7 +62,7 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: Which variant this blueprint follows. Absent = the collection's default. }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = its group's default, else the collection's." }
   # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
   custom:
     - name: status
@@ -70,28 +70,27 @@ properties:
       applies_to: all
       options: [ Idea, Planned, Booked, Confirmed, Done, Cut ]
       meaning: "Where this stands: Idea, Planned, Booked, Confirmed, Done, or Cut."
-      eidosmd:
-        canvas:
-          show: true
-          styles:
-            Draft:
-              color: "#8b9099"
-            Intake:
-              color: "#d3a53c"
-            In Progress:
-              color: "#5f80cf"
-            Done:
-              color: "#7fae6c"
-            Archived:
-              color: "#8b9099"
-            Deprecated:
-              color: "#cf7b8f"
-            needs-clarification:
-              color: "#5f80cf"
-            maybe:
-              color: "#e08a63"
-            visionary:
-              color: "#4aa39f"
+      canvas:
+        show: true
+        styles:
+          Draft:
+            color: "#8b9099"
+          Intake:
+            color: "#d3a53c"
+          In Progress:
+            color: "#5f80cf"
+          Done:
+            color: "#7fae6c"
+          Archived:
+            color: "#8b9099"
+          Deprecated:
+            color: "#cf7b8f"
+          needs-clarification:
+            color: "#5f80cf"
+          maybe:
+            color: "#e08a63"
+          visionary:
+            color: "#4aa39f"
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
