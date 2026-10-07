@@ -1,0 +1,150 @@
+# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# the `eidos` CLI edits this file. Every path is relative to this folder.
+
+eidos_version: 5.5.0
+
+# kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
+naming: Title Case
+
+# Every file at the root, one entry each.
+top_level:
+  - title: Start Here
+    path: ../Start Here.md
+    description: "where to start: what this is, and where things are"
+  - title: The One-Pager
+    path: ../The One-Pager.md
+    description: "the whole game on one page: for a publisher, a festival, or a new teammate"
+  - title: Cut List
+    path: ../Cut List.md
+    description: everything cut from the game, and why
+  - title: Playtest Log
+    path: ../Playtest Log.md
+    description: "every playtest, dated: the build, who played, what you saw, what changed"
+  - title: Art Bible
+    path: ../Art Bible.md
+    description: "how the game looks and sounds: palette, silhouettes, interface, audio"
+
+# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
+folders:
+  # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
+  # not a failure.
+  - name: The Game
+    owned_by: "@eidos/collections"
+    description: "The game itself, five pages: its pillars and core loop, who plays it, where it runs, how much game the team can finish, and where it sits in the market. Every mechanic, level, character, and item gets checked against these."
+    variants:
+      - { name: pillars, template: templates/frame.pillars.md, description: "the game in a breath, its pillars, the core loop, and what it is not", default: true }
+      - { name: player, template: templates/frame.player.md, description: "who plays it, what they have played, what they expect, and what they will not forgive" }
+      - { name: platform, template: templates/frame.platform.md, description: "where it runs, the controls and accessibility, the budget the build holds, and what stores require" }
+      - { name: scope, template: templates/frame.scope.md, description: "the team and the time, the size of the game, the milestones, and the cut line" }
+      - { name: market, template: templates/frame.market.md, description: "the games next to it, the hook, the price, and how players find it" }
+  - name: Mechanics
+    owned_by: "@eidos/collections"
+    description: "One page per mechanic, grouped by system: why it is in the game, the pillar it serves, how it plays, its rules and numbers, and what it is not."
+    variants:
+      - { name: one-pager, template: templates/mechanic.one-pager.md, description: "a mechanic on one page: why it is in the game, how it plays, the rules and numbers so far, what it is not; grow into full", default: true }
+      - { name: full, template: templates/mechanic.full.md, description: "the full page for a mechanic with more rules and numbers than a page holds" }
+    grouping:
+      label: Systems
+      property: system
+      groups: [] # one entry per system (movement, combat, economy, progression), a name and a description, as they accrue
+  - name: Levels
+    owned_by: "@eidos/collections"
+    description: "One page per level, grouped by act: what it is for in the game, what it teaches, the flow, and what the player leaves with."
+    variants:
+      - { name: one-pager, template: templates/level.one-pager.md, description: "a level on one page: why it is in the game, what it teaches, the flow, what it is not; grow into full", default: true }
+      - { name: full, template: templates/level.full.md, description: "the full page for a level: the flow, the layout, what the player leaves with, and its ties" }
+    grouping:
+      label: Acts
+      property: act
+      groups: [] # one entry per act, world, or chapter, a name and a description, as they accrue
+  - name: Characters
+    owned_by: "@eidos/collections"
+    description: "One page per character the player meets, plays, or fights: why they exist, how they read on screen, and what they do."
+    variants:
+      - { name: one-pager, template: templates/character.one-pager.md, description: "a character on one page: why they exist, who they are, how they read on screen, what they are not; grow into full", default: true }
+      - { name: full, template: templates/character.full.md, description: "the full page for a character with a part in the game" }
+      - { name: enemy, template: templates/character.enemy.md, description: "an enemy or a boss: what it tests, how it plays, its tells and numbers" }
+  - name: Items
+    owned_by: "@eidos/collections"
+    description: "One page per item, upgrade, or collectible, grouped by the same systems as the mechanics: how the player gets it and what it does."
+    variants:
+      - { name: one-pager, template: templates/item.one-pager.md, description: "an item on one page: why it is in the game, how the player gets it, its rules and numbers, what it is not", default: true }
+    grouping:
+      label: Systems
+      property: system
+      groups: [] # the same systems as the mechanics, as they accrue
+  - name: Files
+    description: "Concept art, blockouts, maps, balance sheets, prototypes, and the pitch deck the pages link to."
+
+# The property contract, one block per owner. A property applies to `all` collections or a list; a required
+# one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
+properties:
+  # The standard's. migrate rewrites this block; don't hand-edit it.
+  core:
+    - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
+    - { name: title, type: Text, required: true, meaning: Human-readable name. }
+    - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = its group's default, else the collection's." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+  custom:
+    - name: status
+      type: Text
+      applies_to: all
+      options: [ Idea, Designed, Prototyped, In Build, Shipped, Cut ]
+      meaning: "Where this stands in the game: Idea, Designed (written up), Prototyped (played in a prototype), In Build (in the game), Shipped (in a released build), or Cut (out, with its reason kept in cut_reason)."
+      canvas:
+        show: true
+        styles:
+          Idea:
+            color: "#8b9099"
+          Designed:
+            color: "#d3a53c"
+          Prototyped:
+            color: "#e08a63"
+          In Build:
+            color: "#5f80cf"
+          Shipped:
+            color: "#7fae6c"
+          Cut:
+            color: "#cf7b8f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+    - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
+    - { name: system, type: Text, required: true, applies_to: [ Mechanics, Items ], meaning: "Which system this belongs to (movement, combat, economy). Matches its sub-folder." }
+    - { name: act, type: Text, required: true, applies_to: [ Levels ], meaning: "Which act, world, or chapter the level sits in. Matches its sub-folder." }
+    - { name: pillar, type: List, applies_to: [ Mechanics, Levels, Characters, Items ], meaning: "The pillars this serves, named as the Pillars page names them. A page that serves none is the first to question when scope gets tight." }
+    - { name: needs, type: List, applies_to: [ Mechanics, Levels, Characters, Items ], meaning: "Pages that have to be in the build before this one works, as links: the mechanic a level teaches, the ability an item upgrades." }
+    - { name: cut_reason, type: Text, applies_to: [ Mechanics, Levels, Characters, Items ], meaning: "Why it was cut, in one line, once status is Cut. The page stays, so the reason does." }
+
+# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# Starts empty; Eidos declares none.
+vocabulary: []
+
+# Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
+index:
+  The Game:
+    - id: market
+      title: Market
+      summary: null
+      path: Market.md
+    - id: pillars
+      title: Pillars
+      summary: null
+      path: Pillars.md
+    - id: platform
+      title: Platform
+      summary: null
+      path: Platform.md
+    - id: player
+      title: Player
+      summary: null
+      path: Player.md
+    - id: scope
+      title: Scope
+      summary: null
+      path: Scope.md
+  Mechanics: []
+  Levels: []
+  Characters: []
+  Items: []

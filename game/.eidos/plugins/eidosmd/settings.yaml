@@ -1,0 +1,21 @@
+# eidosmd settings shared by everyone in this root. Edit by hand, with eidos setup, or from the browser.
+# product: the product this root defines, by its name, as the browser's Home and the desktop app's tab show it (eidos setup --product); absent, the repository's folder.
+# plugins: which plugins are on for this root, plugins.<name>: true | false (eidos plugin lists them); one not named is at its default.
+# users: the people who work here: { name, alias (for @mentions, no spaces), role (from .eidos/roles/), email (ties to git), agent (true for an AI agent that comments as itself), editor (true for a framework editor, who may change the framework; with none marked, everyone is one), owner (true for a framework owner, always an editor, and the only one who grants or removes owner) } (eidos users lists them, eidos users add adds one, eidos users set sets editor and owner).
+# on_save: where the on-save rules were kept before they became the Linter's ({ property, set: today | now }); the Linter applies them until .eidos/plugins/linter/settings.yaml has its own, and the line goes once they have moved.
+# versions.tag_prefix: what a recorded version's git tag starts with (eidos version record --tag), blueprints/ by default.
+# check.strict: whether a warning fails eidos check as an error does; the owners' decision for this root (eidos check --strict / --no-strict override one run).
+# check.warn_unknown_sections: whether a heading the variant's template does not declare is a warning (section-unknown); false by default, since a template is a starting point, not a fence.
+# check.warn_missing_sections: whether a heading the template declares but the body lacks is a warning (section-missing); true by default.
+# check.warn_section_order: whether the template's headings out of its order are a warning (section-order), extra headings skipped; true by default.
+# installed: what eidos install brought in from a Registry package: { package, ref, pieces, date }, written by the command, read to say what came from where.
+plugins:
+  git: true
+users: []
+versions:
+  tag_prefix: blueprints/
+check:
+  strict: false
+  warn_unknown_sections: false
+  warn_missing_sections: true
+  warn_section_order: true
