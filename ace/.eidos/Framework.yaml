@@ -70,24 +70,16 @@ properties:
       canvas:
         show: true
         styles:
-          Draft:
-            color: "#8b9099"
-          Intake:
-            color: "#d3a53c"
-          In Progress:
-            color: "#5f80cf"
-          Done:
+          On:
+            color: "#e08a63"
+          Ongoing:
             color: "#7fae6c"
+          Simmering:
+            color: "#d3a53c"
+          Sleeping:
+            color: "#5f80cf"
           Archived:
             color: "#8b9099"
-          Deprecated:
-            color: "#cf7b8f"
-          needs-clarification:
-            color: "#5f80cf"
-          maybe:
-            color: "#e08a63"
-          visionary:
-            color: "#4aa39f"
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
