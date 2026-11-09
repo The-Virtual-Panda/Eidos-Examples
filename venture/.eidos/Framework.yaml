@@ -58,7 +58,7 @@ folders:
     label: Lines
     folder_property: line
     folders: [] # the same lines as the plans, as they accrue
-  - name: Decisions
+  - name: Calls
     owned_by: "@eidos/collections"
     description: "One page per call you made, flat: what was going on, what you could have done, what you did, and what it closed. The record of the no is worth as much as the plan."
     variants:
@@ -138,4 +138,4 @@ index:
   Ideas: []
   Plans: []
   Investments: []
-  Decisions: []
+  Calls: []
