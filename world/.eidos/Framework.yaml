@@ -1,12 +1,12 @@
-# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.5.0
+eidos_version: 5.13.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
 
-# Every file at the root, one entry each.
+# Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
     path: ../Start Here.md
@@ -21,7 +21,7 @@ top_level:
     path: ../Names.md
     description: how people and places are named, and how to say them
 
-# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
 # blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
@@ -40,10 +40,9 @@ folders:
     variants:
       - { name: full, template: templates/place.full.md, description: "the full page for a place", default: true }
       - { name: sketch, template: templates/place.sketch.md, description: "a sketch: why it exists, what is still to decide, what is true; grow into full" }
-    grouping:
-      label: Regions
-      property: region
-      groups: [] # one entry per region, a name and a description, as they accrue
+    label: Regions
+    folder_property: region
+    folders: [] # one entry per region, a name and a description, as they accrue
   - name: Factions
     owned_by: "@eidos/collections"
     description: "One page per power in the world: what it wants, what it holds, what it does next."
@@ -62,10 +61,9 @@ folders:
     variants:
       - { name: full, template: templates/arc.full.md, description: "the full page for an arc", default: true }
       - { name: sketch, template: templates/arc.sketch.md, description: "a sketch: why it exists, what is still to decide, the beats; grow into full" }
-    grouping:
-      label: Campaigns
-      property: campaign
-      groups: [] # one entry per campaign run in this world, a name and a description, as they accrue
+    label: Campaigns
+    folder_property: campaign
+    folders: [] # one entry per campaign run in this world, a name and a description, as they accrue
   - name: Files
     description: "Maps, handouts, reference art, and character sheets the pages link to."
 
@@ -77,8 +75,8 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = its group's default, else the collection's." }
-  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
       type: Text
@@ -109,12 +107,12 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: region, type: Text, required: true, applies_to: [ Places ], meaning: "Which region the place is in. Matches its sub-folder." }
+    - { name: region, type: Text, applies_to: [ Places ], meaning: "Which region the place is in. Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: needs, type: List, applies_to: [ Places, Factions, Characters, Arcs ], meaning: "Pages this one needs in place to make sense, as links." }
-    - { name: campaign, type: Text, applies_to: [ Arcs ], required: true, meaning: "Which campaign the arc belongs to. Matches its sub-folder." }
+    - { name: campaign, type: Text, applies_to: [ Arcs ], meaning: "Which campaign the arc belongs to. Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: revealed, type: Checkbox, applies_to: [ Places, Factions, Characters, Arcs ], meaning: Have the players met this yet? The Player role reads only what is revealed. }
 
-# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
 vocabulary: []
 

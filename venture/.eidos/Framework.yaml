@@ -1,12 +1,12 @@
-# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.5.0
+eidos_version: 5.13.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
 
-# Every file at the root, one entry each.
+# Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
     path: ../Start Here.md
@@ -21,7 +21,7 @@ top_level:
     path: ../Team.md
     description: who does what, and which seats are empty
 
-# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
 # blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
@@ -46,20 +46,18 @@ folders:
     variants:
       - { name: full, template: templates/plan.full.md, description: "the full page for a plan", default: true }
       - { name: brief, template: templates/plan.brief.md, description: "a brief: what it is for, what is still to decide, the moves; grow into full" }
-    grouping:
-      label: Lines
-      property: line
-      groups: [] # one entry per line of business, a name and a description, as they accrue
+    label: Lines
+    folder_property: line
+    folders: [] # one entry per line of business, a name and a description, as they accrue
   - name: Investments
     owned_by: "@eidos/collections"
     description: "One page per bet with money on it, grouped by line: a round you raise or a cheque you write, with direction telling them apart."
     variants:
       - { name: full, template: templates/investment.full.md, description: "the full page for a deal", default: true }
       - { name: brief, template: templates/investment.brief.md, description: "a brief: what the money does, what is still to decide, the terms so far; grow into full" }
-    grouping:
-      label: Lines
-      property: line
-      groups: [] # the same lines as the plans, as they accrue
+    label: Lines
+    folder_property: line
+    folders: [] # the same lines as the plans, as they accrue
   - name: Decisions
     owned_by: "@eidos/collections"
     description: "One page per call you made, flat: what was going on, what you could have done, what you did, and what it closed. The record of the no is worth as much as the plan."
@@ -76,8 +74,8 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = its group's default, else the collection's." }
-  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
       type: Text
@@ -108,13 +106,13 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: line, type: Text, required: true, applies_to: [ Plans, Investments ], meaning: "Which line of business this serves. Matches its sub-folder." }
+    - { name: line, type: Text, applies_to: [ Plans, Investments ], meaning: "Which line of business this serves. Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: needs, type: List, applies_to: [ Plans, Investments ], meaning: "Plans or deals that have to be in place first, as links." }
     - { name: amount, type: Number, applies_to: [ Investments ], meaning: "How big the bet is, in your currency." }
     - { name: direction, type: Text, applies_to: [ Investments ], options: [ raise, deploy ], meaning: "Which way the money moves: raise brings it in, deploy sends it out." }
     - { name: decide_by, type: Date, applies_to: [ Ideas, Plans, Investments ], meaning: The day you have to make a call on this. }
 
-# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
 vocabulary: []
 

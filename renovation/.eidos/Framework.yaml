@@ -1,12 +1,12 @@
-# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.5.0
+eidos_version: 5.13.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
 
-# Every file at the root, one entry each.
+# Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
     path: ../Start Here.md
@@ -21,7 +21,7 @@ top_level:
     path: ../Change Log.md
     description: every change to the scope after the quote, dated, with what it cost
 
-# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
 # blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
@@ -40,30 +40,27 @@ folders:
     variants:
       - { name: full, template: templates/room.full.md, description: "the full page for a room", default: true }
       - { name: rough, template: templates/room.rough.md, description: "a rough version: what it is for, what is still to decide, what it has to do; grow into full" }
-    grouping:
-      label: Floors
-      property: floor
-      groups: [] # one entry per floor (basement, main, upstairs, outside), a name and a description, as they accrue
+    label: Floors
+    folder_property: floor
+    folders: [] # one entry per floor (basement, main, upstairs, outside), a name and a description, as they accrue
   - name: The Work
     owned_by: "@eidos/collections"
     description: "One page per job, grouped by phase: what gets done, in what order, and what each job waits on."
     variants:
       - { name: full, template: templates/job.full.md, description: "the full page for a job", default: true }
       - { name: rough, template: templates/job.rough.md, description: "a rough version: what it is, what is still to decide, what gets done; grow into full" }
-    grouping:
-      label: Phases
-      property: phase
-      groups: [] # one entry per phase in the order the work runs (demolition, rough-in, finishes), a name and a description, as they accrue
+    label: Phases
+    folder_property: phase
+    folders: [] # one entry per phase in the order the work runs (demolition, rough-in, finishes), a name and a description, as they accrue
   - name: Selections
     owned_by: "@eidos/collections"
     description: "One page per fixture, finish, or material, grouped by room: what it has to be, and what you chose."
     variants:
       - { name: full, template: templates/selection.full.md, description: "a pick you have made: what it had to be, and what you chose", default: true }
       - { name: option, template: templates/selection.option.md, description: "a pick you are still weighing; grow into full when you choose it" }
-    grouping:
-      label: Rooms
-      property: room
-      groups: [] # one entry per room that takes selections, a name and a description, as they accrue
+    label: Rooms
+    folder_property: room
+    folders: [] # one entry per room that takes selections, a name and a description, as they accrue
   - name: Files
     description: "Drawings, permits, quotes, spec sheets, and site photos the pages link to."
 
@@ -75,8 +72,8 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = its group's default, else the collection's." }
-  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
       type: Text
@@ -107,14 +104,14 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: floor, type: Text, required: true, applies_to: [ Rooms ], meaning: "Which floor the room is on (basement, main, upstairs, outside). Matches its sub-folder." }
+    - { name: floor, type: Text, applies_to: [ Rooms ], meaning: "Which floor the room is on (basement, main, upstairs, outside). Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: needs, type: List, applies_to: [ Rooms, The Work, Selections ], meaning: "Rooms, jobs, or picks that have to be done or decided first, as links." }
-    - { name: phase, type: Text, applies_to: [ The Work ], required: true, meaning: "Which phase the job runs in (demolition, rough-in, finishes). Matches its sub-folder." }
-    - { name: room, type: Text, applies_to: [ Selections ], required: true, meaning: "Which room this goes in. Matches its sub-folder." }
+    - { name: phase, type: Text, applies_to: [ The Work ], meaning: "Which phase the job runs in (demolition, rough-in, finishes). Its folder's path, such as a/b; a value that is not its folder warns." }
+    - { name: room, type: Text, applies_to: [ Selections ], meaning: "Which room this goes in. Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: trade, type: Text, applies_to: [ The Work ], meaning: "Who does the work: electrical, plumbing, framing, finishes." }
     - { name: cost, type: Number, applies_to: [ The Work, Selections ], meaning: "What it is estimated or quoted at." }
 
-# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
 vocabulary: []
 

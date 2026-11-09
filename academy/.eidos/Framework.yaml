@@ -1,12 +1,12 @@
-# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.5.0
+eidos_version: 5.13.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
 
-# Every file at the root, one entry each.
+# Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
     path: ../Start Here.md
@@ -18,7 +18,7 @@ top_level:
     path: ../Lesson Style Guide.md
     description: how a lesson is written and recorded
 
-# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
 # blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
@@ -42,10 +42,9 @@ folders:
     variants:
       - { name: full, template: templates/course.full.md, description: "the full page for a course", default: true }
       - { name: outline, template: templates/course.outline.md, description: "an outline: who it is for, what they will be able to do, the modules; grow into full" }
-    grouping:
-      label: Tracks
-      property: track
-      groups: [] # one entry per track (a subject area), a name and a description, as they accrue
+    label: Tracks
+    folder_property: track
+    folders: [] # one entry per track (a subject area), a name and a description, as they accrue
   - name: Paths
     owned_by: "@eidos/collections"
     description: "One page per path, flat: a sequence of courses, in order, for one kind of learner, toward one outcome. The pages that tie learners to courses."
@@ -62,8 +61,8 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = its group's default, else the collection's." }
-  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
       type: Text
@@ -94,13 +93,13 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: track, type: Text, required: true, applies_to: [ Courses ], meaning: "Which track (subject area) the course belongs to. Matches its sub-folder." }
+    - { name: track, type: Text, applies_to: [ Courses ], meaning: "Which track (subject area) the course belongs to. Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: prerequisites, type: List, applies_to: [ Courses, Paths ], meaning: "Courses a learner has to finish first, as links." }
     - { name: for, type: List, applies_to: [ Courses, Paths ], meaning: "The learners this is for, as links to their pages." }
     - { name: level, type: Text, applies_to: [ Courses ], options: [ intro, intermediate, advanced ], meaning: "Where a learner should be before starting: intro, intermediate, or advanced." }
     - { name: duration, type: Number, applies_to: [ Courses ], meaning: "How many hours it takes a learner, start to finish." }
 
-# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
 vocabulary: []
 

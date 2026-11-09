@@ -1,12 +1,12 @@
-# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.5.0
+eidos_version: 5.13.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
 
-# Every file at the root, one entry each.
+# Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
     path: ../Start Here.md
@@ -18,7 +18,7 @@ top_level:
     path: ../Day-Of Contacts.md
     description: every number the planner needs on the day, on one page
 
-# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
 # blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
@@ -37,20 +37,18 @@ folders:
     variants:
       - { name: full, template: templates/moment.full.md, description: "the full plan for a moment", default: true }
       - { name: rough, template: templates/moment.rough.md, description: "a rough version: what it is for, what is still to decide, how it goes; grow into full" }
-    grouping:
-      label: Days
-      property: day
-      groups: [] # one entry per day (the rehearsal, the wedding day, the morning after), a name and a description, as they accrue
+    label: Days
+    folder_property: day
+    folders: [] # one entry per day (the rehearsal, the wedding day, the morning after), a name and a description, as they accrue
   - name: Vendors
     owned_by: "@eidos/collections"
     description: "One page per vendor, grouped by category: what you are getting, when, and on what terms."
     variants:
       - { name: full, template: templates/vendor.full.md, description: "a booked vendor: what you are getting, their day, the deal", default: true }
       - { name: quote, template: templates/vendor.quote.md, description: "a vendor you are considering: what they would do and what they quoted; grow into full when booked" }
-    grouping:
-      label: Categories
-      property: category
-      groups: [] # one entry per category (venue, catering, photo, music, flowers, attire), a name and a description, as they accrue
+    label: Categories
+    folder_property: category
+    folders: [] # one entry per category (venue, catering, photo, music, flowers, attire), a name and a description, as they accrue
   - name: Files
     description: "Contracts, floor plans, playlists, and photos the pages link to."
 
@@ -62,8 +60,8 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = its group's default, else the collection's." }
-  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
       type: Text
@@ -94,14 +92,14 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: day, type: Text, required: true, applies_to: [ Run of Show ], meaning: "Which day this moment happens on. Matches its sub-folder." }
+    - { name: day, type: Text, applies_to: [ Run of Show ], meaning: "Which day this moment happens on. Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: needs, type: List, applies_to: [ Run of Show, Vendors ], meaning: "Moments or vendors that have to be in place first, as links." }
-    - { name: category, type: Text, applies_to: [ Vendors ], required: true, meaning: "Which kind of vendor (catering, photo, music). Matches the sub-folder." }
+    - { name: category, type: Text, applies_to: [ Vendors ], meaning: "Which kind of vendor (catering, photo, music). Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: starts, type: Date & time, applies_to: [ Run of Show ], meaning: When it starts on the day. }
     - { name: duration, type: Number, applies_to: [ Run of Show ], meaning: "How long it runs, in minutes." }
     - { name: cost, type: Number, applies_to: [ Vendors ], meaning: "What they quoted, all in." }
 
-# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
 vocabulary: []
 

@@ -1,12 +1,12 @@
-# The framework document: the structure this root is written in. See EIDOS.md for what each key means;
+# The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.5.0
+eidos_version: 5.13.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
 
-# Every file at the root, one entry each.
+# Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
     path: ../Start Here.md
@@ -24,7 +24,7 @@ top_level:
     path: ../Art Bible.md
     description: "how the game looks and sounds: palette, silhouettes, interface, audio"
 
-# Every folder at the root, one entry each. `owned_by` names what governs it: "@eidos/collections" for
+# Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
 # blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
@@ -44,20 +44,18 @@ folders:
     variants:
       - { name: one-pager, template: templates/mechanic.one-pager.md, description: "a mechanic on one page: why it is in the game, how it plays, the rules and numbers so far, what it is not; grow into full", default: true }
       - { name: full, template: templates/mechanic.full.md, description: "the full page for a mechanic with more rules and numbers than a page holds" }
-    grouping:
-      label: Systems
-      property: system
-      groups: [] # one entry per system (movement, combat, economy, progression), a name and a description, as they accrue
+    label: Systems
+    folder_property: system
+    folders: [] # one entry per system (movement, combat, economy, progression), a name and a description, as they accrue
   - name: Levels
     owned_by: "@eidos/collections"
     description: "One page per level, grouped by act: what it is for in the game, what it teaches, the flow, and what the player leaves with."
     variants:
       - { name: one-pager, template: templates/level.one-pager.md, description: "a level on one page: why it is in the game, what it teaches, the flow, what it is not; grow into full", default: true }
       - { name: full, template: templates/level.full.md, description: "the full page for a level: the flow, the layout, what the player leaves with, and its ties" }
-    grouping:
-      label: Acts
-      property: act
-      groups: [] # one entry per act, world, or chapter, a name and a description, as they accrue
+    label: Acts
+    folder_property: act
+    folders: [] # one entry per act, world, or chapter, a name and a description, as they accrue
   - name: Characters
     owned_by: "@eidos/collections"
     description: "One page per character the player meets, plays, or fights: why they exist, how they read on screen, and what they do."
@@ -70,10 +68,9 @@ folders:
     description: "One page per item, upgrade, or collectible, grouped by the same systems as the mechanics: how the player gets it and what it does."
     variants:
       - { name: one-pager, template: templates/item.one-pager.md, description: "an item on one page: why it is in the game, how the player gets it, its rules and numbers, what it is not", default: true }
-    grouping:
-      label: Systems
-      property: system
-      groups: [] # the same systems as the mechanics, as they accrue
+    label: Systems
+    folder_property: system
+    folders: [] # the same systems as the mechanics, as they accrue
   - name: Files
     description: "Concept art, blockouts, maps, balance sheets, prototypes, and the pitch deck the pages link to."
 
@@ -85,8 +82,8 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = its group's default, else the collection's." }
-  # Yours. The seed ships defaults; keep, scope, or drop any of them. Only the grouping is required.
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+  # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
       type: Text
@@ -111,13 +108,13 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: system, type: Text, required: true, applies_to: [ Mechanics, Items ], meaning: "Which system this belongs to (movement, combat, economy). Matches its sub-folder." }
-    - { name: act, type: Text, required: true, applies_to: [ Levels ], meaning: "Which act, world, or chapter the level sits in. Matches its sub-folder." }
+    - { name: system, type: Text, applies_to: [ Mechanics, Items ], meaning: "Which system this belongs to (movement, combat, economy). Its folder's path, such as a/b; a value that is not its folder warns." }
+    - { name: act, type: Text, applies_to: [ Levels ], meaning: "Which act, world, or chapter the level sits in. Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: pillar, type: List, applies_to: [ Mechanics, Levels, Characters, Items ], meaning: "The pillars this serves, named as the Pillars page names them. A page that serves none is the first to question when scope gets tight." }
     - { name: needs, type: List, applies_to: [ Mechanics, Levels, Characters, Items ], meaning: "Pages that have to be in the build before this one works, as links: the mechanic a level teaches, the ability an item upgrades." }
     - { name: cut_reason, type: Text, applies_to: [ Mechanics, Levels, Characters, Items ], meaning: "Why it was cut, in one line, once status is Cut. The page stays, so the reason does." }
 
-# The root's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
+# The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
 vocabulary: []
 
