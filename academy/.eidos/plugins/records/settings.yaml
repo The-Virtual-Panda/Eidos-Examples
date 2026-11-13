@@ -1,0 +1,25 @@
+# Records (records) settings shared by everyone in this project. Edit here, or on the Plugins page.
+types:
+  - name: outcomes
+    title: Learning Outcomes
+    label: LO{n}
+    mode: inline
+    sidebar: true
+  - name: decisions
+    title: Decisions
+    label: D{n}
+    mode: file
+    sidebar: true
+    folder: Decisions
+    numbering: ids
+    id_prefix: D
+    statuses:
+      - name: Proposed
+        category: open
+      - name: Decided
+        category: closed
+      - name: Set Aside
+        category: cancelled
+    sign_off: true
+    listed: true
+    tasks: true

@@ -11,7 +11,7 @@ Holds the pipeline. Reads every course for where it stands, what it is waiting o
 - **Surface / hide:** lead with `status`, `duration`, How Often One Ships and What the Platform Requires on the Production page, each course's Format and Length, and anything in Still to Decide that blocks recording. Keep the outcomes and the mission out of the way.
 - **Focus:** the pipeline as a whole: what is Outlined, In Production, Published, and whether the year's budget fits.
 
-This folder holds what the school is, not the to-do list: no tasks, no assignees, on purpose. Read progress from `status` and the dated Decisions; keep the production board in whatever tool the school uses and link it.
+The pages hold what the school is, not the to-do list: no tasks or assignees on a course or a lesson. The production board is the Backlog, beside them: a Make a Lesson task per lesson moving from To Do through Writing, Recording and Editing, and In Review to Published, a Revise a Course task for a refresh, and a Learner Report for a mistake a learner found, each serving the page it changes. Read where a course stands from its `status`, and why it is the way it is from its Decisions.
 
 ## Calibration
 

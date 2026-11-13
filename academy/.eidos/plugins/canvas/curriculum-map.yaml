@@ -1,0 +1,24 @@
+# A canvas, authored in the Eidos MD app. Nodes are sketches, stickies, or blueprints; the canvas holds the flows, frames, and layout, and its comment threads are the Comments plugin's. Documented by `eidos canvas --help`.
+
+title: Curriculum Map
+pages:
+  - id: overview
+    title: Overview
+    frames:
+      - { id: orientation, title: "Orientation", x: 0, y: 0, w: 760, h: 420, color: sky }
+    nodes:
+      - { id: welcome, blueprint: B-B89, frame: orientation }
+      - { id: built, blueprint: B-S53, frame: orientation }
+      - { id: proving, blueprint: B-G46, frame: orientation }
+      - { id: next-track, sketch: { label: "Your first subject track", note: "A track of your own: a folder under Courses, with a folder per course inside it." } }
+      - { id: how-to-read, sticky: { text: "One frame per track. A course points at its lessons; an arrow between courses is a prerequisite. Draw a path as a line through the courses it takes, in order.", color: yellow } }
+    edges:
+      - { from: welcome, to: built, label: "lesson 1" }
+      - { from: welcome, to: proving, label: "lesson 2" }
+      - { from: welcome, to: next-track, label: "comes before" }
+    layout:
+      welcome: { x: 40, y: 60 }
+      built: { x: 420, y: 40 }
+      proving: { x: 420, y: 240 }
+      next-track: { x: 880, y: 60 }
+      how-to-read: { x: 880, y: 260 }

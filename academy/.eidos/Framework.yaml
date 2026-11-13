@@ -1,21 +1,21 @@
 # The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.13.0
+eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
-naming: Title Case
+naming: kebab-case
 
 # Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
-    path: ../Start Here.md
+    path: ../start-here.md
     description: "where to start: what this is, and where things are"
   - title: Catalog
-    path: ../Catalog.md
+    path: ../catalog.md
     description: every course on one page, as a learner sees it
   - title: Lesson Style Guide
-    path: ../Lesson Style Guide.md
+    path: ../lesson-style-guide.md
     description: how a lesson is written and recorded
 
 # Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
@@ -23,7 +23,8 @@ top_level:
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: The School
+  - name: the-school
+    title: The School
     owned_by: "@eidos/collections"
     description: "The school itself, four pages: what it teaches and why, how it teaches, where it sells, and what it costs to make. Every learner, course, and path gets checked against these."
     variants:
@@ -31,27 +32,50 @@ folders:
       - { name: teaching, template: templates/frame.teaching.md, description: "how it teaches: the format, the length, how learners prove it, the rules every course keeps" }
       - { name: market, template: templates/frame.market.md, description: "where the courses sell, what they cost, and what they are up against" }
       - { name: production, template: templates/frame.production.md, description: "what a course costs to make, how often one ships, and what the platform requires" }
-  - name: Learners
+  - name: learners
+    title: Learners
     owned_by: "@eidos/collections"
     description: "Who it is for: one page per kind of learner, flat. Where they start, what they need, what done looks like for them. Courses and paths point at these."
     variants:
       - { name: persona, template: templates/learner.persona.md, description: "one kind of learner: where they start, what they need, what done looks like", default: true }
-  - name: Courses
+  - name: courses
+    title: Courses
     owned_by: "@eidos/collections"
-    description: "The catalog: one page per course, grouped by track. What learners will be able to do, the modules, how they prove it, the format."
+    description: "The catalog: one folder per track, and in it one folder per course, holding the course's page and its lessons. What learners will be able to do, the modules, how they prove it, the format."
     variants:
       - { name: full, template: templates/course.full.md, description: "the full page for a course", default: true }
       - { name: outline, template: templates/course.outline.md, description: "an outline: who it is for, what they will be able to do, the modules; grow into full" }
+      - { name: lesson, template: templates/course.lesson.md, description: "one lesson of a course: the outcomes it serves, what a learner takes away, what they do, and how it is checked" }
     label: Tracks
     folder_property: track
-    folders: [] # one entry per track (a subject area), a name and a description, as they accrue
-  - name: Paths
+    folders:
+      - name: orientation
+        title: Orientation
+        description: "Orientation: how the school works, for every learner before their first course."
+        folders:
+          - name: welcome-to-the-school
+            title: Welcome to the School
+            description: "The course every learner takes first: its page, and its lessons beside it."
+            default_variant: lesson
+      # one entry per track (a subject area), a name and a description, as they accrue
+  - name: paths
+    title: Paths
     owned_by: "@eidos/collections"
     description: "One page per path, flat: a sequence of courses, in order, for one kind of learner, toward one outcome. The pages that tie learners to courses."
     variants:
       - { name: full, template: templates/path.full.md, description: "who it is for, where it goes, and the courses in order", default: true }
   - name: Files
-    description: "Slides, worksheets, recordings, and syllabi the pages link to."
+    owned_by: "@assets/files"
+    description: "Slides, worksheets, recordings, and syllabi the pages link to, each linked to its course or lesson by the Assets plugin; a course's kit is a bundle, one folder of its files."
+  - name: backlog
+    owned_by: "@backlog/tasks"
+    description: the tasks that serve the blueprints, one markdown file each, the Backlog plugin's
+  - name: academy
+    owned_by: "@academy/academy"
+    description: The quizzes and flashcard decks on this project's content, one markdown file each, and the courses that group them, kept by the Academy plugin
+  - name: Decisions
+    owned_by: "@records/decisions"
+    description: "The calls that shaped a course, a path, or the school, one file each, signed off by whoever made the call and listed on the pages they shaped: what was chosen, what was given up, and why."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -61,7 +85,7 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's; `none` = no template." }
   # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
@@ -72,56 +96,92 @@ properties:
       canvas:
         show: true
         styles:
-          Draft:
+          Idea:
             color: "#8b9099"
-          Intake:
+          Outlined:
             color: "#d3a53c"
-          In Progress:
+          In Production:
             color: "#5f80cf"
-          Done:
+          Published:
             color: "#7fae6c"
-          Archived:
-            color: "#8b9099"
-          Deprecated:
+          Retired:
             color: "#cf7b8f"
-          needs-clarification:
-            color: "#5f80cf"
-          maybe:
-            color: "#e08a63"
-          visionary:
-            color: "#4aa39f"
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: track, type: Text, applies_to: [ Courses ], meaning: "Which track (subject area) the course belongs to. Its folder's path, such as a/b; a value that is not its folder warns." }
-    - { name: prerequisites, type: List, applies_to: [ Courses, Paths ], meaning: "Courses a learner has to finish first, as links." }
-    - { name: for, type: List, applies_to: [ Courses, Paths ], meaning: "The learners this is for, as links to their pages." }
-    - { name: level, type: Text, applies_to: [ Courses ], options: [ intro, intermediate, advanced ], meaning: "Where a learner should be before starting: intro, intermediate, or advanced." }
-    - { name: duration, type: Number, applies_to: [ Courses ], meaning: "How many hours it takes a learner, start to finish." }
+    - { name: track, type: Text, applies_to: [ courses ], meaning: "Where the page sits: its track, and for a course's own page or a lesson, the course's folder beneath it (Orientation/Welcome to the School). The folder's path; a value that is not its folder warns." }
+    - { name: prerequisites, type: List, applies_to: [ courses, paths ], meaning: "Courses a learner has to finish first, as links." }
+    - { name: for, type: List, applies_to: [ courses, paths ], meaning: "The learners this is for, as links to their pages." }
+    - { name: level, type: Text, applies_to: [ courses ], options: [ intro, intermediate, advanced ], meaning: "Where a learner should be before starting: intro, intermediate, or advanced." }
+    - { name: duration, type: Number, applies_to: [ courses ], meaning: "How many hours it takes a learner: a course start to finish, a lesson by itself (0.25 for a quarter hour)." }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
-vocabulary: []
+vocabulary:
+  - term: course
+    means: A sequence of lessons toward a set of learning outcomes, for the learners it names; one page in its track, with its lessons beside it.
+    not:
+      - "class: a class is one cohort taking a course at a time; the course is the same for every cohort"
+  - term: lesson
+    means: One sitting of a course, serving one or more of its learning outcomes; a page in the course's folder.
+    not:
+      - "unit: say lesson for one sitting, and module for a group of lessons"
+  - term: learning outcome
+    means: Something a learner can do after a course, said so it could be checked, labelled LO1, LO2, and on, on the course's page.
+    not:
+      - "objective: an objective is what the instructor intends; an outcome is what the learner can show"
+      - "topic: a topic is what is covered, not what a learner can do"
+  - term: track
+    means: "A folder of the Courses collection that groups the courses sharing a subject, in no order."
+    not:
+      - "category: say track, the Courses collection's own word for its folders"
+  - term: path
+    means: An ordered sequence of courses, for one kind of learner, toward one outcome.
+    not:
+      - "program: say path, the ordered sequence"
+  - term: learner
+    means: Someone who takes the school's courses; each kind has a page in Learners.
+    not:
+      - "student: say learner"
+  - term: quiz
+    means: A set of questions on a lesson, kept in Academy (the plugin's folder) and drawing from the lesson's page, that a learner takes as practice or as an official attempt.
+    not:
+      - "exam: say quiz; how a learner proves an outcome may also be a project or a review"
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  The School:
+  the-school:
     - id: how-we-teach
       title: How We Teach
       summary: null
-      path: How We Teach.md
+      path: how-we-teach.md
     - id: market
       title: Market
       summary: null
-      path: Market.md
+      path: market.md
     - id: mission
       title: Mission
       summary: null
-      path: Mission.md
+      path: mission.md
     - id: production
       title: Production
       summary: null
-      path: Production.md
-  Learners: []
-  Courses: []
-  Paths: []
+      path: production.md
+  learners: []
+  courses:
+    - id: B-S53
+      title: How a Course Is Built
+      summary: Tracks, courses, modules, lessons, and the learning outcomes that tie them together.
+      path: orientation/welcome-to-the-school/how-a-course-is-built.md
+      folder: orientation/welcome-to-the-school
+    - id: B-G46
+      title: Proving What You Learned
+      summary: Quizzes, practice and official attempts, flashcard decks, and how written answers are graded.
+      path: orientation/welcome-to-the-school/proving-what-you-learned.md
+      folder: orientation/welcome-to-the-school
+    - id: B-B89
+      title: Welcome to the School
+      summary: "The course every learner takes first: how a course here is built, and how a learner proves what they learned."
+      path: orientation/welcome-to-the-school/welcome-to-the-school.md
+      folder: orientation/welcome-to-the-school
+  paths: []

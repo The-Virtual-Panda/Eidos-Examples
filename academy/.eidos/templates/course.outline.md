@@ -6,9 +6,10 @@ _Which learners, and what it teaches them, in a short paragraph. Grow it into th
 
 ## What They Will Be Able to Do
 
-_At the end, numbered._
+_At the end, each a learning outcome labelled LO1, LO2, and on._
 
-1. <!-- the first thing a learner can do afterward -->
+<!-- records:section type=outcomes -->
+<!-- /records:section -->
 
 ## Still to Decide
 

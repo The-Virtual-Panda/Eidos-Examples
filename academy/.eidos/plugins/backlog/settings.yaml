@@ -1,0 +1,122 @@
+# Backlog (backlog) settings shared by everyone in this project. Edit here, or on the Plugins page.
+statuses:
+  - Idea
+  - To Do
+  - Writing
+  - Recording
+  - Editing
+  - In Review
+  - Published
+columns:
+  - name: To Do
+    statuses:
+      - To Do
+  - name: Writing
+    statuses:
+      - Writing
+  - name: Recording and Editing
+    statuses:
+      - Recording
+      - Editing
+  - name: In Review
+    statuses:
+      - In Review
+  - name: Published
+    statuses:
+      - Published
+default_status: To Do
+status_colors:
+  Idea: gray
+  Recording: purple
+  Editing: purple
+  In Review: orange
+  Writing: blue
+  Published: green
+status_categories:
+  Idea: todo
+  To Do: todo
+  Writing: in_progress
+  Recording: in_progress
+  Editing: in_progress
+  In Review: in_progress
+  Published: done
+priorities:
+  - High
+  - Medium
+  - Low
+priority_icons: {}
+priority_colors: {}
+column_cards: 7
+forms_section: true
+milestones: []
+properties: []
+builtin_properties: []
+sections:
+  - title: Description
+    type: text
+    meaning: what the work is and why, read first
+  - title: Acceptance Criteria
+    type: checklist
+    meaning: what must be true when it is done, one line each, ticked as each is met
+types:
+  - name: default
+    title: Task
+    icon: circle
+    color: gray
+  - name: lesson
+    title: Make a Lesson
+    icon: bookmark
+    color: blue
+    sections:
+      - title: Brief
+        type: text
+        meaning: the lesson it makes, linked by its page, and the outcomes it serves
+      - title: Steps
+        type: checklist
+        meaning: script, record, edit, captions, the quiz, one line each, ticked as each
+          is done
+      - title: Notes
+        type: text
+        meaning: what came up making it
+    prefix: L
+  - name: revision
+    title: Revise a Course
+    icon: layers
+    color: orange
+    sections:
+      - title: What Changes
+        type: text
+        meaning: what on the course or lesson changes, and why now
+      - title: Done When
+        type: checklist
+        meaning: what must be true once it is revised
+    prefix: R
+  - name: erratum
+    title: Learner Report
+    icon: alert
+    color: red
+    sections:
+      - title: What They Saw
+        type: text
+        meaning: "the learner's words: the lesson, the place in it, and what was wrong"
+      - title: Fix
+        type: text
+        meaning: what was changed, and where
+    prefix: E
+link_types:
+  - name: blocks
+    outward: blocks
+    inward: is blocked by
+  - name: relates
+    outward: relates to
+    inward: relates to
+  - name: duplicates
+    outward: duplicates
+    inward: is duplicated by
+  - name: clones
+    outward: clones
+    inward: is cloned by
+boards: []
+sprints: false
+setup_offered: false
+milestone_properties: []

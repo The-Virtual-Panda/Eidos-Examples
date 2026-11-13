@@ -1,0 +1,30 @@
+# What the Assets plugin knows of each file beyond the file system: a title, a description, and the blueprints (by id), tasks (by name), and URLs it is linked to, and for a bundle the file it opens on. Keyed by the file's or the bundle's path from the project; a rename through the plugin rewrites the key.
+files:
+  Files/welcome-to-the-school:
+    title: "Welcome to the School: Course Kit"
+    description: The orientation course's handout and its diagram of how the pieces
+      of a course fit.
+    links:
+      - kind: blueprint
+        ref: B-B89
+      - kind: blueprint
+        ref: B-S53
+      - kind: blueprint
+        ref: B-G46
+  Files/welcome-to-the-school/how-the-pieces-fit.svg:
+    links:
+      - kind: blueprint
+        ref: B-B89
+      - kind: blueprint
+        ref: B-S53
+      - kind: blueprint
+        ref: B-G46
+  Files/welcome-to-the-school/index.html:
+    links:
+      - kind: blueprint
+        ref: B-B89
+      - kind: blueprint
+        ref: B-S53
+      - kind: blueprint
+        ref: B-G46
+  

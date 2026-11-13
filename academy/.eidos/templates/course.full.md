@@ -14,13 +14,14 @@ _What you do not know yet. Kept near the top so nothing gets buried; when someth
 
 ## What They Will Be Able to Do
 
-_At the end, as numbered statements someone could check. If it is not written here, the course is not promising it. Every module below serves at least one._
+_At the end, as statements someone could check, each a learning outcome labelled LO1, LO2, and on. If it is not written here, the course is not promising it. Every module below serves at least one, and every lesson and quiz cites the ones it serves._
 
-1. <!-- the first thing a learner can do afterward -->
+<!-- records:section type=outcomes -->
+<!-- /records:section -->
 
 ## The Modules
 
-_The outline: modules in order, and the lessons in each, one line per lesson with the outcome it serves. Not the material; the shape of it. Put the syllabus in Files and link it._
+_The outline: modules in order, and the lessons in each, one line per lesson linking its page in this course's folder, with the outcome it serves. Not the material; the shape of it. Put the syllabus in Files and link it._
 
 ### Module
 
@@ -28,7 +29,7 @@ _What it covers, and which outcomes it serves._
 
 ## How They Prove It
 
-_How a learner shows each outcome, and how the school checks: the project, the quiz, the review. Held up against How We Teach._
+_How a learner shows each outcome, and how the school checks: the project, the quiz, the review. Held up against How We Teach. A quiz or a deck lives in Academy, in the course of the same name, and is linked from the lesson it draws on._
 
 ## Format and Length
 
@@ -44,6 +45,7 @@ _Courses a learner has to finish first, and courses this one leads to. Link them
 
 ## Notes and Decisions
 
-_Notes: the references, the reviewer, the platform's notes. Decisions: one line each, dated, never deleted._
+_Notes: the references, the reviewer, the platform's notes. Decisions are records in Decisions, each signed off by the person who made the call, and listed here as they are logged._
 
-<!-- 2026-04-08: Moved the setup lesson into Module 1; learners quit before reaching it. (Editor) -->
+<!-- records:list type=decisions -->
+<!-- /records:list -->

@@ -22,6 +22,7 @@ _What this path does not cover, and which path does. Where a learner goes next._
 
 ## Notes and Decisions
 
-_Notes: completion numbers, the learner who tested it, the reminder. Decisions: one line each, dated, never deleted._
+_Notes: completion numbers, the learner who tested it, the reminder. Decisions are records in Decisions, each signed off by the person who made the call, and listed here as they are logged._
 
-<!-- 2026-04-08: Dropped the theory course from the path; nobody who finished it needed it. (Instructor) -->
+<!-- records:list type=decisions -->
+<!-- /records:list -->
