@@ -24,6 +24,8 @@
 # home.overview: the top-level doc the Home's Overview tab reads, by its path (README.md); absent, the first under top_level. A framework editor's to set (the Overview's ⋯ → Use as the overview).
 # vocabulary: where the app lists the Vocabulary, core (among the top-level docs in the Core View; what a project without the line does) or settings (among the framework's pages in Framework settings). A framework owner's to set (the Vocabulary's Move to settings and Move to Core).
 product: The Game
+home:
+  overview: README.md
 plugins:
   git: true
   records: true

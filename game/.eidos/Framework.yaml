@@ -9,7 +9,7 @@ naming: kebab-case
 # Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
-    path: ../start-here.md
+    path: ../README.md
     description: "where to start: what this is, and where things are"
   - title: The One-Pager
     path: ../the-one-pager.md
