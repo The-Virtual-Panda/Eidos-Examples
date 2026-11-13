@@ -4,6 +4,7 @@ title: How It Runs
 variant: practice
 date_created: 2026-09-19
 date_modified: 2026-09-19
+aliases: ["How It Runs"]
 ---
 
 # How It Runs

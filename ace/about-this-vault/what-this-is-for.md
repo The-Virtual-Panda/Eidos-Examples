@@ -4,6 +4,7 @@ title: What This Is For
 variant: purpose
 date_created: 2026-09-19
 date_modified: 2026-09-19
+aliases: ["What This Is For"]
 ---
 
 # What This Is For
