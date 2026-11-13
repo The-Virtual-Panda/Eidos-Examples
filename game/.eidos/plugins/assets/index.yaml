@@ -1,6 +1,6 @@
 # What the Assets plugin knows of each file beyond the file system: a title, a description, and the blueprints (by id), tasks (by name), and URLs it is linked to, and for a bundle the file it opens on. Keyed by the file's or the bundle's path from the project; a rename through the plugin rewrites the key.
 files:
-  Files/Art Bible:
+  files/art-bible:
     title: Art Bible
     description: "The art bible's reference sheets, kept together: the palette
       swatches, the silhouette lineup, the scale chart, the interface kit, and the
