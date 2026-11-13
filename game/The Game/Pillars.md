@@ -28,7 +28,7 @@ _The next one, and what it rules out._
 
 ## The Core Loop
 
-_What the player does over and over, in order: the thirty seconds, the session, the whole game. The loop every mechanic plugs into; draw it on a canvas if that helps._
+_What the player does over and over, in order: the thirty seconds, the session, the whole game. The loop every mechanic plugs into; draw it on the Core Loop page of the Game Map canvas if that helps._
 
 ## Not This Game
 

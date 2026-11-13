@@ -34,8 +34,13 @@ _What this character deliberately is not, and who holds that instead. A characte
 
 _The levels they appear in, the mechanics and items they hand over, the characters they are tied to. Link the pages rather than naming them._
 
-## Notes and Decisions
+## Notes
 
-_Notes: the reference art, the voice, where the dialogue lives. Decisions: one line each, dated, never deleted._
+_The reference art, the voice, where the dialogue lives. What the page has not settled goes in Still to Decide, not here._
 
-<!-- 2026-06-03: She no longer follows the player into act two; the escort beat fought the core loop. (Designer) -->
+## Decisions
+
+_The calls that shaped this page, one record each in Decisions, listed here as they are made: what was decided, between what, and the playtest or build that settled it (she no longer follows the player into act two, because the escort beat fought the core loop). A tuned number is a decision too, so a change to the feel is never an accident._
+
+<!-- records:section type=decision -->
+<!-- /records:section -->

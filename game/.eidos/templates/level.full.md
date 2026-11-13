@@ -18,7 +18,7 @@ _The mechanics this level introduces, then tests, then twists, each a link. A le
 
 ## How It Plays
 
-_The flow, as beats from the way in to the way out, numbered so anyone can point at one: the first sight, the first challenge, the set piece, the reward. Beats are the plan; the blockout is where they get tested._
+_The flow, as beats from the way in to the way out, numbered so anyone can point at one: the first sight, the first challenge, the set piece, the reward. Beats are the plan; the blockout is where they get tested. A beat that grows into an encounter page of its own, in this level's folder, is linked from its line._
 
 1. <!-- the way in, and the first thing the player sees -->
 
@@ -38,8 +38,13 @@ _What this level deliberately does not do, and which level does. A level without
 
 _The mechanics it teaches, the characters and enemies in it, the items found here, the levels on either side. Link the pages rather than naming them._
 
-## Notes and Decisions
+## Notes
 
-_Notes: the blockout build, the reference, the playtest that changed it. Decisions: one line each, dated, never deleted._
+_The blockout build, the reference, the playtest that changed it. What the page has not settled goes in Still to Decide, not here._
 
-<!-- 2026-06-03: Moved the first save point before the bridge; testers quit at the second death. (Designer) -->
+## Decisions
+
+_The calls that shaped this page, one record each in Decisions, listed here as they are made: what was decided, between what, and the playtest or build that settled it (the first save point moved before the bridge, because testers quit at the second death). A tuned number is a decision too, so a change to the feel is never an accident._
+
+<!-- records:section type=decision -->
+<!-- /records:section -->

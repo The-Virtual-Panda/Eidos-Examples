@@ -1,7 +1,7 @@
 # The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.13.0
+eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
@@ -40,29 +40,39 @@ folders:
       - { name: market, template: templates/frame.market.md, description: "the games next to it, the hook, the price, and how players find it" }
   - name: Mechanics
     owned_by: "@eidos/collections"
-    description: "One page per mechanic, grouped by system: why it is in the game, the pillar it serves, how it plays, its rules and numbers, and what it is not."
+    description: "One page per mechanic, in folders by system, and a system's folder can hold smaller systems (Combat, then Melee and Ranged inside it), with the system's own page beside them: why each mechanic is in the game, the pillar it serves, how it plays, its rules and numbers, and what it is not."
     variants:
       - { name: one-pager, template: templates/mechanic.one-pager.md, description: "a mechanic on one page: why it is in the game, how it plays, the rules and numbers so far, what it is not; grow into full", default: true }
       - { name: full, template: templates/mechanic.full.md, description: "the full page for a mechanic with more rules and numbers than a page holds" }
+      - { name: system, template: templates/mechanic.system.md, description: "a system's overview, beside the mechanics in its folder: what the system is for, the mechanics in it, how they feed each other, and the numbers that tie them" }
     label: Systems
     folder_property: system
     folders: [] # one entry per system (movement, combat, economy, progression), a name and a description, as they accrue
   - name: Levels
     owned_by: "@eidos/collections"
-    description: "One page per level, grouped by act: what it is for in the game, what it teaches, the flow, and what the player leaves with."
+    description: "One page per level, in a folder per act. A level that grows fights, puzzles, and set pieces becomes a folder of its own, its page beside an encounter page for each: what each level is for, what it teaches, the flow, and what the player leaves with."
     variants:
       - { name: one-pager, template: templates/level.one-pager.md, description: "a level on one page: why it is in the game, what it teaches, the flow, what it is not; grow into full", default: true }
       - { name: full, template: templates/level.full.md, description: "the full page for a level: the flow, the layout, what the player leaves with, and its ties" }
+      - { name: encounter, template: templates/level.encounter.md, description: "one fight, puzzle, chase, or set piece inside a level, kept in the level's folder beside the level's page: what it tests, the setup, how it plays, and the way out" }
     label: Acts
     folder_property: act
     folders: [] # one entry per act, world, or chapter, a name and a description, as they accrue
   - name: Characters
     owned_by: "@eidos/collections"
-    description: "One page per character the player meets, plays, or fights: why they exist, how they read on screen, and what they do."
+    description: "One page per character the player meets, plays, or fights: why they exist, how they read on screen, and what they do. The cast sits at the top; enemies, and the bosses inside them, start on the enemy page."
     variants:
       - { name: one-pager, template: templates/character.one-pager.md, description: "a character on one page: why they exist, who they are, how they read on screen, what they are not; grow into full", default: true }
       - { name: full, template: templates/character.full.md, description: "the full page for a character with a part in the game" }
       - { name: enemy, template: templates/character.enemy.md, description: "an enemy or a boss: what it tests, how it plays, its tells and numbers" }
+    folders:
+      - name: Enemies
+        description: "Everything the player fights, on the enemy page: what it tests, its tells, and its numbers. The rest of the cast sits beside this folder."
+        default_variant: enemy
+        folders:
+          - name: Bosses
+            description: "The bosses: an enemy page each, with its phases numbered under How It Plays. Each one is a test of what its act taught."
+    label: Rosters
   - name: Items
     owned_by: "@eidos/collections"
     description: "One page per item, upgrade, or collectible, grouped by the same systems as the mechanics: how the player gets it and what it does."
@@ -72,7 +82,14 @@ folders:
     folder_property: system
     folders: [] # the same systems as the mechanics, as they accrue
   - name: Files
-    description: "Concept art, blockouts, maps, balance sheets, prototypes, and the pitch deck the pages link to."
+    owned_by: "@assets/files"
+    description: "Concept art, blockouts, maps, balance sheets, and the pitch deck the pages link to; a folder inside it is a bundle, one asset of many files, such as a playable prototype build or the art bible's reference sheets. Kept by the Assets plugin."
+  - name: Backlog
+    owned_by: "@backlog/tasks"
+    description: "The work that builds the game, one task each, kept by the Backlog plugin: tasks, and bugs from playtests, each serving the pages it builds or breaks."
+  - name: Decisions
+    owned_by: "@records/decision"
+    description: "One record per call that shaped the game, kept by the Records plugin: a design rule, a tuned number, a cut, a technical trade-off. Proposed, then confirmed by the designer, and listed on every page it serves."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -82,7 +99,7 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's; `none` = no template." }
   # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
@@ -116,7 +133,29 @@ properties:
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
-vocabulary: []
+vocabulary:
+  - term: Pillar
+    means: One of the three or four rules the whole game keeps, as the Pillars page names it; every mechanic, level, character, and item names the pillars it serves.
+    not:
+      - "goal: a goal is something to reach, a pillar is something every decision answers to"
+    see: ../The Game/Pillars.md
+  - term: System
+    means: A group of mechanics that work together toward one job (movement, combat, the economy), kept as a folder in Mechanics with its own page beside its mechanics; a system can hold smaller ones.
+    not:
+      - "category: the folder is a system because its mechanics feed each other, not because they look alike"
+  - term: Encounter
+    means: One fight, puzzle, chase, or set piece inside a level, with a page of its own in the level's folder once the level has more than one.
+    not:
+      - "room: a room is space, an encounter is what the space asks of the player"
+  - term: Build
+    means: A playable version of the game, named or numbered, as the Playtest Log and every bug name it.
+    not:
+      - "release: a release is the build that went out to players; name the build it was"
+  - term: Cut
+    means: "Out of the game on purpose: the page stays, marked Cut, with its cut_reason, so the reason survives."
+    not:
+      - "deleted: nothing cut is deleted; a deleted page loses the reason it was cut"
+      - "postponed: a page waiting for a later milestone is still in, at Idea or Designed"
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:

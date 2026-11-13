@@ -1,0 +1,127 @@
+# Backlog (backlog) settings shared by everyone in this project. Edit here, or on the Plugins page.
+statuses:
+  - Triage
+  - To Do
+  - In Progress
+  - Verify
+  - Done
+columns:
+  - name: To Do
+    statuses:
+      - To Do
+  - name: In Progress
+    statuses:
+      - In Progress
+  - name: Verify
+    statuses:
+      - Verify
+  - name: Done
+    statuses:
+      - Done
+default_status: To Do
+status_colors:
+  Triage: purple
+  Verify: orange
+status_categories:
+  Triage: todo
+  To Do: todo
+  In Progress: in_progress
+  Verify: in_progress
+  Done: done
+priorities:
+  - High
+  - Medium
+  - Low
+priority_icons: {}
+priority_colors: {}
+column_cards: 7
+forms_section: true
+milestones:
+  - name: Prototype
+  - name: Vertical Slice
+  - name: Content Complete
+  - name: Launch
+properties:
+  - name: discipline
+    type: Text
+    options:
+      - Design
+      - Code
+      - Art
+      - Audio
+      - Writing
+      - QA
+    meaning: "who on the team picks it up: the craft the work needs, not a person"
+    filter: true
+    card: true
+  - name: severity
+    type: Text
+    options:
+      - Blocker
+      - Major
+      - Minor
+      - Polish
+    meaning: "what it costs the player: Blocker stops the game or loses progress,
+      Major breaks a mechanic or a level, Minor is wrong but playable around,
+      Polish is a seam only a careful eye sees"
+    applies_to:
+      - bug
+    filter: true
+    card: true
+  - name: build
+    type: Text
+    meaning: the build it was found in, as the Playtest Log names it
+    applies_to:
+      - bug
+    table: true
+builtin_properties: []
+sections:
+  - title: Description
+    type: text
+    meaning: what the work is and why, read first
+  - title: Acceptance Criteria
+    type: checklist
+    meaning: what must be true when it is done, one line each, ticked as each is met
+types:
+  - name: default
+    title: Task
+    icon: circle
+    color: gray
+  - name: bug
+    title: Bug
+    icon: bug
+    color: red
+    sections:
+      - title: What Happened
+        type: text
+        meaning: what the player did and what the game did, in the reporter's words,
+          read first
+      - title: Steps to Reproduce
+        type: checklist
+        meaning: how to make it happen again, one step a line, ticked as each one
+          reproduces it in the current build
+      - title: Expected
+        type: text
+        meaning: what the page it breaks says should happen, linked
+      - title: Resolution
+        type: text
+        meaning: what was changed and in which build, or why it stays, written when it
+          leaves Verify
+    prefix: B
+link_types:
+  - name: blocks
+    outward: blocks
+    inward: is blocked by
+  - name: relates
+    outward: relates to
+    inward: relates to
+  - name: duplicates
+    outward: duplicates
+    inward: is duplicated by
+  - name: clones
+    outward: clones
+    inward: is cloned by
+boards: []
+sprints: true
+setup_offered: true
+milestone_properties: []

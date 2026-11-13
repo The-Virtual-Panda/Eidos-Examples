@@ -1,0 +1,16 @@
+# eidosmd saved views shared by everyone in this project, committed with it. Edit by hand or from the Eidos MD app (Save as view); eidos views lists them.
+# Each view: id (V- and four characters, never changed), name (as the sidebar lists it), page (what it lists: /p/backlog, /p/backlog/backlog, /p/backlog/drafts, /c/<collection>),
+# query (the page's address it keeps: its filters and its sort). A person's own views are views in their local.yaml beside this file, never committed.
+views:
+  - id: V-TR1A
+    name: Playtest Triage
+    page: /p/backlog/backlog
+    query: status=Triage&type=bug
+  - id: V-BL0K
+    name: Blockers
+    page: /p/backlog
+    query: type=bug&severity=Blocker
+  - id: V-VS1C
+    name: Vertical Slice
+    page: /p/backlog
+    query: milestone=Vertical+Slice

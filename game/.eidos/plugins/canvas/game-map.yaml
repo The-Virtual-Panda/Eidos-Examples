@@ -1,0 +1,58 @@
+# A canvas, authored in the Eidos MD app. Nodes are sketches, stickies, or blueprints; the canvas holds the flows, frames, and layout, and its comment threads are the Comments plugin's. Documented by `eidos canvas --help`.
+
+title: Game Map
+pages:
+  - id: core-loop
+    title: Core Loop
+    frames:
+      - { id: seconds, title: The Thirty Seconds, x: 0, y: 120, w: 520, h: 360, color: sand }
+      - { id: session, title: The Session, x: 580, y: 120, w: 520, h: 360, color: sky }
+      - { id: game, title: The Whole Game, x: 1160, y: 120, w: 520, h: 360, color: mint }
+    nodes:
+      - id: intro
+        text: { text: "The core loop from the Pillars page, drawn. Put the mechanics on it as they are written (drag a page from the sidebar), and draw what each step hands the next. A mechanic that sits on no loop is one to question.", size: medium }
+        box: { w: 1680, h: 80 }
+      - id: seconds-note
+        frame: seconds
+        sticky: { text: "What the player does over and over: the press, the result, the reward that sends them back to the press.", color: yellow }
+      - id: session-note
+        frame: session
+        sticky: { text: "What one sitting adds up to: the run, the level, the day in the game. Where they stop, and why they come back.", color: blue }
+      - id: game-note
+        frame: game
+        sticky: { text: "What changes across the whole game: the abilities, the acts, the story. What the last hour asks that the first did not.", color: green }
+    edges:
+      - { from: seconds-note, to: session-note, label: adds up to }
+      - { from: session-note, to: game-note, label: adds up to }
+    layout:
+      intro: { x: 0, y: 0 }
+      seconds-note: { x: 40, y: 200 }
+      session-note: { x: 620, y: 200 }
+      game-note: { x: 1200, y: 200 }
+  - id: system-map
+    title: System Map
+    nodes:
+      - id: intro
+        text: { text: "One node per system page in Mechanics, and an arrow for what one system gives another: movement gets the player into a fight, combat drops what the economy spends. A system with no arrow in or out is a game of its own inside this one.", size: medium }
+        box: { w: 1200, h: 100 }
+      - id: how
+        sticky: { text: "Label each arrow with what crosses it (a resource, a state, a reason to switch). Dash the ones that are not built yet.", color: yellow }
+    edges: []
+    layout:
+      intro: { x: 0, y: 0 }
+      how: { x: 0, y: 160 }
+  - id: level-flow
+    title: Level Flow
+    frames:
+      - { id: act, title: An Act, x: 0, y: 140, w: 1200, h: 420, color: lilac }
+    nodes:
+      - id: intro
+        text: { text: "The order the player meets the levels in, one frame per act. Drag each level page onto its act; a solid arrow is the critical path, a dashed one a branch, a secret, or the way back. A level that opens a door for another names it in needs.", size: medium }
+        box: { w: 1200, h: 100 }
+      - id: act-note
+        frame: act
+        sticky: { text: "Rename this frame for the first act and copy it for the next. Each act's boss sits at the end of its frame.", color: purple }
+    edges: []
+    layout:
+      intro: { x: 0, y: 0 }
+      act-note: { x: 40, y: 220 }

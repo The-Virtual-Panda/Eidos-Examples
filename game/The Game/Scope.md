@@ -20,7 +20,7 @@ _How long it plays and how much is in it: hours, acts, levels, mechanics, charac
 
 ## Milestones
 
-_The prototype, the vertical slice, content complete, launch: what each one proves, and roughly when. Not a schedule; the shape of one._
+_The prototype, the vertical slice, content complete, launch: what each one proves, and roughly when. Not a schedule; the shape of one. The Backlog's milestones carry these names, so the work toward each one is counted there, not here._
 
 ## The Cut Line
 

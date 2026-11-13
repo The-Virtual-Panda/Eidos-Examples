@@ -1,0 +1,43 @@
+# Records (records) settings shared by everyone in this project. Edit here, or on the Plugins page.
+types:
+  - name: decision
+    title: Decisions
+    mode: file
+    sidebar: true
+    folder: Decisions
+    numbering: ids
+    id_prefix: D
+    statuses:
+      - name: Proposed
+        category: open
+      - name: Confirmed
+        category: closed
+      - name: Rejected
+        category: cancelled
+      - name: Superseded
+        category: cancelled
+    default_status: Proposed
+    sign_off: true
+    listed: true
+    tasks: true
+    fields:
+      - name: kind
+        type: list
+        options:
+          - design
+          - tuning
+          - scope
+          - technical
+        required: true
+        meanings:
+          design: "What the game does: a rule, a behavior, or how a mechanic, level,
+            character, or item plays, settled between real alternatives."
+          tuning: "A number changed because of what players did: a timing, a value, a
+            cost, a drop rate, with the playtest or build that showed it."
+          scope: "What is in the game or out of it: a cut, an addition, or a change to the
+            cut line or a milestone's content."
+          technical: "How it is built, where a real trade-off reaches the design: an
+            engine limit, the platform budget, a tool chosen with a lasting
+            cost."
+      - name: evidence
+        type: text

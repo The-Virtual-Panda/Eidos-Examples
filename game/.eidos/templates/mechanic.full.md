@@ -34,8 +34,13 @@ _What this mechanic deliberately does not do, and which mechanic does instead: t
 
 _The mechanics it needs and the ones that build on it, the items that change it, the levels that teach and test it. Link the pages rather than naming them._
 
-## Notes and Decisions
+## Notes
 
-_Notes: the prototype build, the reference games, what the playtests said. Decisions: one line each, dated, never deleted, so a change to the feel is a decision and not an accident._
+_The prototype build, the reference games, what the playtests said. What the page has not settled goes in Still to Decide, not here._
 
-<!-- 2026-05-12: The dash no longer passes through enemies; in playtest 3 it skipped every fight. (Designer) -->
+## Decisions
+
+_The calls that shaped this page, one record each in Decisions, listed here as they are made: what was decided, between what, and the playtest or build that settled it (the dash no longer passes through enemies, because in playtest 3 it skipped every fight). A tuned number is a decision too, so a change to the feel is never an accident._
+
+<!-- records:section type=decision -->
+<!-- /records:section -->

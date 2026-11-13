@@ -1,0 +1,62 @@
+id: F-914D06
+title: Report a Bug
+intro: "You played a build of the game. Tell us what went wrong, in your own
+  words: what you were doing, what happened, and what you expected. One problem
+  per report."
+confirmation: Thank you. The team reads every report before the next build.
+open: false
+token: a2e3738e12fe760bac905d281f599f3f3750e963
+images: true
+questions:
+  - key: qabe277
+    label: What went wrong, in a line?
+    help: ""
+    kind: short
+    required: true
+    target:
+      to: title
+    options: []
+  - key: qc01074
+    label: What happened?
+    help: What you were doing, where you were in the game, and what the game did.
+    kind: long
+    required: true
+    target:
+      to: section
+      key: what-happened
+    options: []
+  - key: q5f1758
+    label: How can we make it happen again?
+    help: The steps, one a line, if you know them.
+    kind: long
+    required: false
+    target:
+      to: section
+      key: steps-to-reproduce
+    options: []
+  - key: qcf0c24
+    label: What did you expect to happen?
+    help: ""
+    kind: long
+    required: false
+    target:
+      to: section
+      key: expected
+    options: []
+  - key: q30478f
+    label: Which build were you playing?
+    help: The name or number on the title screen or in the file you were sent.
+    kind: short
+    required: false
+    target:
+      to: property
+      name: build
+    options: []
+task:
+  type: bug
+  status: Triage
+  priority: null
+  assignee: []
+  milestone: null
+  blueprints: []
+  properties: {}

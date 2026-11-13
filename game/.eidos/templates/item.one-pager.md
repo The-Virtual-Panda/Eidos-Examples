@@ -26,8 +26,13 @@ _The icon, the pickup, the effect when it is used: how it reads at a glance._
 
 _What it deliberately does not do, and which item or mechanic does. Write this first, not last._
 
-## Notes and Decisions
+## Notes
 
-_Notes: the balance sheet, the reference. Decisions: one line each, dated, never deleted._
+_The balance sheet, the reference. What the page has not settled goes in Still to Decide, not here._
 
-<!-- 2026-06-03: The lamp oil refill no longer stacks; players hoarded nine and never felt the dark. (Designer) -->
+## Decisions
+
+_The calls that shaped this page, one record each in Decisions, listed here as they are made: what was decided, between what, and the playtest or build that settled it (the lamp oil refill no longer stacks, because players hoarded nine and never felt the dark). A tuned number is a decision too, so a change to the feel is never an accident._
+
+<!-- records:section type=decision -->
+<!-- /records:section -->
