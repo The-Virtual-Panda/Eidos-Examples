@@ -1,30 +1,26 @@
 # {{Product}}
 
-> **Start here.** This folder is the one place that says what the business **is** and where it is going:
-> every idea, every line and product, every plan, every bet, every call, with the reasons attached. It stays true whether or not a dollar has moved.
+> **Start here.** This is the one place that says what the business is and where it is going. Every idea, plan, money decision, and call is here, with the reasons beside it.
 
 {{One line: what the business does, for whom, and why now.}}
 
-## Where things are
+## What goes where
 
-- **[The Business](<the-business>)**: four pages: what it is and why now, who pays, how it makes money, and how long you have. Everything else gets checked against them.
-- **[Ideas](ideas)**: one page per opportunity you are weighing. A spark grows into a case; a case becomes a line, a product, or a plan, or a call to stop.
-- **[Lines](lines)**: the business by line. Each line of business is a folder with its own page inside it, each product a folder inside its line, and each plan sits in the folder of what it grows: `lines/wholesale/wholesale.md`, `lines/wholesale/cold-brew/cold-brew.md`, `lines/wholesale/cold-brew/grocery-launch.md`. Make the folder when the line or product needs one, and give it its name as a title (Wholesale, Cold Brew), which is what the app shows.
-- **[Investments](investments)**: one page per bet with money on it, raised or spent. A round for the whole company sits at the top; money for one line or product sits in that line's folder.
-- **[Calls](calls)**: one record per call you made. Each one names the pages it serves and is listed on them, and the founder signs it off once it is made.
-- **[Files](files)**: decks, models, term sheets, contracts, and research the pages link to. The Pitch Deck, the Financial Model, and the Data Room are bundles: each one set of files, linked and shared as one.
-- **[Backlog](backlog)**: the work that carries out a plan's moves, one task per file, each serving the plan or deal it moves.
+- **[The Business](the-business)**: four pages on the company itself: what it is and why now, who pays, how it makes money, and how much cash and time you have. Write these first. Everything else is checked against them.
+- **[Ideas](ideas)**: one page for each opportunity you are thinking about. Add one the moment an idea is worth a second conversation. If you drop it, mark it `Killed` and keep the page, so nobody pitches it again without the reasons.
+- **[Lines](lines)**: the parts of the business that make money. Each line of business gets a folder, each of its products a folder inside it, and each plan to grow one goes in its folder. Add a folder when you start selling something new.
+- **[Investments](investments)**: one page for each bet with money on it, whether you are raising a round or writing a check. Add one as soon as there is a number on the table.
+- **[Calls](calls)**: one short note for each choice you made: what was going on, what you could have done, what you did, and what would make you think again. Each one shows up on the pages it is about. It waits as Proposed until the founder signs it off.
+- **[Files](files)**: the pitch deck, the financial model, the data room, contracts, and research. The pages link here.
+- **[Backlog](backlog)**: the to-do list that carries out the plans, one task each. The pages above say what and why. The tasks say who does what next.
 
-## The one-page docs
+The one-page docs:
 
-- **[The Pitch](<the-pitch.md>)**: the thirty-second version of the business.
+- **[The Pitch](the-pitch.md)**: the business in thirty seconds.
 - **[Roadmap](roadmap.md)**: the next twelve months on one page.
 - **[Team](team.md)**: who does what, and which seats are empty.
 
-## How to use it
+## Where to start
 
-Building a business is mostly making calls, so this folder keeps the three things a company usually loses: the ideas it considered and why they died, the plans as they were meant before they got changed, and the calls it made with the reasons attached. Every idea, plan, and deal carries `decide_by`, the day you have to make a call on it, and the saved views (Raising, Deploying, Live ideas, and Active, next call first) list them by that date. None of it is a to-do list: the to-dos are tasks on the Backlog, and a plan's milestones can be the Backlog's milestones. Write the page before the money moves, and keep it true after: an idea you kill stays here, marked `Killed`, so nobody pitches it again without the reasons.
-
-A call starts as Proposed and waits for the founder; once made, it is Made and signed off, and a call later undone is Overturned by the call that undid it. Its notes say what was going on, what you could have done (doing nothing included), what you did and who made it, what it closed and what it cost, and what would reopen it. A call without that last line is either permanent or arbitrary.
-
-_Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos); `eidos check` keeps it honest, and Metrics warns when a page runs past its reading time or a plan has no `decide_by`._
+1. Fill in the [Thesis](the-business/thesis.md) and [Runway and Limits](the-business/runway-and-limits.md): what the business is, and how long the money lasts.
+2. Add your first line of business to [Lines](lines), or your first idea to [Ideas](ideas), and give it a "decide by" date: the day you have to make a call on it.
