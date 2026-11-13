@@ -8,7 +8,7 @@ Reads for the code, not the dream: the municipal inspector, the engineer, the HO
 
 - **Vocabulary & depth:** code and permit language, precisely. No design reasons, no budget, no household detail.
 - **Decisions:** the sign-off is theirs; the project is not. They pass or fail an inspection; they do not redesign a room.
-- **Surface / hide:** lead with the Permits page, each job's What Gets Done and When It Happens, and What Is Behind the Walls on the House page. Keep What We Want, the Budget, Still to Decide, the Decisions, and every price out of it.
+- **Surface / hide:** lead with the Permits page, each job's What Gets Done and When It Happens, What Is Behind the Walls on the House page, and the Inspection tasks on the On Site board with their results. Keep What We Want, the Budget, Still to Decide, the Decisions, the options, and every price and change order cost out of it.
 - **Focus:** does each job meet the rule it is subject to, and is the inspection it waits on the right one at the right point.
 
 ## Calibration

@@ -1,32 +1,30 @@
 # The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.13.0
+eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
-naming: Title Case
+naming: kebab-case
 
 # Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
-    path: ../Start Here.md
+    path: ../start-here.md
     description: "where to start: what this is, and where things are"
   - title: Schedule
-    path: ../Schedule.md
+    path: ../schedule.md
     description: the whole project on one page, phase by phase, with dates
   - title: Contacts
-    path: ../Contacts.md
+    path: ../contacts.md
     description: everyone on the job, on one page
-  - title: Change Log
-    path: ../Change Log.md
-    description: every change to the scope after the quote, dated, with what it cost
 
 # Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
 # blueprints, "@<tool>/<kind>" for a tool's own folder. Absent, the folder is yours and nothing reads it.
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: The Brief
+  - name: the-brief
+    title: The Brief
     owned_by: "@eidos/collections"
     description: "The big picture, four pages: what you want, the house as it stands, what it can cost, and what the permits require. Every room, job, and pick gets checked against these."
     variants:
@@ -34,35 +32,64 @@ folders:
       - { name: house, template: templates/frame.house.md, description: "the house as it stands: what is there, what stays, what the work has to live with" }
       - { name: budget, template: templates/frame.budget.md, description: "the money, the dates, what matters most, and the hard limits" }
       - { name: permits, template: templates/frame.permits.md, description: "permits, inspections, and the rules the work has to meet" }
-  - name: Rooms
+  - name: rooms
+    title: Rooms
     owned_by: "@eidos/collections"
-    description: "One page per room the project touches, grouped by floor: what the finished room has to do."
+    description: "One page per room the project touches, in folders by floor, then room, then area or fixture as the room needs: what the finished space has to do."
     variants:
       - { name: full, template: templates/room.full.md, description: "the full page for a room", default: true }
       - { name: rough, template: templates/room.rough.md, description: "a rough version: what it is for, what is still to decide, what it has to do; grow into full" }
     label: Floors
-    folder_property: floor
-    folders: [] # one entry per floor (basement, main, upstairs, outside), a name and a description, as they accrue
-  - name: The Work
+    folder_property: location
+    folders: [] # floors are made as the house needs them (basement, main, upstairs, outside), each holding its rooms, and a room its areas
+  - name: the-work
+    title: The Work
     owned_by: "@eidos/collections"
-    description: "One page per job, grouped by phase: what gets done, in what order, and what each job waits on."
+    description: "One page per job, in folders by phase in the order the work runs: what gets done, and what each job waits on."
     variants:
       - { name: full, template: templates/job.full.md, description: "the full page for a job", default: true }
       - { name: rough, template: templates/job.rough.md, description: "a rough version: what it is, what is still to decide, what gets done; grow into full" }
     label: Phases
     folder_property: phase
-    folders: [] # one entry per phase in the order the work runs (demolition, rough-in, finishes), a name and a description, as they accrue
-  - name: Selections
+    folders:
+      - name: demolition
+        title: Demolition
+        description: "Taking out what goes: fixtures, finishes, walls, and the haul-away. Ends when the space is down to what stays."
+      - name: structure
+        title: Structure
+        description: "Framing, beams, openings, and anything the engineer signs: the bones changed before anything runs through them."
+      - name: rough-in
+        title: Rough-In
+        description: Electrical, plumbing, gas, and HVAC run inside the open walls and floors. Ends at the rough-in inspection.
+      - name: close-up
+        title: Close-Up
+        description: "Insulation, drywall, and subfloor: covering what passed inspection. Nothing behind a wall changes after this without opening it again."
+      - name: finishes
+        title: Finishes
+        description: "Floors, cabinets, tile, counters, and paint: the surfaces you will live with."
+      - name: trim-out
+        title: Trim-Out
+        description: Fixtures, devices, appliances, trim, and hardware set in place, then the final inspection and the punch list.
+  - name: selections
+    title: Selections
     owned_by: "@eidos/collections"
-    description: "One page per fixture, finish, or material, grouped by room: what it has to be, and what you chose."
+    description: "One page per fixture, finish, or material, in folders by floor and room as Rooms has them: what it has to be, the options weighed, and what you chose."
     variants:
-      - { name: full, template: templates/selection.full.md, description: "a pick you have made: what it had to be, and what you chose", default: true }
-      - { name: option, template: templates/selection.option.md, description: "a pick you are still weighing; grow into full when you choose it" }
+      - { name: full, template: templates/selection.full.md, description: "a pick: what it has to be, the options weighed against that, and what you chose", default: true }
     label: Rooms
     folder_property: room
-    folders: [] # one entry per room that takes selections, a name and a description, as they accrue
-  - name: Files
-    description: "Drawings, permits, quotes, spec sheets, and site photos the pages link to."
+    folders: [] # the same floor and room folders as Rooms, made as each room takes its first pick
+  - name: files
+    title: Files
+    owned_by: "@assets/files"
+    description: "Drawings, permits, quotes, spec sheets, and site photos, each linked to the rooms, jobs, picks, and tasks it belongs to. A set that travels together (the permit drawings, a bid with its attachments, one day's site photos) is a bundle: a folder of its own inside this one."
+  - name: backlog
+    owned_by: "@backlog/tasks"
+    description: the tasks that serve the blueprints, one markdown file each, the Backlog plugin's
+  - name: change-orders
+    title: Change Orders
+    owned_by: "@records/change-order"
+    description: "One file per change to the scope after the quote was signed: what changed, why, what it cost, and who approved it. The homeowner signs each one off; together they settle the final invoice."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -72,7 +99,7 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's; `none` = no template." }
   # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
@@ -83,57 +110,59 @@ properties:
       canvas:
         show: true
         styles:
-          Draft:
+          Idea:
             color: "#8b9099"
-          Intake:
+          Planned:
             color: "#d3a53c"
+          Approved:
+            color: "#4aa39f"
           In Progress:
             color: "#5f80cf"
           Done:
             color: "#7fae6c"
-          Archived:
-            color: "#8b9099"
-          Deprecated:
+          Cut:
             color: "#cf7b8f"
-          needs-clarification:
-            color: "#5f80cf"
-          maybe:
-            color: "#e08a63"
-          visionary:
-            color: "#4aa39f"
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: floor, type: Text, applies_to: [ Rooms ], meaning: "Which floor the room is on (basement, main, upstairs, outside). Its folder's path, such as a/b; a value that is not its folder warns." }
-    - { name: needs, type: List, applies_to: [ Rooms, The Work, Selections ], meaning: "Rooms, jobs, or picks that have to be done or decided first, as links." }
-    - { name: phase, type: Text, applies_to: [ The Work ], meaning: "Which phase the job runs in (demolition, rough-in, finishes). Its folder's path, such as a/b; a value that is not its folder warns." }
-    - { name: room, type: Text, applies_to: [ Selections ], meaning: "Which room this goes in. Its folder's path, such as a/b; a value that is not its folder warns." }
-    - { name: trade, type: Text, applies_to: [ The Work ], meaning: "Who does the work: electrical, plumbing, framing, finishes." }
-    - { name: cost, type: Number, applies_to: [ The Work, Selections ], meaning: "What it is estimated or quoted at." }
+    - { name: location, type: Text, applies_to: [ rooms ], meaning: "Where in the house: its folder's path, floor then room then area (main/kitchen/island). A value that is not its folder warns." }
+    - { name: needs, type: List, applies_to: [ rooms, the-work, selections ], meaning: "Rooms, jobs, or picks that have to be done or decided first, as links." }
+    - { name: phase, type: Text, applies_to: [ the-work ], meaning: "Which phase the job runs in: its folder's path (rough-in, or rough-in/electrical where a phase is split by trade). A value that is not its folder warns." }
+    - { name: room, type: Text, applies_to: [ selections ], meaning: "Which room this goes in: its folder's path, floor then room, as the room's own folder reads in Rooms (main/kitchen). A value that is not its folder warns." }
+    - { name: trade, type: Text, applies_to: [ the-work ], meaning: "Who does the work: electrical, plumbing, framing, tile, painting." }
+    - { name: cost, type: Number, applies_to: [ the-work, selections ], meaning: "What it is quoted at: the job's signed quote, or the chosen pick's price installed." }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
-vocabulary: []
+vocabulary:
+  - term: change order
+    means: A change to the scope after the quote was signed, with what it costs and why, approved by the homeowner before the work is done
+    not:
+      - "extra: an extra is a change order nobody wrote down, and it is the one the final invoice argues about"
+  - term: punch item
+    means: Something wrong or unfinished found on the walk-through near the end, fixed by the trade and accepted by the homeowner
+    not:
+      - "change order: a punch item finishes what was already agreed and never adds scope or cost"
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  The Brief:
+  the-brief:
     - id: budget
       title: Budget
       summary: null
-      path: Budget.md
+      path: budget.md
     - id: permits
       title: Permits
       summary: null
-      path: Permits.md
+      path: permits.md
     - id: the-house
       title: The House
       summary: null
-      path: The House.md
+      path: the-house.md
     - id: what-we-want
       title: What We Want
       summary: null
-      path: What We Want.md
-  Rooms: []
-  The Work: []
-  Selections: []
+      path: what-we-want.md
+  rooms: []
+  the-work: []
+  selections: []

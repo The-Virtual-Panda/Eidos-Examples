@@ -24,10 +24,24 @@ _What this room deliberately does not get, and which room or which later project
 
 ## The Work and the Picks
 
-_The jobs that touch this room and the selections that go in it, as links: `[Kitchen Electrical](<../../The Work/Rough-In/Kitchen Electrical.md>)`, not just the name._
+_The jobs that touch this room and the selections that go in it, as links: `[Kitchen Electrical](../../the-work/rough-in/kitchen-electrical.md)`, not just the name._
 
 ## Notes and Decisions
 
 _Notes: measurements, the reference photo, the thing the contractor said on site. Decisions: one line each, with the date, never deleted, so nobody reopens a settled question in month four._
 
 <!-- 2026-02-11: Kept the window; moving it cost more than the view was worth. (Homeowner) -->
+
+## Change Orders
+
+_Every change to this room after the quote, listed from the change orders that name it. An approved one is in the price; a proposed one is not, until you sign it off._
+
+<!-- records:list type=change-order -->
+<!-- /records:list -->
+
+## On Site
+
+_The tasks in this room, its punch items among them, listed by the Backlog from its tasks._
+
+<!-- backlog:tasks -->
+<!-- /backlog:tasks -->

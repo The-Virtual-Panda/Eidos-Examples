@@ -14,9 +14,16 @@ _Size, finish, rating, code, the look it has to match, as a numbered list. This 
 
 1. <!-- the first thing it has to be -->
 
+## The Options
+
+_Each option weighed against the list above, one line each, with its price, where it is from, and its spec sheet. The one you choose is signed off as Chosen; the rest are Ruled out and kept, so the reasoning survives the next showroom visit._
+
+<!-- records:section type=option -->
+<!-- /records:section -->
+
 ## What We Chose
 
-_Maker, model, finish, where it is from, what it cost, how long it takes to arrive, and a link to the spec sheet in Files. What it replaced, if anything._
+_The option signed off as Chosen, in full: maker, model, finish, where it is from, what it cost installed, how long it takes to arrive, and a link to the spec sheet in Files. What it replaced, if anything._
 
 ## Not This Pick
 
@@ -31,3 +38,10 @@ _The job that puts it in, and the picks it has to match. Link the pages rather t
 _Notes: the showroom, where the sample is, the reminder. Decisions: one line each, dated, never deleted._
 
 <!-- 2026-03-02: Went with the 30-inch; the 36 blocked the drawer. (Designer) -->
+
+## On Site
+
+_The order for this pick and the task that installs it, listed by the Backlog from its tasks._
+
+<!-- backlog:tasks -->
+<!-- /backlog:tasks -->

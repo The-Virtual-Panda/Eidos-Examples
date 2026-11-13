@@ -1,0 +1,73 @@
+# A canvas, authored in the Eidos MD app. Nodes are sketches, stickies, or blueprints; the canvas holds the flows, frames, and layout, and its comment threads are the Comments plugin's. Documented by `eidos canvas --help`.
+
+title: The Order of the Work
+pages:
+  - id: overview
+    title: Overview
+    nodes:
+      - id: heading
+        text:
+          text: "The order of the work: each phase is a folder in The Work, each gate is a date on the Schedule and a task on the On Site board."
+          size: large
+      - id: permit
+        sticky:
+          text: "Permits issued\n\nNothing is opened up before the permit is posted on site. See the Permits page."
+          color: pink
+      - id: demolition
+        sticky:
+          text: "Demolition\n\nTake out what goes, down to what stays."
+          color: blue
+      - id: structure
+        sticky:
+          text: "Structure\n\nFraming, beams, and openings, signed by the engineer where the permit asks."
+          color: blue
+      - id: rough-in
+        sticky:
+          text: "Rough-In\n\nElectrical, plumbing, gas, and HVAC inside the open walls."
+          color: blue
+      - id: rough-insp
+        sticky:
+          text: "Rough-in inspection\n\nThe walls stay open until it passes. A failed item is fixed and booked again."
+          color: pink
+      - id: close-up
+        sticky:
+          text: "Close-Up\n\nInsulation, drywall, subfloor. After this, a change behind a wall means opening it again."
+          color: blue
+      - id: finishes
+        sticky:
+          text: "Finishes\n\nFloors, cabinets, tile, counters, paint."
+          color: blue
+      - id: trim-out
+        sticky:
+          text: "Trim-Out\n\nFixtures, devices, appliances, trim, hardware."
+          color: blue
+      - id: final-insp
+        sticky:
+          text: "Final inspection\n\nThe permit is closed out."
+          color: pink
+      - id: punch
+        sticky:
+          text: "Punch walk\n\nYou walk every room; each item goes on the Punch List board until you accept it."
+          color: pink
+    edges:
+      - { from: permit, to: demolition }
+      - { from: demolition, to: structure }
+      - { from: structure, to: rough-in }
+      - { from: rough-in, to: rough-insp }
+      - { from: rough-insp, to: close-up }
+      - { from: close-up, to: finishes }
+      - { from: finishes, to: trim-out }
+      - { from: trim-out, to: final-insp }
+      - { from: final-insp, to: punch }
+    layout:
+      heading: { x: 0, y: -160 }
+      permit: { x: 0, y: 0 }
+      demolition: { x: 260, y: 0 }
+      structure: { x: 520, y: 0 }
+      rough-in: { x: 780, y: 0 }
+      rough-insp: { x: 1040, y: 0 }
+      close-up: { x: 1040, y: 300 }
+      finishes: { x: 780, y: 300 }
+      trim-out: { x: 520, y: 300 }
+      final-insp: { x: 260, y: 300 }
+      punch: { x: 0, y: 300 }

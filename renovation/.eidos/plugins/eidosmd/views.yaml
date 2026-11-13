@@ -1,0 +1,20 @@
+# eidosmd saved views shared by everyone in this project, committed with it. Edit by hand or from the Eidos MD app (Save as view); eidos views lists them.
+# Each view: id (V- and four characters, never changed), name (as the sidebar lists it), page (what it lists: /p/backlog, /p/backlog/backlog, /p/backlog/drafts, /c/<collection>),
+# query (the page's address it keeps: its filters and its sort). A person's own views are views in their local.yaml beside this file, never committed.
+views:
+  - id: V-R7QN
+    name: Rough-In Still Open
+    page: /p/backlog/backlog
+    query: phase=Rough-In&status=To+Do&status=Scheduled&status=In+Progress&status=Waiting
+  - id: V-K4TB
+    name: Inspections to Book or Pass
+    page: /p/backlog/backlog
+    query: type=inspection&status=To+Do&status=Scheduled&status=Waiting
+  - id: V-M2WX
+    name: Orders Not Yet In
+    page: /p/backlog/backlog
+    query: type=order&status=To+Do&status=Scheduled&status=In+Progress&status=Waiting
+  - id: V-P8HD
+    name: Fixed, Waiting on Your Walk
+    page: /p/backlog/backlog
+    query: type=punch&status=Fixed

@@ -1,0 +1,181 @@
+# Backlog (backlog) settings shared by everyone in this project. Edit here, or on the Plugins page.
+statuses:
+  - To Do
+  - Scheduled
+  - In Progress
+  - Waiting
+  - Done
+  - Open
+  - Fixed
+  - Accepted
+columns:
+  - name: To Do
+    statuses:
+      - To Do
+  - name: Scheduled
+    statuses:
+      - Scheduled
+  - name: In Progress
+    statuses:
+      - In Progress
+  - name: Waiting
+    statuses:
+      - Waiting
+  - name: Done
+    statuses:
+      - Done
+default_status: To Do
+status_colors:
+  Waiting: orange
+  Accepted: green
+status_categories:
+  To Do: todo
+  Scheduled: todo
+  In Progress: in_progress
+  Waiting: in_progress
+  Done: done
+  Open: todo
+  Fixed: in_progress
+  Accepted: done
+priorities:
+  - High
+  - Medium
+  - Low
+priority_icons: {}
+priority_colors: {}
+column_cards: 7
+forms_section: true
+milestones: []
+properties:
+  - name: phase
+    type: Text
+    options:
+      - Demolition
+      - Structure
+      - Rough-In
+      - Close-Up
+      - Finishes
+      - Trim-Out
+    meaning: The phase of The Work it belongs to, in the order the work runs
+    applies_to:
+      - default
+      - inspection
+      - order
+    filter: true
+    filter_in_use: true
+    card: true
+    table: true
+  - name: trade
+    type: Text
+    meaning: "Who does it or fixes it: electrical, plumbing, tile, painting"
+    applies_to:
+      - default
+      - inspection
+      - punch
+    filter: true
+    filter_in_use: true
+    card: true
+    table: true
+builtin_properties: []
+sections:
+  - title: Description
+    type: text
+    meaning: what gets done, where, and which job page it comes from
+  - title: Done When
+    type: checklist
+    meaning: what has to be true before it is marked done, one line each
+types:
+  - name: default
+    title: Task
+    icon: circle
+    color: gray
+  - name: inspection
+    title: Inspection
+    icon: check
+    color: teal
+    sections:
+      - title: What Is Inspected
+        type: text
+        meaning: the work, the rule it is checked against, and the permit it falls under
+      - title: Result
+        type: text
+        meaning: passed, failed, or partial, the inspector's notes, and what has to be
+          corrected before it is booked again
+  - name: order
+    title: Order
+    icon: box
+    color: orange
+    sections:
+      - title: What Is Ordered
+        type: text
+        meaning: the pick it is for, how many, the supplier, and the order number
+      - title: Received
+        type: checklist
+        meaning: "what is checked when it arrives: the right model and finish, the
+          count, no damage"
+  - name: punch
+    title: Punch Item
+    icon: flag
+    color: red
+    sections:
+      - title: What Is Wrong
+        type: text
+        meaning: what you saw and exactly where, with a photo from Files
+      - title: Fixed When
+        type: checklist
+        meaning: what has to be true for you to accept it
+    prefix: P
+link_types:
+  - name: blocks
+    outward: blocks
+    inward: is blocked by
+  - name: relates
+    outward: relates to
+    inward: relates to
+  - name: duplicates
+    outward: duplicates
+    inward: is duplicated by
+  - name: clones
+    outward: clones
+    inward: is cloned by
+boards:
+  - name: site
+    title: On Site
+    statuses:
+      - To Do
+      - Scheduled
+      - In Progress
+      - Waiting
+      - Done
+    types:
+      - default
+      - inspection
+      - order
+    properties:
+      - phase
+      - trade
+  - name: punch
+    title: Punch List
+    folder: punch
+    statuses:
+      - Open
+      - Fixed
+      - Accepted
+    types:
+      - punch
+    properties:
+      - trade
+    columns:
+      - name: Open
+        statuses:
+          - Open
+      - name: Fixed
+        statuses:
+          - Fixed
+      - name: Accepted
+        statuses:
+          - Accepted
+    default_status: Open
+sprints: false
+setup_offered: false
+milestone_properties: []

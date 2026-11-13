@@ -1,0 +1,59 @@
+# Records (records) settings shared by everyone in this project. Edit here, or on the Plugins page.
+types:
+  - name: change-order
+    title: Change Orders
+    label: CO{n}
+    mode: file
+    sidebar: true
+    folder: change-orders
+    numbering: ids
+    id_prefix: CO
+    statuses:
+      - name: Proposed
+        category: open
+      - name: Approved
+        category: closed
+      - name: Declined
+        category: cancelled
+    default_status: Proposed
+    sign_off: true
+    listed: true
+    tasks: true
+    fields:
+      - name: cost
+        type: number
+        required: true
+      - name: reason
+        type: list
+        options:
+          - Owner request
+          - Hidden condition
+          - Code
+          - Design change
+        required: true
+        meanings:
+          Owner request: You asked for something the signed quote does not include
+          Hidden condition: "The house turned out different behind the wall than anyone
+            could see: rot, old wiring, a joist cut through"
+          Code: The inspector or the code requires it
+          Design change: A drawing or a pick changed after the quote
+  - name: option
+    title: Options
+    label: O{n}
+    mode: inline
+    statuses:
+      - name: Considering
+        category: open
+      - name: Chosen
+        category: closed
+      - name: Ruled out
+        category: cancelled
+    default_status: Considering
+    sign_off: true
+    fields:
+      - name: price
+        type: number
+      - name: source
+        type: text
+      - name: spec
+        type: link

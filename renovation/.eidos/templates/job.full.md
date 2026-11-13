@@ -35,3 +35,17 @@ _The cabinets delivered, the panel upgraded, the room emptied. Anything this job
 _Notes: the quote, the contractor's number, the site photo. Decisions: one line each, dated, never deleted._
 
 <!-- 2026-02-20: Added the subpanel to this job; the electrician would not split the trip. (Contractor) -->
+
+## Change Orders
+
+_Every change to this job after the quote, listed from the change orders that name it. An approved one is in the price; a proposed one is not, until you sign it off._
+
+<!-- records:list type=change-order -->
+<!-- /records:list -->
+
+## On Site
+
+_The tasks that carry this job out, the inspection it waits on, and the orders it needs, listed by the Backlog from its tasks._
+
+<!-- backlog:tasks -->
+<!-- /backlog:tasks -->
