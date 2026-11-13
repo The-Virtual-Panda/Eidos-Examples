@@ -1,0 +1,19 @@
+# Records (records) settings shared by everyone in this project. Edit here, or on the Plugins page.
+types:
+  - name: highlight
+    title: Highlights
+    label: H{n}
+    mode: inline
+    statuses:
+      - name: Kept
+        category: open
+      - name: Linked
+        category: closed
+      - name: Dropped
+        category: cancelled
+    default_status: Kept
+    fields:
+      - name: where
+        type: text
+      - name: dot
+        type: link

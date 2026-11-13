@@ -20,7 +20,7 @@ _Daily, weekly, yearly: what each note is for and when you write it. The weekly 
 
 ## Naming and Linking Up
 
-_How notes are named, how a note finds its map (`up`), and what a map is for. The habits that keep Atlas findable without folders._
+_How notes are named, how a note finds its map (`up`), and what a map is for. The habits that keep Atlas findable when its folders say only what kind of note each is (a dot, a map, a source), never what it is about._
 
 ## What the Agent May Do
 

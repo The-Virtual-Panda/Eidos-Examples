@@ -1,7 +1,7 @@
 # The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.13.0
+eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
@@ -25,13 +25,24 @@ folders:
       - { name: practice, template: templates/frame.practice.md, description: "how it runs: where things land, the daily and weekly rhythm, naming and linking, what the agent may do" }
   - name: Atlas
     owned_by: "@eidos/collections"
-    description: "What you know: one note per idea, source, or thing, and maps that gather them. Flat on purpose; a note finds its place by linking up to a map, not by its folder."
+    description: "What you know, in three kinds of note: Dots (one idea, thing, or person each), Maps that gather them, and Sources you read, watched, or heard. A folder says what kind of note it is, never its topic; a note finds its topic by linking up to a map."
     variants:
       - { name: note, template: templates/note.note.md, description: "a title and nothing more, on purpose", default: true }
       - { name: map, template: templates/note.map.md, description: "a map of content: the notes it gathers, as links, in the order to read them" }
+      - { name: source, template: templates/note.source.md, description: "a source: what it says, and its highlights, each one on its way to a dot" }
+    folders:
+      - name: Dots
+        description: One note per idea, thing, statement, or person. Add a folder beneath for a kind of dot you keep many of (People, Statements).
+        default_variant: note
+      - name: Maps
+        description: "Maps of content: notes about notes, each gathering the dots and sources on one topic."
+        default_variant: map
+      - name: Sources
+        description: "One note per book, article, talk, video, or podcast: what it says, and the highlights worth keeping. Add a folder beneath for a kind you keep many of (Books, Talks)."
+        default_variant: source
   - name: Calendar
     owned_by: "@eidos/collections"
-    description: "When: dated notes, grouped by series. Daily, Weekly, and Yearly are the idea; add a series for any other run of dated notes (meetings, sermons, a trip)."
+    description: "When: dated notes, grouped by series. Daily, Weekly, and Yearly are the rhythm; every other run of dated notes (meetings, sermons, a trip) is a folder under Logs."
     variants:
       - { name: day, template: templates/entry.day.md, description: "a day: what it is for, and what happened", default: true }
       - { name: week, template: templates/entry.week.md, description: "a week: the look back, and what is ahead" }
@@ -39,7 +50,20 @@ folders:
       - { name: log, template: templates/entry.log.md, description: "a dated note in any other series: what was said, what to carry forward" }
     label: Series
     folder_property: series
-    folders: [] # one entry per series (Daily, Weekly, Yearly, or one of your own), a name and a description, as they accrue
+    folders:
+      - name: Daily
+        description: One note a day.
+        default_variant: day
+      - name: Weekly
+        description: "One note a week: the look back, where an effort's heat changes."
+        default_variant: week
+      - name: Yearly
+        description: "One note a year: its themes, and the look back as it closes."
+        default_variant: year
+      - name: Logs
+        description: "Every other run of dated notes, a folder each beneath (Meetings, Sermons, a trip), so a log's series is its path: Logs/Meetings."
+        default_variant: log
+      # one entry per series (Daily, Weekly, Yearly, or one of your own), a name and a description, as they accrue
   - name: Efforts
     owned_by: "@eidos/collections"
     description: "What you are doing: one note per effort, its heat in status. The working notes live in Atlas; the effort says what they are for."
@@ -47,7 +71,8 @@ folders:
       - { name: full, template: templates/effort.full.md, description: "the full page for an effort", default: true }
       - { name: quick, template: templates/effort.quick.md, description: "what it is for and what done looks like; grow into full when it earns a finish line" }
   - name: Files
-    description: "Images, PDFs, and files the notes link to."
+    owned_by: "@assets/files"
+    description: "Images, PDFs, audio, and files the notes link to: the vault's attachment folder, kept by the Assets plugin."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -57,7 +82,7 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's; `none` = no template." }
   # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
@@ -85,10 +110,33 @@ properties:
     - { name: series, type: Text, applies_to: [ Calendar ], meaning: "Which run of dated notes this belongs to (Daily, Weekly, Yearly, or one of your own). Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: up, type: List, applies_to: [ Atlas, Efforts ], meaning: "The maps this note sits under, as links. The way up." }
     - { name: date, type: Date, applies_to: [ Calendar ], required: true, meaning: "The day, week, or year this note is for." }
+    - { name: author, type: List, applies_to: [ Atlas ], meaning: "A source's author, speaker, or maker, as links to their dots where they have one." }
+    - { name: url, type: Text, applies_to: [ Atlas ], meaning: "Where a source lives online, when it does." }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
-vocabulary: []
+vocabulary:
+  - term: Dot
+    means: An Atlas note that holds one idea, thing, statement, or person.
+    not: []
+  - term: Map
+    means: "A note about notes: a list of the dots and sources on one topic, in the order to read them."
+    not:
+      - "folder: a folder says what kind of note it is; a map says what it is about, and one note can sit under many maps"
+  - term: Source
+    means: "An Atlas note for something you took in: a book, an article, a talk, a video, a podcast."
+    not: []
+  - term: Highlight
+    means: A passage kept from a source, labelled H1, H2, and so on, with the dot it became once it has one.
+    not: []
+  - term: Effort
+    means: Something you are doing, with a heat; it may or may not have a finish line.
+    not:
+      - "project: a project ends; an effort can be Ongoing for years, and says so"
+  - term: Heat
+    means: "An effort's status: On (this week), Ongoing (always), Simmering (soon), Sleeping (not now), Archived (over)."
+    not:
+      - "priority: heat is how much of your attention an effort has now, not how much it matters"
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
