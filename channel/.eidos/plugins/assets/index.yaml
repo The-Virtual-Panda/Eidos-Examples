@@ -1,6 +1,6 @@
 # What the Assets plugin knows of each file beyond the file system: a title, a description, and the blueprints (by id), tasks (by name), and URLs it is linked to, and for a bundle the file it opens on. Keyed by the file's or the bundle's path from the project; a rename through the plugin rewrites the key.
 files:
-  Files/Brand Kit:
+  files/brand-kit:
     title: Brand Kit
     description: "The logo, the fonts, the color swatches, the intro and outro, the
       lower thirds, the music bed, and the thumbnail template: the files the Brand

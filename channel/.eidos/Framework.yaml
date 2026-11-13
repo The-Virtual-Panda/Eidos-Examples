@@ -4,21 +4,21 @@
 eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
-naming: Title Case
+naming: kebab-case
 
 # Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
-    path: ../Start Here.md
+    path: ../start-here.md
     description: "where to start: what this is, and where things are"
   - title: Content Calendar
-    path: ../Content Calendar.md
+    path: ../content-calendar.md
     description: what ships when, on one page
   - title: Brand Kit
-    path: ../Brand Kit.md
+    path: ../brand-kit.md
     description: "the look and the sound: colors, fonts, intro, outro, lower thirds"
   - title: Rate Card
-    path: ../Rate Card.md
+    path: ../rate-card.md
     description: what a placement costs, and what a sponsor gets
 
 # Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
@@ -26,7 +26,8 @@ top_level:
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: The Channel
+  - name: the-channel
+    title: The Channel
     owned_by: "@eidos/collections"
     description: "The channel itself, four pages: who watches, what the formats are, how it sounds, and how it makes money. Every video, post, and page gets checked against these."
     variants:
@@ -34,7 +35,8 @@ folders:
       - { name: format, template: templates/frame.format.md, description: "the formats, the title and thumbnail rules, the schedule, the platforms" }
       - { name: voice, template: templates/frame.voice.md, description: "who the viewer meets on camera, how it sounds, and what the channel never does" }
       - { name: market, template: templates/frame.market.md, description: "the niche, the channels next to it, and how it makes money" }
-  - name: Videos
+  - name: videos
+    title: Videos
     owned_by: "@eidos/collections"
     description: "One page per video, Short, stream, or episode, grouped by series, and a series by season where it runs in seasons."
     variants:
@@ -46,7 +48,8 @@ folders:
     label: Series
     folder_property: series
     folders: [] # one entry per series, a name and a description, as they accrue; a series that runs in seasons holds a folder per season
-  - name: Posts
+  - name: posts
+    title: Posts
     owned_by: "@eidos/collections"
     description: "The written side: one page per post or newsletter issue, grouped by the same series as the videos."
     variants:
@@ -56,18 +59,22 @@ folders:
     label: Series
     folder_property: series
     folders: [] # the same series, and seasons, as the videos, as they accrue
-  - name: Pages
+  - name: pages
+    title: Pages
     owned_by: "@eidos/collections"
     description: "The site: one page each, flat. About, sponsors, merch, the newsletter; the part of the channel that is not on a platform."
     variants:
       - { name: page, template: templates/page.page.md, description: "a page on the site: what it is for, and what a visitor does there", default: true }
-  - name: Files
+  - name: files
+    title: Files
     owned_by: "@assets/files"
     description: "Thumbnails, scripts, b-roll lists, sponsor decks, and the brand kit, kept by the Assets plugin: each file linked to the videos, posts, and pages it belongs to."
-  - name: Production
+  - name: production
+    title: Production
     owned_by: "@backlog/tasks"
     description: "The production pipeline: one task per piece of work that gets a video, post, or page live (a production, a thumbnail, a booking, a fact check, a sponsor deliverable), on a board from Up Next to Live. The Backlog plugin's."
-  - name: Sponsorships
+  - name: sponsorships
+    title: Sponsorships
     owned_by: "@records/sponsorships"
     description: "The brand deals: one record per sponsorship (the brand, the placement, the rate, the usage, the exclusivity), Offered or In Talks until the creator books or declines it, and listed on the videos that carry it. The Records plugin's."
 
@@ -85,9 +92,9 @@ properties:
     - name: status
       type: Text
       applies_to:
-        - Videos
-        - Posts
-        - Pages
+        - videos
+        - posts
+        - pages
       options: [ Idea, Greenlit, In Production, Scheduled, Published, Shelved ]
       meaning: "Where this stands: Idea (pitched, not committed), Greenlit (it will be made), In Production (its work is on the board in Production), Scheduled (finished, with a date), Published (live), or Shelved (not made, or taken down, the reason kept in Notes and Decisions)."
       canvas:
@@ -108,12 +115,12 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once.", eidosmd: { new: today } }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change.", eidosmd: { new: today } }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: series, type: Text, applies_to: [ Videos, Posts ], meaning: "Which series this belongs to. Its folder's path, such as a/b; a value that is not its folder warns." }
-    - { name: watch_first, type: List, applies_to: [ Videos, Posts ], meaning: "Videos or posts a viewer should see before this one, as links." }
-    - { name: publish_date, type: Date, applies_to: [ Videos, Posts ], meaning: "When it went live, or goes live." }
-    - { name: runtime, type: Number, applies_to: [ Videos ], meaning: "How long it runs, in minutes." }
-    - { name: format, type: Text, applies_to: [ Videos ], meaning: "The format it follows, named as the Formats page names it. A video that fits none is a new format or a mistake." }
-    - { name: guests, type: List, applies_to: [ Videos, Posts ], meaning: "Who appears besides the host: a guest, a co-host, a collaborator, by name." }
+    - { name: series, type: Text, applies_to: [ videos, posts ], meaning: "Which series this belongs to. Its folder's path, such as a/b; a value that is not its folder warns." }
+    - { name: watch_first, type: List, applies_to: [ videos, posts ], meaning: "Videos or posts a viewer should see before this one, as links." }
+    - { name: publish_date, type: Date, applies_to: [ videos, posts ], meaning: "When it went live, or goes live." }
+    - { name: runtime, type: Number, applies_to: [ videos ], meaning: "How long it runs, in minutes." }
+    - { name: format, type: Text, applies_to: [ videos ], meaning: "The format it follows, named as the Formats page names it. A video that fits none is a new format or a mistake." }
+    - { name: guests, type: List, applies_to: [ videos, posts ], meaning: "Who appears besides the host: a guest, a co-host, a collaborator, by name." }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
@@ -122,7 +129,7 @@ vocabulary:
     means: A recurring shape a video takes, with its own beats and runtime, declared on the Formats page.
     not:
       - "genre: a genre is the kind of content a niche holds; a format is how one video in it is built"
-    see: ../The Channel/Formats.md
+    see: ../the-channel/formats.md
   - term: series
     means: A run of videos and posts under one name, a folder of Videos and of Posts, holding a folder per season where it runs in seasons.
     not:
@@ -138,23 +145,23 @@ vocabulary:
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  The Channel:
+  the-channel:
     - id: audience
       title: Audience
       summary: null
-      path: Audience.md
+      path: audience.md
     - id: formats
       title: Formats
       summary: null
-      path: Formats.md
+      path: formats.md
     - id: niche-and-money
       title: Niche and Money
       summary: null
-      path: Niche and Money.md
+      path: niche-and-money.md
     - id: voice
       title: Voice
       summary: null
-      path: Voice.md
-  Videos: []
-  Posts: []
-  Pages: []
+      path: voice.md
+  videos: []
+  posts: []
+  pages: []

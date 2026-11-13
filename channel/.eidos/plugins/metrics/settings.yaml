@@ -42,32 +42,32 @@ near-duplicate: true
 near_duplicate_similarity: 0.7
 near_duplicate_min_words: 25
 budgets:
-  - collection: The Channel
+  - collection: the-channel
     minutes: 5
-  - collection: Videos
+  - collection: videos
     variant: full
     minutes: 6
-  - collection: Videos
+  - collection: videos
     variant: stream
     minutes: 5
-  - collection: Videos
+  - collection: videos
     variant: episode
     minutes: 5
-  - collection: Videos
+  - collection: videos
     variant: short
     minutes: 1
-  - collection: Videos
+  - collection: videos
     variant: pitch
     minutes: 2
-  - collection: Posts
+  - collection: posts
     variant: full
     minutes: 4
-  - collection: Posts
+  - collection: posts
     variant: companion
     minutes: 2
-  - collection: Posts
+  - collection: posts
     variant: newsletter
     minutes: 3
-  - collection: Pages
+  - collection: pages
     variant: page
     minutes: 3

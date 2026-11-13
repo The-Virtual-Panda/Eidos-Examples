@@ -4,11 +4,11 @@
 views:
   - id: V-R7SC
     name: Release Schedule
-    page: /c/Videos
+    page: /c/videos
     query: status=Greenlit&status=In+Production&status=Scheduled&sort=publish_date
   - id: V-ID3A
     name: Idea Bank
-    page: /c/Videos
+    page: /c/videos
     query: status=Idea&sort=-date_modified
   - id: V-TH8N
     name: Thumbnails and Graphics

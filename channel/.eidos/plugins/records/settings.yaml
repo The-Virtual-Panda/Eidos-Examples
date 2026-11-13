@@ -4,7 +4,7 @@ types:
     title: Sponsorships
     mode: file
     sidebar: true
-    folder: Sponsorships
+    folder: sponsorships
     numbering: ids
     id_prefix: SP
     statuses:
