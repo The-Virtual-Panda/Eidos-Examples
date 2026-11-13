@@ -5,7 +5,7 @@ types:
     label: R{n}
     mode: file
     sidebar: true
-    folder: Rulings
+    folder: rulings
     numbering: ids
     id_prefix: R
     statuses:

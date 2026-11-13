@@ -4,21 +4,21 @@
 eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
-naming: Title Case
+naming: kebab-case
 
 # Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
-    path: ../Start Here.md
+    path: ../start-here.md
     description: "where to start: what this is, and where things are"
   - title: History
-    path: ../History.md
+    path: ../history.md
     description: the world's past in order, on one page
   - title: Player's Guide
-    path: ../Player's Guide.md
+    path: ../player-s-guide.md
     description: "what every player may read: the handout"
   - title: Names
-    path: ../Names.md
+    path: ../names.md
     description: how people and places are named, and how to say them
 
 # Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
@@ -26,53 +26,61 @@ top_level:
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: The World
+  - name: the-world
+    title: The World
     owned_by: "@eidos/collections"
     description: "The setting itself, four pages: what it is about, how it feels, how it works, and who plays in it. Every place, faction, character, and arc gets checked against these."
     variants:
-      - { name: premise, template: templates/frame.premise.md, description: "what the world is about, and what it is not", default: true }
-      - { name: tone, template: templates/frame.tone.md, description: "how it feels, and the lines the table and the prose keep" }
-      - { name: laws, template: templates/frame.laws.md, description: "how the world works, and what can never happen" }
-      - { name: table, template: templates/frame.table.md, description: "who plays, how sessions run, and what the players know" }
-  - name: Places
+      - { name: premise, title: Premise, template: templates/frame.premise.md, description: "what the world is about, and what it is not", default: true }
+      - { name: tone, title: Tone, template: templates/frame.tone.md, description: "how it feels, and the lines the table and the prose keep" }
+      - { name: laws, title: How It Works, template: templates/frame.laws.md, description: "how the world works, and what can never happen" }
+      - { name: table, title: The Table, template: templates/frame.table.md, description: "who plays, how sessions run, and what the players know" }
+  - name: places
+    title: Places
     owned_by: "@eidos/collections"
     description: "One page per place, in folders as deep as the world goes: a land, its regions, their settlements, the sites inside them. A land's or a region's own page sits beside the folder that holds what is in it."
     variants:
-      - { name: full, template: templates/place.full.md, description: "the full page for a place", default: true }
-      - { name: sketch, template: templates/place.sketch.md, description: "a sketch: why it exists, what is still to decide, what is true; grow into full" }
-      - { name: site, template: templates/place.site.md, description: "a site inside a place, keyed by area: a dungeon, a temple, an inn, a ship" }
+      - { name: full, title: Full page, template: templates/place.full.md, description: "the full page for a place", default: true }
+      - { name: sketch, title: Sketch, template: templates/place.sketch.md, description: "a sketch: why it exists, what is still to decide, what is true; grow into full" }
+      - { name: site, title: Site, template: templates/place.site.md, description: "a site inside a place, keyed by area: a dungeon, a temple, an inn, a ship" }
     label: Regions
     folder_property: region
     folders: [] # one entry per region, a name and a description, as they accrue
-  - name: Factions
+  - name: factions
+    title: Factions
     owned_by: "@eidos/collections"
     description: "One page per power in the world: what it wants, what it holds, what it does next."
     variants:
-      - { name: full, template: templates/faction.full.md, description: "the full page for a faction", default: true }
-      - { name: sketch, template: templates/faction.sketch.md, description: "a sketch: why it exists, what is still to decide, what is true; grow into full" }
-  - name: Characters
+      - { name: full, title: Full page, template: templates/faction.full.md, description: "the full page for a faction", default: true }
+      - { name: sketch, title: Sketch, template: templates/faction.sketch.md, description: "a sketch: why it exists, what is still to decide, what is true; grow into full" }
+  - name: characters
+    title: Characters
     owned_by: "@eidos/collections"
     description: "One page per person the party may meet."
     variants:
-      - { name: full, template: templates/character.full.md, description: "the full page for a character", default: true }
-      - { name: sketch, template: templates/character.sketch.md, description: "a sketch: why they exist, what is still to decide, what is true; grow into full" }
-  - name: Arcs
+      - { name: full, title: Full page, template: templates/character.full.md, description: "the full page for a character", default: true }
+      - { name: sketch, title: Sketch, template: templates/character.sketch.md, description: "a sketch: why they exist, what is still to decide, what is true; grow into full" }
+  - name: arcs
+    title: Arcs
     owned_by: "@eidos/collections"
     description: "One page per story arc, in a folder per campaign; the sessions played in an arc sit in a folder of their own beside the arc's page, one page each."
     variants:
-      - { name: full, template: templates/arc.full.md, description: "the full page for an arc", default: true }
-      - { name: sketch, template: templates/arc.sketch.md, description: "a sketch: why it exists, what is still to decide, the beats; grow into full" }
-      - { name: session, template: templates/arc.session.md, description: "one session as it was played: the recap, what changed, what the party learned, what is left open" }
+      - { name: full, title: Full page, template: templates/arc.full.md, description: "the full page for an arc", default: true }
+      - { name: sketch, title: Sketch, template: templates/arc.sketch.md, description: "a sketch: why it exists, what is still to decide, the beats; grow into full" }
+      - { name: session, title: Session, template: templates/arc.session.md, description: "one session as it was played: the recap, what changed, what the party learned, what is left open" }
     label: Campaigns
     folder_property: campaign
     folders: [] # one entry per campaign run in this world, a name and a description, as they accrue
-  - name: Files
+  - name: files
+    title: Files
     owned_by: "@assets/files"
     description: "Maps, handouts, reference art, and character sheets the pages link to. A map with a player's copy and a GM's copy, or a handout in several pages, is one bundle."
-  - name: Prep
+  - name: prep
+    title: Prep
     owned_by: "@backlog/tasks"
     description: "Session prep, one task per thing to ready before the table meets: a session to prep, a map to draw, a handout to print. Work, not canon: what a session settles is written into the pages and the rulings."
-  - name: Rulings
+  - name: rulings
+    title: Rulings
     owned_by: "@records/rulings"
     description: "Canon rulings, one file each: a call the GM made on what is true in the world or how a rule reads at this table, signed off once it is canon, overturned rather than deleted. Each lists itself on the pages it touches."
 
@@ -106,10 +114,10 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: region, type: Text, applies_to: [ Places ], meaning: "Where the place is: its folder's path from the widest land in, such as Ostmark/The Fens/Harrow. A value that is not its folder warns." }
-    - { name: needs, type: List, applies_to: [ Places, Factions, Characters, Arcs ], meaning: "Pages this one needs in place to make sense, as links." }
-    - { name: campaign, type: Text, applies_to: [ Arcs ], meaning: "Which campaign the page belongs to, and for a session which arc: its folder's path, such as The Drowned Crown/The Silted Harbor. A value that is not its folder warns." }
-    - { name: revealed, type: Checkbox, applies_to: [ Places, Factions, Characters, Arcs, top_level ], meaning: "Have the players met this yet? The Player role reads only what is revealed: a page, a top-level doc, a secret." }
+    - { name: region, type: Text, applies_to: [ places ], meaning: "Where the place is: its folder's path from the widest land in, such as ostmark/the-fens/harrow. A value that is not its folder warns." }
+    - { name: needs, type: List, applies_to: [ places, factions, characters, arcs ], meaning: "Pages this one needs in place to make sense, as links." }
+    - { name: campaign, type: Text, applies_to: [ arcs ], meaning: "Which campaign the page belongs to, and for a session which arc: its folder's path, such as the-drowned-crown/the-silted-harbor. A value that is not its folder warns." }
+    - { name: revealed, type: Checkbox, applies_to: [ places, factions, characters, arcs, top_level ], meaning: "Have the players met this yet? The Player role reads only what is revealed: a page, a top-level doc, a secret." }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
@@ -137,24 +145,24 @@ vocabulary:
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  The World:
+  the-world:
     - id: how-it-works
       title: How It Works
       summary: null
-      path: How It Works.md
+      path: how-it-works.md
     - id: premise
       title: Premise
       summary: null
-      path: Premise.md
+      path: premise.md
     - id: the-table
       title: The Table
       summary: null
-      path: The Table.md
+      path: the-table.md
     - id: tone
       title: Tone
       summary: null
-      path: Tone.md
-  Places: []
-  Factions: []
-  Characters: []
-  Arcs: []
+      path: tone.md
+  places: []
+  factions: []
+  characters: []
+  arcs: []
