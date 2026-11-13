@@ -48,6 +48,19 @@ installed:
     pieces:
       - root
     date: 2026-09-19
+icons:
+  folders:
+    ideas:
+      icon: lucide:lightbulb
+    lines:
+      icon: lucide:layers
+    investments:
+      icon: lucide:hand-coins
+    the-business:
+      icon: lucide:building
+  project:
+    icon: lucide:trending-up
+    color: green
 ids:
   scheme: adaptive
   padding: 0
