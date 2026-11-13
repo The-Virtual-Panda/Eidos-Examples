@@ -47,3 +47,24 @@ installed:
     pieces:
       - root
     date: 2026-09-19
+icons:
+  folders:
+    about-this-vault:
+      icon: lucide:info
+    atlas:
+      icon: lucide:globe
+    atlas/dots:
+      icon: lucide:circle-dot
+    atlas/maps:
+      icon: lucide:map
+    atlas/sources:
+      icon: lucide:book-open
+    calendar:
+      icon: lucide:calendar
+    calendar/logs:
+      icon: lucide:notebook-pen
+    efforts:
+      icon: lucide:flame
+  project:
+    icon: lucide:brain
+    color: purple
