@@ -48,3 +48,16 @@ installed:
     pieces:
       - root
     date: 2026-09-19
+icons:
+  folders:
+    the-channel:
+      icon: lucide:compass
+    videos:
+      icon: lucide:clapperboard
+    posts:
+      icon: lucide:pen-line
+    pages:
+      icon: lucide:globe
+  project:
+    icon: lucide:tv
+    color: red
