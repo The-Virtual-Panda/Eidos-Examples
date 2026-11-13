@@ -43,6 +43,23 @@ check:
   warn_section_order: true
   warn_unknown_properties: true
 installed: []
+icons:
+  folders:
+    the-game:
+      icon: lucide:compass
+    mechanics:
+      icon: lucide:cog
+    levels:
+      icon: lucide:map
+    characters:
+      icon: lucide:users
+    characters/enemies:
+      icon: lucide:skull
+    items:
+      icon: lucide:gem
+  project:
+    icon: lucide:gamepad-2
+    color: purple
 ids:
   scheme: adaptive
   padding: 0
