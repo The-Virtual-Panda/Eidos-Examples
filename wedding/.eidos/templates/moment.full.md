@@ -31,7 +31,7 @@ _What this moment deliberately does not do, and which moment does it instead. Th
 
 ## Who Is On
 
-_The wedding party and family with a part to play, and the vendors delivering it. Link vendors, `[Photographer](<../../../Vendors/Photo and Video/Photographer.md>)`, rather than just naming them._
+_The wedding party and family with a part to play, and the vendors delivering it. Link vendors, `[Photographer](../../../vendors/photo-and-video/photographer.md)`, rather than just naming them._
 
 ## What It Needs
 

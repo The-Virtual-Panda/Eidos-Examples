@@ -4,15 +4,15 @@
 views:
   - id: V-7KQ2
     name: The Day in Order
-    page: /c/Run%20of%20Show
-    query: group=Wedding+Day%2FGetting+Ready&group=Wedding+Day%2FCeremony&group=Wedding+Day%2FCocktail+Hour&group=Wedding+Day%2FReception&sort=starts
+    page: /c/run-of-show
+    query: group=wedding-day%2Fgetting-ready&group=wedding-day%2Fceremony&group=wedding-day%2Fcocktail-hour&group=wedding-day%2Freception&sort=starts
   - id: V-3MWD
     name: Shortlist
-    page: /c/Vendors
+    page: /c/vendors
     query: status=Idea&status=Planned
   - id: V-9TBX
     name: Booked
-    page: /c/Vendors
+    page: /c/vendors
     query: status=Booked&status=Confirmed&status=Done
   - id: V-4HNR
     name: Still to Book

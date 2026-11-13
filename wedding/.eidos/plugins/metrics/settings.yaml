@@ -42,35 +42,35 @@ near-duplicate: true
 near_duplicate_similarity: 0.7
 near_duplicate_min_words: 25
 budgets:
-  - collection: Run of Show
+  - collection: run-of-show
     variant: full
     minutes: 4
-  - collection: Run of Show
+  - collection: run-of-show
     variant: rough
     minutes: 2
-  - collection: Vendors
+  - collection: vendors
     variant: full
     minutes: 4
-  - collection: Vendors
+  - collection: vendors
     variant: quote
     minutes: 2
-  - collection: The Big Picture
+  - collection: the-big-picture
     minutes: 5
 metrics:
   - name: has-start-time
-    collection: Run of Show
+    collection: run-of-show
     measure: filled
     variant: full
     property: starts
     min: 100
   - name: has-cost
-    collection: Vendors
+    collection: vendors
     measure: filled
     variant: full
     property: cost
     min: 100
   - name: open-decisions
-    collection: Run of Show
+    collection: run-of-show
     measure: records
     record_type: decision
     where:

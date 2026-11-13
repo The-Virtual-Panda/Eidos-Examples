@@ -7,16 +7,16 @@
 
 ## Where things are
 
-- **[The Big Picture](<The Big Picture>)**: four pages: what the day is for, who is coming, where it happens, and what it can cost. Everything else gets checked against them.
-- **[Run of Show](<Run of Show>)**: one page per moment of the day (the vows, the first dance, the send-off), in a folder per day and, on the wedding day, per event: getting ready, the ceremony, cocktail hour, the reception.
-- **[Vendors](Vendors)**: one page per vendor, in a folder per category (food and drink split into catering, cake, and bar): what you are getting, when, and on what terms. A new vendor starts as a quote and grows into the full page once booked.
-- **[Checklist](Checklist)**: the to-do list, one task per file, grouped by how far out it is due, from a year out to the thank-you notes. It starts with the tasks almost every wedding has; cut the ones that are not yours, and set each milestone's date once you have the wedding date.
-- **[Files](Files)**: contracts, floor plans, menus, playlists, and inspiration boards the pages link to. A set of files that belong together, a mood board or a contract with its riders, is kept as one bundle.
+- **[The Big Picture](<the-big-picture>)**: four pages: what the day is for, who is coming, where it happens, and what it can cost. Everything else gets checked against them.
+- **[Run of Show](<run-of-show>)**: one page per moment of the day (the vows, the first dance, the send-off), in a folder per day and, on the wedding day, per event: getting ready, the ceremony, cocktail hour, the reception.
+- **[Vendors](vendors)**: one page per vendor, in a folder per category (food and drink split into catering, cake, and bar): what you are getting, when, and on what terms. A new vendor starts as a quote and grows into the full page once booked.
+- **[Checklist](checklist)**: the to-do list, one task per file, grouped by how far out it is due, from a year out to the thank-you notes. It starts with the tasks almost every wedding has; cut the ones that are not yours, and set each milestone's date once you have the wedding date.
+- **[Files](files)**: contracts, floor plans, menus, playlists, and inspiration boards the pages link to. A set of files that belong together, a mood board or a contract with its riders, is kept as one bundle.
 
 ## The one-page docs
 
-- **[The Timeline](<The Timeline.md>)**: the whole day on one page, hour by hour.
-- **[Day-Of Contacts](<Day-Of Contacts.md>)**: every number the planner needs on the day, on one page.
+- **[The Timeline](<the-timeline.md>)**: the whole day on one page, hour by hour.
+- **[Day-Of Contacts](<day-of-contacts.md>)**: every number the planner needs on the day, on one page.
 
 ## How to use it
 

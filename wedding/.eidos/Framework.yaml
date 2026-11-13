@@ -4,18 +4,18 @@
 eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
-naming: Title Case
+naming: kebab-case
 
 # Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
-    path: ../Start Here.md
+    path: ../start-here.md
     description: "where to start: what this is, and where things are"
   - title: The Timeline
-    path: ../The Timeline.md
+    path: ../the-timeline.md
     description: the whole day on one page, hour by hour
   - title: Day-Of Contacts
-    path: ../Day-Of Contacts.md
+    path: ../day-of-contacts.md
     description: every number the planner needs on the day, on one page
 
 # Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
@@ -23,82 +23,108 @@ top_level:
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: The Big Picture
+  - name: the-big-picture
+    title: The Big Picture
     owned_by: "@eidos/collections"
     description: "The big picture, four pages: what the day is for, who is coming, where it happens, and what it can cost. Every moment and vendor gets checked against these."
     variants:
-      - { name: vision, template: templates/frame.vision.md, description: "what the day is for, how it should feel, and what it is not", default: true }
-      - { name: guests, template: templates/frame.guests.md, description: "who is coming, and what different kinds of guests will need" }
-      - { name: venue, template: templates/frame.venue.md, description: "the places, how guests move between them, and the house rules" }
-      - { name: budget, template: templates/frame.budget.md, description: "the money, the date, what matters most, and the hard limits" }
-  - name: Run of Show
+      - { name: vision, title: Vision, template: templates/frame.vision.md, description: "what the day is for, how it should feel, and what it is not", default: true }
+      - { name: guests, title: Guests, template: templates/frame.guests.md, description: "who is coming, and what different kinds of guests will need" }
+      - { name: venue, title: Venue, template: templates/frame.venue.md, description: "the places, how guests move between them, and the house rules" }
+      - { name: budget, title: Budget, template: templates/frame.budget.md, description: "the money, the date, what matters most, and the hard limits" }
+  - name: run-of-show
+    title: Run of Show
     owned_by: "@eidos/collections"
     description: "One page per moment of the day, grouped by day and then by event, in the order it happens."
     variants:
-      - { name: full, template: templates/moment.full.md, description: "the full plan for a moment", default: true }
-      - { name: rough, template: templates/moment.rough.md, description: "a rough version: what it is for, what is still to decide, how it goes; grow into full" }
+      - { name: full, title: Full Moment, template: templates/moment.full.md, description: "the full plan for a moment", default: true }
+      - { name: rough, title: Rough Moment, template: templates/moment.rough.md, description: "a rough version: what it is for, what is still to decide, how it goes; grow into full" }
     label: Days and Events
     folder_property: day
     folders:
-      - name: The Night Before
+      - name: the-night-before
+        title: The Night Before
         description: "The rehearsal, the rehearsal dinner, the welcome drinks: everything before the wedding day itself."
-      - name: Wedding Day
+      - name: wedding-day
+        title: Wedding Day
         description: The wedding day, one folder per event, in the order they happen.
         folders:
-          - name: Getting Ready
+          - name: getting-ready
+            title: Getting Ready
             description: Hair, makeup, dressing, the first look, and the photos before the ceremony.
-          - name: Ceremony
+          - name: ceremony
+            title: Ceremony
             description: "From guests arriving to the recessional: the processional, the vows, the rings, the kiss."
-          - name: Cocktail Hour
+          - name: cocktail-hour
+            title: Cocktail Hour
             description: "The gap between the ceremony and the reception: drinks, the family photos, the room being turned."
-          - name: Reception
+          - name: reception
+            title: Reception
             description: The entrances, dinner, the toasts, the first dance, the cake, the dancing, and the send-off.
-      - name: The Morning After
+      - name: the-morning-after
+        title: The Morning After
         description: The farewell brunch, the gift opening, the last goodbyes.
       # a day or an event the plan needs and these lack is added as it comes up
-  - name: Vendors
+  - name: vendors
+    title: Vendors
     owned_by: "@eidos/collections"
     description: "One page per vendor, grouped by category: what you are getting, when, and on what terms."
     variants:
-      - { name: full, template: templates/vendor.full.md, description: "a booked vendor: what you are getting, their day, the deal" }
-      - { name: quote, template: templates/vendor.quote.md, description: "a vendor you are considering: what they would do and what they quoted; grow into full when booked", default: true }
+      - { name: full, title: Booked Vendor, template: templates/vendor.full.md, description: "a booked vendor: what you are getting, their day, the deal" }
+      - { name: quote, title: Quote, template: templates/vendor.quote.md, description: "a vendor you are considering: what they would do and what they quoted; grow into full when booked", default: true }
     label: Categories
     folder_property: category
     folders:
-      - name: Venue
+      - name: venue
+        title: Venue
         description: "The places the day is held: ceremony site, reception venue, the rehearsal dinner spot."
-      - name: Planning
+      - name: planning
+        title: Planning
         description: The planner or day-of coordinator.
-      - name: Food and Drink
+      - name: food-and-drink
+        title: Food and Drink
         description: Everything guests eat and drink, by who supplies it.
         folders:
-          - name: Catering
+          - name: catering
+            title: Catering
             description: The meal, the service staff, and the tastings.
-          - name: Cake and Desserts
+          - name: cake-and-desserts
+            title: Cake and Desserts
             description: The cake, the dessert table, the late-night snack.
-          - name: Bar
+          - name: bar
+            title: Bar
             description: The bar service and the bartenders, where the caterer does not cover it.
-      - name: Photo and Video
+      - name: photo-and-video
+        title: Photo and Video
         description: The photographer, the videographer, the photo booth.
-      - name: Music
+      - name: music
+        title: Music
         description: Ceremony musicians, the band or DJ, and the sound.
-      - name: Flowers and Decor
+      - name: flowers-and-decor
+        title: Flowers and Decor
         description: The florist, the decor, and the lighting.
-      - name: Attire and Beauty
+      - name: attire-and-beauty
+        title: Attire and Beauty
         description: The outfits, the alterations, hair, and makeup.
-      - name: Officiant
+      - name: officiant
+        title: Officiant
         description: Whoever marries the couple, and the paperwork that makes it legal.
-      - name: Stationery
+      - name: stationery
+        title: Stationery
         description: Save-the-dates, invitations, programs, signs, and place cards.
-      - name: Rentals
+      - name: rentals
+        title: Rentals
         description: Tables, chairs, linens, tableware, tents, and anything else hired for the day.
-      - name: Transport
+      - name: transport
+        title: Transport
         description: Shuttles, cars, and the last ride home.
       # a category the vendors need and these lack is added as it comes up
-  - name: Files
+  - name: files
+    title: Files
     owned_by: "@assets/files"
     description: "Contracts, floor plans, menus, playlists, and inspiration boards the pages link to; a set of files that belong together (a mood board, a signed contract with its riders) is one bundle."
-  - name: Checklist
+  - name: checklist
+    title: Checklist
     owned_by: "@backlog/tasks"
     description: "The to-do list, one task per file, by how many months out it is due: the work that gets the day booked and ready, kept beside the pages it serves."
 
@@ -136,12 +162,12 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once.", eidosmd: { new: today } }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change.", eidosmd: { new: today } }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: day, type: Text, applies_to: [ Run of Show ], meaning: "Which day, and which event in it, this moment happens in: its folder's path, such as Wedding Day/Reception; a value that is not its folder warns." }
-    - { name: needs, type: List, applies_to: [ Run of Show, Vendors ], meaning: "Moments or vendors that have to be in place first, as links." }
-    - { name: category, type: Text, applies_to: [ Vendors ], meaning: "Which kind of vendor this is: its folder's path, such as Food and Drink/Catering; a value that is not its folder warns." }
-    - { name: starts, type: Date & time, applies_to: [ Run of Show ], meaning: When it starts on the day. }
-    - { name: duration, type: Number, applies_to: [ Run of Show ], meaning: "How long it runs, in minutes." }
-    - { name: cost, type: Number, applies_to: [ Vendors ], meaning: "What they quoted, all in." }
+    - { name: day, type: Text, applies_to: [ run-of-show ], meaning: "Which day, and which event in it, this moment happens in: its folder's path, such as wedding-day/reception; a value that is not its folder warns." }
+    - { name: needs, type: List, applies_to: [ run-of-show, vendors ], meaning: "Moments or vendors that have to be in place first, as links." }
+    - { name: category, type: Text, applies_to: [ vendors ], meaning: "Which kind of vendor this is: its folder's path, such as food-and-drink/catering; a value that is not its folder warns." }
+    - { name: starts, type: Date & time, applies_to: [ run-of-show ], meaning: When it starts on the day. }
+    - { name: duration, type: Number, applies_to: [ run-of-show ], meaning: "How long it runs, in minutes." }
+    - { name: cost, type: Number, applies_to: [ vendors ], meaning: "What they quoted, all in." }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
@@ -165,22 +191,22 @@ vocabulary:
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  The Big Picture:
+  the-big-picture:
     - id: budget
       title: Budget
       summary: null
-      path: Budget.md
+      path: budget.md
     - id: guests
       title: Guests
       summary: null
-      path: Guests.md
+      path: guests.md
     - id: venue
       title: Venue
       summary: null
-      path: Venue.md
+      path: venue.md
     - id: vision
       title: Vision
       summary: null
-      path: Vision.md
-  Run of Show: []
-  Vendors: []
+      path: vision.md
+  run-of-show: []
+  vendors: []
