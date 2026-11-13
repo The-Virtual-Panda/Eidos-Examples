@@ -34,19 +34,19 @@ folders:
     owned_by: "@eidos/collections"
     description: "The game itself, five pages: its pillars and core loop, who plays it, where it runs, how much game the team can finish, and where it sits in the market. Every mechanic, level, character, and item gets checked against these."
     variants:
-      - { name: pillars, template: templates/frame.pillars.md, description: "the game in a breath, its pillars, the core loop, and what it is not", default: true }
-      - { name: player, template: templates/frame.player.md, description: "who plays it, what they have played, what they expect, and what they will not forgive" }
-      - { name: platform, template: templates/frame.platform.md, description: "where it runs, the controls and accessibility, the budget the build holds, and what stores require" }
-      - { name: scope, template: templates/frame.scope.md, description: "the team and the time, the size of the game, the milestones, and the cut line" }
-      - { name: market, template: templates/frame.market.md, description: "the games next to it, the hook, the price, and how players find it" }
+      - { name: pillars, title: Pillars, template: templates/frame.pillars.md, description: "the game in a breath, its pillars, the core loop, and what it is not", default: true }
+      - { name: player, title: Player, template: templates/frame.player.md, description: "who plays it, what they have played, what they expect, and what they will not forgive" }
+      - { name: platform, title: Platform, template: templates/frame.platform.md, description: "where it runs, the controls and accessibility, the budget the build holds, and what stores require" }
+      - { name: scope, title: Scope, template: templates/frame.scope.md, description: "the team and the time, the size of the game, the milestones, and the cut line" }
+      - { name: market, title: Market, template: templates/frame.market.md, description: "the games next to it, the hook, the price, and how players find it" }
   - name: mechanics
     title: Mechanics
     owned_by: "@eidos/collections"
     description: "One page per mechanic, in folders by system, and a system's folder can hold smaller systems (Combat, then Melee and Ranged inside it), with the system's own page beside them: why each mechanic is in the game, the pillar it serves, how it plays, its rules and numbers, and what it is not."
     variants:
-      - { name: one-pager, template: templates/mechanic.one-pager.md, description: "a mechanic on one page: why it is in the game, how it plays, the rules and numbers so far, what it is not; grow into full", default: true }
-      - { name: full, template: templates/mechanic.full.md, description: "the full page for a mechanic with more rules and numbers than a page holds" }
-      - { name: system, template: templates/mechanic.system.md, description: "a system's overview, beside the mechanics in its folder: what the system is for, the mechanics in it, how they feed each other, and the numbers that tie them" }
+      - { name: one-pager, title: One-Pager, template: templates/mechanic.one-pager.md, description: "a mechanic on one page: why it is in the game, how it plays, the rules and numbers so far, what it is not; grow into full", default: true }
+      - { name: full, title: Full Page, template: templates/mechanic.full.md, description: "the full page for a mechanic with more rules and numbers than a page holds" }
+      - { name: system, title: System, template: templates/mechanic.system.md, description: "a system's overview, beside the mechanics in its folder: what the system is for, the mechanics in it, how they feed each other, and the numbers that tie them" }
     label: Systems
     folder_property: system
     folders: [] # one entry per system (movement, combat, economy, progression), a name and a description, as they accrue
@@ -55,9 +55,9 @@ folders:
     owned_by: "@eidos/collections"
     description: "One page per level, in a folder per act. A level that grows fights, puzzles, and set pieces becomes a folder of its own, its page beside an encounter page for each: what each level is for, what it teaches, the flow, and what the player leaves with."
     variants:
-      - { name: one-pager, template: templates/level.one-pager.md, description: "a level on one page: why it is in the game, what it teaches, the flow, what it is not; grow into full", default: true }
-      - { name: full, template: templates/level.full.md, description: "the full page for a level: the flow, the layout, what the player leaves with, and its ties" }
-      - { name: encounter, template: templates/level.encounter.md, description: "one fight, puzzle, chase, or set piece inside a level, kept in the level's folder beside the level's page: what it tests, the setup, how it plays, and the way out" }
+      - { name: one-pager, title: One-Pager, template: templates/level.one-pager.md, description: "a level on one page: why it is in the game, what it teaches, the flow, what it is not; grow into full", default: true }
+      - { name: full, title: Full Page, template: templates/level.full.md, description: "the full page for a level: the flow, the layout, what the player leaves with, and its ties" }
+      - { name: encounter, title: Encounter, template: templates/level.encounter.md, description: "one fight, puzzle, chase, or set piece inside a level, kept in the level's folder beside the level's page: what it tests, the setup, how it plays, and the way out" }
     label: Acts
     folder_property: act
     folders: [] # one entry per act, world, or chapter, a name and a description, as they accrue
@@ -66,9 +66,9 @@ folders:
     owned_by: "@eidos/collections"
     description: "One page per character the player meets, plays, or fights: why they exist, how they read on screen, and what they do. The cast sits at the top; enemies, and the bosses inside them, start on the enemy page."
     variants:
-      - { name: one-pager, template: templates/character.one-pager.md, description: "a character on one page: why they exist, who they are, how they read on screen, what they are not; grow into full", default: true }
-      - { name: full, template: templates/character.full.md, description: "the full page for a character with a part in the game" }
-      - { name: enemy, template: templates/character.enemy.md, description: "an enemy or a boss: what it tests, how it plays, its tells and numbers" }
+      - { name: one-pager, title: One-Pager, template: templates/character.one-pager.md, description: "a character on one page: why they exist, who they are, how they read on screen, what they are not; grow into full", default: true }
+      - { name: full, title: Full Page, template: templates/character.full.md, description: "the full page for a character with a part in the game" }
+      - { name: enemy, title: Enemy, template: templates/character.enemy.md, description: "an enemy or a boss: what it tests, how it plays, its tells and numbers" }
     folders:
       - name: enemies
         title: Enemies
@@ -84,7 +84,7 @@ folders:
     owned_by: "@eidos/collections"
     description: "One page per item, upgrade, or collectible, grouped by the same systems as the mechanics: how the player gets it and what it does."
     variants:
-      - { name: one-pager, template: templates/item.one-pager.md, description: "an item on one page: why it is in the game, how the player gets it, its rules and numbers, what it is not", default: true }
+      - { name: one-pager, title: One-Pager, template: templates/item.one-pager.md, description: "an item on one page: why it is in the game, how the player gets it, its rules and numbers, what it is not", default: true }
     label: Systems
     folder_property: system
     folders: [] # the same systems as the mechanics, as they accrue
