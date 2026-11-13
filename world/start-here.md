@@ -1,32 +1,25 @@
 # {{Product}}
 
-> **Start here.** This folder is the one place that says what this world **is**: every place, every
-> faction, every person, every arc, what is canon and what is still a sketch. It stays true whether or not a session has been played in it.
+> **Start here.** This is everything about your world in one place: its places, its powers, its people, the stories run in it, and what the players have found out so far.
 
 {{One line: what kind of world this is, and what the stories set here are about.}}
 
 ## Where things are
 
-- **[The World](<the-world>)**: four pages: what it is about, how it feels, how it works, and who plays in it. Everything else gets checked against them.
-- **[Places](places)**: one page per place, in folders as deep as the world goes: a land, its regions, their settlements, the sites inside them. A dungeon or a temple is a site, keyed by area.
-- **[Factions](factions)**: one page per power: what it wants, what it holds, what it does next.
-- **[Characters](characters)**: one page per person the party may meet.
-- **[Arcs](arcs)**: one page per story arc, in a folder per campaign, with the sessions played in it beside it, one page each.
-- **[Rulings](rulings)**: the canon rulings, one each: what the GM ruled true in the world, or how a rule reads at this table. Each lists itself on the pages it touches.
-- **[Prep](prep)**: session prep, one task per thing to ready before the table meets. Work, not canon.
-- **[Files](files)**: maps, handouts, reference art, and character sheets the pages link to.
-- **Relationships**, a canvas: who wants what from whom, faction by faction and person by person.
+- **[The World](<the-world>)**: four short pages: what the world is about, how it feels, how it works, and who plays in it. Write these first. Every other page is checked against them.
+- **[Places](places)**: one page per place. Put a place inside the folder of the land or region it sits in, as deep as you need. A dungeon, a temple, or an inn gets a site page with a numbered key for each room.
+- **[Factions](factions)**: one page per power in the world, with what it wants and what it does next. Add one when a group starts to matter to the story.
+- **[Characters](characters)**: one page per person the party may meet. Add one the moment someone has a name.
+- **[Arcs](arcs)**: one folder per campaign, one page per story arc in it. After each session, add a page for it next to its arc.
+- **[Rulings](rulings)**: one note per call you made at the table, about the world or about the rules. A ruling you take back is marked overturned, never deleted.
+- **[Prep](prep)**: what to get ready before the next session, as a to-do list. When the session is over, write what happened on the pages, not here.
+- **[Files](files)**: maps, handouts, art, and character sheets the pages link to.
 
-## The one-page docs
+Three pages sit beside the folders: **[History](history.md)**, the world's past in order; the **[Player's Guide](<player-s-guide.md>)**, the handout a new player reads; and **[Names](names.md)**, how names are made and said.
 
-- **[History](history.md)**: the world's past in order, on one page.
-- **[Player's Guide](<player-s-guide.md>)**: what every player may read: the handout.
-- **[Names](names.md)**: how people and places are named, and how to say them.
+Each page and each secret on it says whether the players have seen it yet. Players are shown only what they have seen.
 
-## How to use it
+## Where to start
 
-A page here says what a thing **is** in the world: why it exists, what is true of it, what the party sees, its secrets, and what it is not. It is not a session plan and not a wiki. Prep the session in Prep; once it is played, write what happened as a session page, carry what changed onto the pages it touched, and make each change to canon a ruling. A faction you retire stays here, marked `Retired`, and a ruling you reverse is overturned, not deleted, so the reasoning survives.
-
-`revealed` is the line between what the GM knows and what the Player role may read: on a page, on a top-level doc, and on each secret.
-
-_Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos); `eidos check` keeps it honest._
+1. Fill in [Premise](<the-world/premise.md>) in a few sentences: what this world is about, and what it is not.
+2. Add the first place the party will see, then prep the first session in [Prep](prep).
