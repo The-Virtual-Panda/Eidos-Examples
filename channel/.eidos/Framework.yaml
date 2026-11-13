@@ -8,8 +8,8 @@ naming: kebab-case
 
 # Every file at the top of the project, one entry each.
 top_level:
-  - title: Start Here
-    path: ../start-here.md
+  - title: README
+    path: ../README.md
     description: "where to start: what this is, and where things are"
   - title: Content Calendar
     path: ../content-calendar.md

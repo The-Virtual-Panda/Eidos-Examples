@@ -61,3 +61,5 @@ icons:
   project:
     icon: lucide:tv
     color: red
+home:
+  overview: README.md
