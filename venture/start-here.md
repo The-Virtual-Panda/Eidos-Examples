@@ -7,19 +7,19 @@
 
 ## Where things are
 
-- **[The Business](<The Business>)**: four pages: what it is and why now, who pays, how it makes money, and how long you have. Everything else gets checked against them.
-- **[Ideas](Ideas)**: one page per opportunity you are weighing. A spark grows into a case; a case becomes a line, a product, or a plan, or a call to stop.
-- **[Lines](Lines)**: the business by line. Each line of business is a folder with its own page inside it, each product a folder inside its line, and each plan sits in the folder of what it grows: `Lines/Wholesale/Wholesale.md`, `Lines/Wholesale/Cold Brew/Cold Brew.md`, `Lines/Wholesale/Cold Brew/Grocery Launch.md`. Make the folder when the line or product needs one.
-- **[Investments](Investments)**: one page per bet with money on it, raised or spent. A round for the whole company sits at the top; money for one line or product sits in that line's folder.
-- **[Calls](Calls)**: one record per call you made. Each one names the pages it serves and is listed on them, and the founder signs it off once it is made.
-- **[Files](Files)**: decks, models, term sheets, contracts, and research the pages link to. The Pitch Deck, the Financial Model, and the Data Room are bundles: each one set of files, linked and shared as one.
+- **[The Business](<the-business>)**: four pages: what it is and why now, who pays, how it makes money, and how long you have. Everything else gets checked against them.
+- **[Ideas](ideas)**: one page per opportunity you are weighing. A spark grows into a case; a case becomes a line, a product, or a plan, or a call to stop.
+- **[Lines](lines)**: the business by line. Each line of business is a folder with its own page inside it, each product a folder inside its line, and each plan sits in the folder of what it grows: `lines/wholesale/wholesale.md`, `lines/wholesale/cold-brew/cold-brew.md`, `lines/wholesale/cold-brew/grocery-launch.md`. Make the folder when the line or product needs one, and give it its name as a title (Wholesale, Cold Brew), which is what the app shows.
+- **[Investments](investments)**: one page per bet with money on it, raised or spent. A round for the whole company sits at the top; money for one line or product sits in that line's folder.
+- **[Calls](calls)**: one record per call you made. Each one names the pages it serves and is listed on them, and the founder signs it off once it is made.
+- **[Files](files)**: decks, models, term sheets, contracts, and research the pages link to. The Pitch Deck, the Financial Model, and the Data Room are bundles: each one set of files, linked and shared as one.
 - **[Backlog](backlog)**: the work that carries out a plan's moves, one task per file, each serving the plan or deal it moves.
 
 ## The one-page docs
 
-- **[The Pitch](<The Pitch.md>)**: the thirty-second version of the business.
-- **[Roadmap](Roadmap.md)**: the next twelve months on one page.
-- **[Team](Team.md)**: who does what, and which seats are empty.
+- **[The Pitch](<the-pitch.md>)**: the thirty-second version of the business.
+- **[Roadmap](roadmap.md)**: the next twelve months on one page.
+- **[Team](team.md)**: who does what, and which seats are empty.
 
 ## How to use it
 

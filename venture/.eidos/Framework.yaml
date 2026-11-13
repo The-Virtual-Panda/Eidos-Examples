@@ -4,21 +4,21 @@
 eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
-naming: Title Case
+naming: kebab-case
 
 # Every file at the top of the project, one entry each.
 top_level:
   - title: Start Here
-    path: ../Start Here.md
+    path: ../start-here.md
     description: "where to start: what this is, and where things are"
   - title: The Pitch
-    path: ../The Pitch.md
+    path: ../the-pitch.md
     description: the thirty-second version of the business
   - title: Roadmap
-    path: ../Roadmap.md
+    path: ../roadmap.md
     description: the next twelve months on one page
   - title: Team
-    path: ../Team.md
+    path: ../team.md
     description: who does what, and which seats are empty
 
 # Every folder at the top of the project, one entry each. `owned_by` names what governs it: "@eidos/collections" for
@@ -26,7 +26,8 @@ top_level:
 folders:
   # The framing docs: what every other blueprint is judged against. One left unwritten is a gap to surface,
   # not a failure.
-  - name: The Business
+  - name: the-business
+    title: The Business
     owned_by: "@eidos/collections"
     description: "The business itself, four pages: what it is and why now, who pays, how it makes money, and how long you have. Every idea, plan, deal, and call gets checked against these."
     variants:
@@ -34,15 +35,17 @@ folders:
       - { name: market, template: templates/frame.market.md, description: "who pays, who else is selling to them, and how you reach them" }
       - { name: model, template: templates/frame.model.md, description: "how it makes money, what it costs, and what breaks first as it grows" }
       - { name: runway, template: templates/frame.runway.md, description: "cash, targets, what matters most, and what would make you stop" }
-  - name: Ideas
+  - name: ideas
+    title: Ideas
     owned_by: "@eidos/collections"
     description: "One page per opportunity you are weighing, flat. A spark grows into a case; a case becomes a line, a product, or a plan in Lines, or a call to stop."
     variants:
       - { name: case, template: templates/idea.case.md, description: "the case: the problem, who pays, the numbers, the risks, what would kill it", default: true }
       - { name: spark, template: templates/idea.spark.md, description: "a paragraph: what, who would pay, why now; grow into case" }
-  - name: Lines
+  - name: lines
+    title: Lines
     owned_by: "@eidos/collections"
-    description: "The business by line: each line of business a folder, each of its products a folder inside it, and the plans that grow them pages in the folder of what they grow. A line or product's own page sits in its folder under its name (Lines/Wholesale/Wholesale.md); make a folder the moment one needs it."
+    description: "The business by line: each line of business a folder, each of its products a folder inside it, and the plans that grow them pages in the folder of what they grow. A line or product's own page sits in its folder (lines/wholesale/wholesale.md). Make a folder the moment one needs it, and give it its name as a title (Wholesale, Cold Brew) so nobody reads the slug."
     variants:
       - { name: plan, template: templates/line.plan.md, description: "a plan to grow a line or a product: the goal, the moves, the milestones, the cost, and what would stop it", default: true }
       - { name: brief, template: templates/line.brief.md, description: "a plan still taking shape: what it is for, what is still to decide, the moves so far; grow into plan" }
@@ -51,7 +54,8 @@ folders:
     label: Lines
     folder_property: line
     folders: [] # one entry per line of business, a name and a description, as they accrue
-  - name: Investments
+  - name: investments
+    title: Investments
     owned_by: "@eidos/collections"
     description: "One page per bet with money on it: a round you raise or a check you write, with direction telling them apart. A round for the whole company sits at the top; money for one line or product sits in that line's folder, the same paths as in Lines."
     variants:
@@ -60,13 +64,16 @@ folders:
     label: Lines
     folder_property: line
     folders: [] # the same lines as the plans, as they accrue
-  - name: Files
+  - name: files
+    title: Files
     owned_by: "@assets/files"
     description: "Decks, models, term sheets, contracts, and research the pages link to, kept by the Assets plugin; a deck or a model that ships as several files is a bundle."
   - name: backlog
+    title: Backlog
     owned_by: "@backlog/tasks"
     description: "The work that carries out the plans' moves: one task per file, each serving the plan or deal it moves, on a board kept by the Backlog plugin. A task is never a plan; a call made along the way goes in Calls."
-  - name: Calls
+  - name: calls
+    title: Calls
     owned_by: "@records/call"
     description: "One file per call you made, kept by Records: what was going on, what you could have done, what you did, what it closed, and what would reopen it. Listed on every idea, plan, and deal it serves; the founder signs each one off. The record of the no is worth as much as the plan."
 
@@ -102,11 +109,11 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once.", eidosmd: { new: today } }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change.", eidosmd: { new: today } }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: line, type: Text, applies_to: [ Lines, Investments ], meaning: "Which line of business, or product inside one, this sits in: its folder's path, such as Wholesale/Cold Brew. Absent at the top of the collection, for the whole company." }
-    - { name: needs, type: List, applies_to: [ Lines, Investments ], meaning: "Plans or deals that have to be in place first, as links." }
-    - { name: amount, type: Number, applies_to: [ Investments ], meaning: "How big the bet is, in your currency." }
-    - { name: direction, type: Text, applies_to: [ Investments ], options: [ raise, deploy ], meaning: "Which way the money moves: raise brings it in, deploy sends it out." }
-    - { name: decide_by, type: Date, applies_to: [ Ideas, Lines, Investments ], meaning: The day you have to make a call on this. }
+    - { name: line, type: Text, applies_to: [ lines, investments ], meaning: "Which line of business, or product inside one, this sits in: its folder's path, such as wholesale/cold-brew. Absent at the top of the collection, for the whole company." }
+    - { name: needs, type: List, applies_to: [ lines, investments ], meaning: "Plans or deals that have to be in place first, as links." }
+    - { name: amount, type: Number, applies_to: [ investments ], meaning: "How big the bet is, in your currency." }
+    - { name: direction, type: Text, applies_to: [ investments ], options: [ raise, deploy ], meaning: "Which way the money moves: raise brings it in, deploy sends it out." }
+    - { name: decide_by, type: Date, applies_to: [ ideas, lines, investments ], meaning: The day you have to make a call on this. }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
@@ -130,23 +137,23 @@ vocabulary:
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:
-  The Business:
+  the-business:
     - id: how-it-makes-money
       title: How It Makes Money
       summary: null
-      path: How It Makes Money.md
+      path: how-it-makes-money.md
     - id: market
       title: Market
       summary: null
-      path: Market.md
+      path: market.md
     - id: runway-and-limits
       title: Runway and Limits
       summary: null
-      path: Runway and Limits.md
+      path: runway-and-limits.md
     - id: thesis
       title: Thesis
       summary: null
-      path: Thesis.md
-  Ideas: []
-  Lines: []
-  Investments: []
+      path: thesis.md
+  ideas: []
+  lines: []
+  investments: []

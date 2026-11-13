@@ -4,17 +4,17 @@
 views:
   - id: V-R4SE
     name: Raising
-    page: /c/Investments
+    page: /c/investments
     query: direction=raise&sort=decide_by
   - id: V-D3PL
     name: Deploying
-    page: /c/Investments
+    page: /c/investments
     query: direction=deploy&sort=decide_by
   - id: V-AC7V
     name: Active, next call first
-    page: /c/Lines
+    page: /c/lines
     query: status=Active&sort=decide_by
   - id: V-L1VE
     name: Live ideas
-    page: /c/Ideas
+    page: /c/ideas
     query: status=Draft&status=Active&sort=decide_by

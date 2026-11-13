@@ -1,10 +1,10 @@
 # What the Assets plugin knows of each file beyond the file system: a title, a description, and the blueprints (by id), tasks (by name), and URLs it is linked to, and for a bundle the file it opens on. Keyed by the file's or the bundle's path from the project; a rename through the plugin rewrites the key.
 files:
-  Files/Data Room:
+  files/data-room:
     title: Data Room
     description: "What an investor gets in diligence: incorporation papers, the cap
       table, signed contracts, and the latest financials, as one set."
-  Files/Financial Model:
+  files/financial-model:
     title: Financial Model
     description: "The model the Runway and How It Makes Money pages are read from:
       the spreadsheet, its monthly exports, and the cap table."
@@ -13,7 +13,7 @@ files:
         ref: runway-and-limits
       - kind: blueprint
         ref: how-it-makes-money
-  Files/Pitch Deck:
+  files/pitch-deck:
     title: Pitch Deck
     description: "The deck as you present it: the slides, their export, and the
       images they use."
