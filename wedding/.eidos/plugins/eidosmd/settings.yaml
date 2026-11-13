@@ -51,11 +51,19 @@ installed:
 icons:
   folders:
     the-big-picture:
-      icon: lucide:heart
-      color: pink
+      icon: lucide:compass
     run-of-show:
       icon: lucide:clock
-      color: purple
     vendors:
       icon: lucide:store
-      color: teal
+    run-of-show/wedding-day:
+      icon: lucide:sun
+    vendors/venue:
+      icon: lucide:castle
+    vendors/food-and-drink:
+      icon: lucide:utensils
+    vendors/photo-and-video:
+      icon: lucide:camera
+  project:
+    icon: lucide:heart
+    color: pink
