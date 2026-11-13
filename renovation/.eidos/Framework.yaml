@@ -28,17 +28,17 @@ folders:
     owned_by: "@eidos/collections"
     description: "The big picture, four pages: what you want, the house as it stands, what it can cost, and what the permits require. Every room, job, and pick gets checked against these."
     variants:
-      - { name: wants, template: templates/frame.wants.md, description: "what you want and why, and what this project is not", default: true }
-      - { name: house, template: templates/frame.house.md, description: "the house as it stands: what is there, what stays, what the work has to live with" }
-      - { name: budget, template: templates/frame.budget.md, description: "the money, the dates, what matters most, and the hard limits" }
-      - { name: permits, template: templates/frame.permits.md, description: "permits, inspections, and the rules the work has to meet" }
+      - { name: wants, title: What We Want, template: templates/frame.wants.md, description: "what you want and why, and what this project is not", default: true }
+      - { name: house, title: The House, template: templates/frame.house.md, description: "the house as it stands: what is there, what stays, what the work has to live with" }
+      - { name: budget, title: Budget, template: templates/frame.budget.md, description: "the money, the dates, what matters most, and the hard limits" }
+      - { name: permits, title: Permits, template: templates/frame.permits.md, description: "permits, inspections, and the rules the work has to meet" }
   - name: rooms
     title: Rooms
     owned_by: "@eidos/collections"
     description: "One page per room the project touches, in folders by floor, then room, then area or fixture as the room needs: what the finished space has to do."
     variants:
-      - { name: full, template: templates/room.full.md, description: "the full page for a room", default: true }
-      - { name: rough, template: templates/room.rough.md, description: "a rough version: what it is for, what is still to decide, what it has to do; grow into full" }
+      - { name: full, title: Full Room, template: templates/room.full.md, description: "the full page for a room", default: true }
+      - { name: rough, title: Rough Room, template: templates/room.rough.md, description: "a rough version: what it is for, what is still to decide, what it has to do; grow into full" }
     label: Floors
     folder_property: location
     folders: [] # floors are made as the house needs them (basement, main, upstairs, outside), each holding its rooms, and a room its areas
@@ -47,8 +47,8 @@ folders:
     owned_by: "@eidos/collections"
     description: "One page per job, in folders by phase in the order the work runs: what gets done, and what each job waits on."
     variants:
-      - { name: full, template: templates/job.full.md, description: "the full page for a job", default: true }
-      - { name: rough, template: templates/job.rough.md, description: "a rough version: what it is, what is still to decide, what gets done; grow into full" }
+      - { name: full, title: Full Job, template: templates/job.full.md, description: "the full page for a job", default: true }
+      - { name: rough, title: Rough Job, template: templates/job.rough.md, description: "a rough version: what it is, what is still to decide, what gets done; grow into full" }
     label: Phases
     folder_property: phase
     folders:
@@ -75,7 +75,7 @@ folders:
     owned_by: "@eidos/collections"
     description: "One page per fixture, finish, or material, in folders by floor and room as Rooms has them: what it has to be, the options weighed, and what you chose."
     variants:
-      - { name: full, template: templates/selection.full.md, description: "a pick: what it has to be, the options weighed against that, and what you chose", default: true }
+      - { name: full, title: Pick, template: templates/selection.full.md, description: "a pick: what it has to be, the options weighed against that, and what you chose", default: true }
     label: Rooms
     folder_property: room
     folders: [] # the same floor and room folders as Rooms, made as each room takes its first pick
@@ -84,6 +84,7 @@ folders:
     owned_by: "@assets/files"
     description: "Drawings, permits, quotes, spec sheets, and site photos, each linked to the rooms, jobs, picks, and tasks it belongs to. A set that travels together (the permit drawings, a bid with its attachments, one day's site photos) is a bundle: a folder of its own inside this one."
   - name: backlog
+    title: Backlog
     owned_by: "@backlog/tasks"
     description: the tasks that serve the blueprints, one markdown file each, the Backlog plugin's
   - name: change-orders
