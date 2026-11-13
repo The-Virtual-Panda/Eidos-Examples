@@ -48,6 +48,21 @@ installed:
     pieces:
       - root
     date: 2026-09-19
+icons:
+  folders:
+    the-world:
+      icon: lucide:globe
+    places:
+      icon: lucide:map
+    factions:
+      icon: lucide:shield
+    characters:
+      icon: lucide:users
+    arcs:
+      icon: lucide:scroll-text
+  project:
+    icon: lucide:castle
+    color: purple
 ids:
   scheme: adaptive
   padding: 0
