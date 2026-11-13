@@ -55,16 +55,14 @@ icons:
   folders:
     the-school:
       icon: lucide:school
-      color: blue
     learners:
       icon: lucide:users
-      color: teal
     courses:
       icon: lucide:book-open
-      color: purple
     paths:
       icon: lucide:route
-      color: green
+    courses/orientation:
+      icon: lucide:compass
   project:
     icon: lucide:graduation-cap
     color: blue
