@@ -51,6 +51,8 @@ installed:
     pieces:
       - root
     date: 2026-09-19
+home:
+  overview: start-here.md
 icons:
   folders:
     the-school:
