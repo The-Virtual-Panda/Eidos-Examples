@@ -10,7 +10,7 @@ types:
     label: D{n}
     mode: file
     sidebar: true
-    folder: Decisions
+    folder: decisions
     numbering: ids
     id_prefix: D
     statuses:

@@ -39,8 +39,8 @@ The quiz [How a Course Is Built](../../../academy/welcome-to-the-school/how-a-co
 
 ## Materials
 
-The course's kit in Files: a [one-page handout](../../../Files/welcome-to-the-school/index.html) and a diagram of how the pieces fit.
+The course's kit in Files: a [one-page handout](../../../files/welcome-to-the-school/index.html) and a diagram of how the pieces fit.
 
-![How the pieces of a course fit](../../../Files/welcome-to-the-school/how-the-pieces-fit.svg)
+![How the pieces of a course fit](../../../files/welcome-to-the-school/how-the-pieces-fit.svg)
 
 ## Notes

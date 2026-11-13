@@ -28,24 +28,24 @@ folders:
     owned_by: "@eidos/collections"
     description: "The school itself, four pages: what it teaches and why, how it teaches, where it sells, and what it costs to make. Every learner, course, and path gets checked against these."
     variants:
-      - { name: mission, template: templates/frame.mission.md, description: "what the school teaches and why, and what it is not", default: true }
-      - { name: teaching, template: templates/frame.teaching.md, description: "how it teaches: the format, the length, how learners prove it, the rules every course keeps" }
-      - { name: market, template: templates/frame.market.md, description: "where the courses sell, what they cost, and what they are up against" }
-      - { name: production, template: templates/frame.production.md, description: "what a course costs to make, how often one ships, and what the platform requires" }
+      - { name: mission, title: Mission, template: templates/frame.mission.md, description: "what the school teaches and why, and what it is not", default: true }
+      - { name: teaching, title: How We Teach, template: templates/frame.teaching.md, description: "how it teaches: the format, the length, how learners prove it, the rules every course keeps" }
+      - { name: market, title: Market, template: templates/frame.market.md, description: "where the courses sell, what they cost, and what they are up against" }
+      - { name: production, title: Production, template: templates/frame.production.md, description: "what a course costs to make, how often one ships, and what the platform requires" }
   - name: learners
     title: Learners
     owned_by: "@eidos/collections"
     description: "Who it is for: one page per kind of learner, flat. Where they start, what they need, what done looks like for them. Courses and paths point at these."
     variants:
-      - { name: persona, template: templates/learner.persona.md, description: "one kind of learner: where they start, what they need, what done looks like", default: true }
+      - { name: persona, title: Persona, template: templates/learner.persona.md, description: "one kind of learner: where they start, what they need, what done looks like", default: true }
   - name: courses
     title: Courses
     owned_by: "@eidos/collections"
     description: "The catalog: one folder per track, and in it one folder per course, holding the course's page and its lessons. What learners will be able to do, the modules, how they prove it, the format."
     variants:
-      - { name: full, template: templates/course.full.md, description: "the full page for a course", default: true }
-      - { name: outline, template: templates/course.outline.md, description: "an outline: who it is for, what they will be able to do, the modules; grow into full" }
-      - { name: lesson, template: templates/course.lesson.md, description: "one lesson of a course: the outcomes it serves, what a learner takes away, what they do, and how it is checked" }
+      - { name: full, title: Full Course, template: templates/course.full.md, description: "the full page for a course", default: true }
+      - { name: outline, title: Outline, template: templates/course.outline.md, description: "an outline: who it is for, what they will be able to do, the modules; grow into full" }
+      - { name: lesson, title: Lesson, template: templates/course.lesson.md, description: "one lesson of a course: the outcomes it serves, what a learner takes away, what they do, and how it is checked" }
     label: Tracks
     folder_property: track
     folders:
@@ -63,17 +63,21 @@ folders:
     owned_by: "@eidos/collections"
     description: "One page per path, flat: a sequence of courses, in order, for one kind of learner, toward one outcome. The pages that tie learners to courses."
     variants:
-      - { name: full, template: templates/path.full.md, description: "who it is for, where it goes, and the courses in order", default: true }
-  - name: Files
+      - { name: full, title: Full Path, template: templates/path.full.md, description: "who it is for, where it goes, and the courses in order", default: true }
+  - name: files
+    title: Files
     owned_by: "@assets/files"
     description: "Slides, worksheets, recordings, and syllabi the pages link to, each linked to its course or lesson by the Assets plugin; a course's kit is a bundle, one folder of its files."
   - name: backlog
+    title: Backlog
     owned_by: "@backlog/tasks"
     description: the tasks that serve the blueprints, one markdown file each, the Backlog plugin's
   - name: academy
+    title: Academy
     owned_by: "@academy/academy"
     description: The quizzes and flashcard decks on this project's content, one markdown file each, and the courses that group them, kept by the Academy plugin
-  - name: Decisions
+  - name: decisions
+    title: Decisions
     owned_by: "@records/decisions"
     description: "The calls that shaped a course, a path, or the school, one file each, signed off by whoever made the call and listed on the pages they shaped: what was chosen, what was given up, and why."
 
@@ -109,7 +113,7 @@ properties:
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: track, type: Text, applies_to: [ courses ], meaning: "Where the page sits: its track, and for a course's own page or a lesson, the course's folder beneath it (Orientation/Welcome to the School). The folder's path; a value that is not its folder warns." }
+    - { name: track, type: Text, applies_to: [ courses ], meaning: "Where the page sits: its track, and for a course's own page or a lesson, the course's folder beneath it (orientation/welcome-to-the-school, shown as Orientation / Welcome to the School). The folder's path; a value that is not its folder warns." }
     - { name: prerequisites, type: List, applies_to: [ courses, paths ], meaning: "Courses a learner has to finish first, as links." }
     - { name: for, type: List, applies_to: [ courses, paths ], meaning: "The learners this is for, as links to their pages." }
     - { name: level, type: Text, applies_to: [ courses ], options: [ intro, intermediate, advanced ], meaning: "Where a learner should be before starting: intro, intermediate, or advanced." }

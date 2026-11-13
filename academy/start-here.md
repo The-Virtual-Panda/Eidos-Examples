@@ -11,9 +11,9 @@
 - **[Learners](learners)**: one page per kind of learner: where they start, what they need, what done looks like.
 - **[Courses](courses)**: a folder per track, and in it a folder per course: the course's page (who it is for, its learning outcomes, the modules, how they prove it, the format) with a page per lesson beside it. **[Welcome to the School](courses/orientation/welcome-to-the-school/welcome-to-the-school.md)** is the worked example: a course, two lessons, and the quizzes that check them.
 - **[Paths](paths)**: one page per sequence of courses, for one kind of learner, toward one outcome.
-- **[Files](Files)**: slides, worksheets, recordings, and syllabi the pages link to, a course's kit as one bundle.
+- **[Files](files)**: slides, worksheets, recordings, and syllabi the pages link to, a course's kit as one bundle.
 - **[Academy](academy)**: the quizzes and flashcard decks, kept by the Academy plugin, one Academy course per course here, each quiz drawing on a lesson's page.
-- **[Decisions](Decisions)**: the calls that shaped a course, a path, or the school, each signed off by whoever made it and listed on the pages it shaped.
+- **[Decisions](decisions)**: the calls that shaped a course, a path, or the school, each signed off by whoever made it and listed on the pages it shaped.
 - **[Backlog](backlog)**: the production board: making a lesson, revising a course, and fixing what a learner reported.
 
 ## The one-page docs

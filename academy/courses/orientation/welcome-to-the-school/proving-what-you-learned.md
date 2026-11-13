@@ -38,6 +38,6 @@ The quiz [Proving What You Learned](../../../academy/welcome-to-the-school/provi
 
 ## Materials
 
-The course's kit in Files: the [one-page handout](../../../Files/welcome-to-the-school/index.html), whose second half is this lesson.
+The course's kit in Files: the [one-page handout](../../../files/welcome-to-the-school/index.html), whose second half is this lesson.
 
 ## Notes

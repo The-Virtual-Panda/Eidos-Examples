@@ -51,7 +51,7 @@ Each lesson has a quiz in Academy, in the course of the same name, and the secon
 
 ## Format and Length
 
-Two short lessons of text, a quarter hour each, with a quiz after each. The [course kit](../../../Files/welcome-to-the-school/index.html), a handout and a diagram, is in Files. Half an hour in all, the `duration` above.
+Two short lessons of text, a quarter hour each, with a quiz after each. The [course kit](../../../files/welcome-to-the-school/index.html), a handout and a diagram, is in Files. Half an hour in all, the `duration` above.
 
 ## Not This Course
 
@@ -64,5 +64,5 @@ Nothing before it. Every other course comes after it.
 ## Notes and Decisions
 
 <!-- records:list type=decisions -->
-- [ ] [D-K99 Check each lesson with its own quiz in Academy, not one exam at the end](../../../Decisions/d-k99-check-each-lesson-with-its-own-quiz.md) · Proposed · @Brenton Unger II
+- [ ] [D-K99 Check each lesson with its own quiz in Academy, not one exam at the end](../../../decisions/d-k99-check-each-lesson-with-its-own-quiz.md) · Proposed · @Brenton Unger II
 <!-- /records:list -->
