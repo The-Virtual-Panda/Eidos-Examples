@@ -1,0 +1,159 @@
+# Backlog (backlog) settings shared by everyone in this project. Edit here, or on the Plugins page.
+statuses:
+  - Up Next
+  - Scripting
+  - Filming
+  - Editing
+  - Review
+  - Scheduled
+  - Live
+columns:
+  - name: Up Next
+    statuses:
+      - Up Next
+  - name: Scripting
+    statuses:
+      - Scripting
+  - name: Filming
+    statuses:
+      - Filming
+  - name: Editing
+    statuses:
+      - Editing
+  - name: Review
+    statuses:
+      - Review
+  - name: Scheduled
+    statuses:
+      - Scheduled
+  - name: Live
+    statuses:
+      - Live
+default_status: Up Next
+status_colors: {}
+status_categories:
+  Up Next: todo
+  Scripting: in_progress
+  Filming: in_progress
+  Editing: in_progress
+  Review: in_progress
+  Scheduled: in_progress
+  Live: done
+priorities:
+  - High
+  - Medium
+  - Low
+priority_icons: {}
+priority_colors: {}
+column_cards: 7
+forms_section: true
+milestones: []
+properties: []
+builtin_properties: []
+sections:
+  - title: Description
+    type: text
+    meaning: what the work is and why, read first
+  - title: Acceptance Criteria
+    type: checklist
+    meaning: what must be true when it is done, one line each, ticked as each is met
+types:
+  - name: default
+    title: Task
+    icon: circle
+    color: gray
+  - name: production
+    title: Production
+    icon: layers
+    color: purple
+    sections:
+      - title: What it is
+        type: text
+        meaning: the video, Short, or episode this carries from script to live, and the
+          date it has to make
+      - title: Shot list
+        type: checklist
+        meaning: every shot and segment to get, A-roll and B-roll, ticked as each is in
+          the can
+      - title: Edit notes
+        type: text
+        meaning: "notes on the cut: pacing, music, graphics, and what the next pass
+          fixes"
+      - title: Upload checklist
+        type: checklist
+        meaning: title, description, chapters, captions, thumbnail, end screen, cards,
+          pinned comment, and the publish time, ticked as each is set
+  - name: asset
+    title: Asset
+    icon: spark
+    color: orange
+    sections:
+      - title: What to make
+        type: text
+        meaning: the thumbnail, graphic, lower third, or music cue to produce
+      - title: Specs
+        type: text
+        meaning: "sizes, formats, and anything it must meet: a thumbnail at 1280 by 720
+          that still reads at phone size"
+      - title: Where it's used
+        type: text
+        meaning: the videos, posts, or pages it will appear on
+  - name: booking
+    title: Booking
+    icon: bookmark
+    color: blue
+    sections:
+      - title: What to book
+        type: text
+        meaning: the guest, location, gear, or studio, and when
+      - title: Requirements
+        type: checklist
+        meaning: "what it must meet, one line each, ticked as each is met: the release
+          form, the mic, the parking"
+      - title: Confirmation
+        type: text
+        meaning: the reference or the reply that shows it is booked
+  - name: fact-check
+    title: Fact check
+    icon: check
+    color: teal
+    sections:
+      - title: Claim
+        type: text
+        meaning: the statement to check, as written
+      - title: Sources
+        type: links
+        meaning: what was read, one link a line
+      - title: Verdict
+        type: text
+        meaning: whether it holds, and any correction
+  - name: deliverable
+    title: Sponsor deliverable
+    icon: flag
+    color: green
+    sections:
+      - title: What to deliver
+        type: text
+        meaning: "what the sponsor receives: the script for approval, the draft cut, the
+          live link, the numbers after thirty days"
+      - title: Their brief
+        type: checklist
+        meaning: the talking points, links, codes, and dos and don'ts from the sponsor's
+          brief, ticked as the read covers each
+link_types:
+  - name: blocks
+    outward: blocks
+    inward: is blocked by
+  - name: relates
+    outward: relates to
+    inward: relates to
+  - name: duplicates
+    outward: duplicates
+    inward: is duplicated by
+  - name: clones
+    outward: clones
+    inward: is cloned by
+boards: []
+sprints: false
+setup_offered: false
+milestone_properties: []

@@ -6,6 +6,9 @@ _The shapes a video can take, the rules each one keeps, and how often each one s
 
 _One block per format: what it is, how long it runs, how it is built (hook, setup, payoff, close), and what it is for. The recurring shapes a viewer recognizes without reading the title._
 
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->
+
 ### Format
 
 _The name, the runtime, the beats, and what makes a good one._
@@ -20,8 +23,11 @@ _The rules: length, capitalization, what a title promises, what a thumbnail show
 
 ## The Schedule
 
-_How often each format ships, on which days, and what the path from idea to published looks like. The number the Producer holds the channel to._
+_How often each format ships, and on which days. The number the Producer holds the channel to; the work toward it runs on the board in Production, from Up Next to Live._
+
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->
 
 ## Where It Goes
 
-_The main platform, the Shorts feed, the podcast feed, the written version. What each gets and what it does not._
+_The main platform, the Shorts feed, the live platform, the podcast feeds, the newsletter, the written version. What each gets and what it does not._

@@ -8,10 +8,12 @@
 ## Where things are
 
 - **[The Channel](<The Channel>)**: four pages: who watches, what the formats are, how it sounds, and how it makes money. Everything else gets checked against them.
-- **[Videos](Videos)**: one page per video, grouped by series: the hook, the beats, the title and thumbnail, the sponsor read.
-- **[Posts](Posts)**: one page per post, grouped by the same series: the written side of the channel.
+- **[Videos](Videos)**: one page per video, Short, stream, or podcast episode, grouped by series, and a series by season when it runs in seasons: the hook, the beats, the title and thumbnail, the sponsor read.
+- **[Posts](Posts)**: one page per post or newsletter issue, grouped by the same series: the written side of the channel.
 - **[Pages](Pages)**: one page per page of the site: about, sponsors, merch, the newsletter.
-- **[Files](Files)**: thumbnails, scripts, b-roll lists, brand files, and sponsor decks the pages link to.
+- **[Production](Production)**: the work of getting each one live, one task each (a production, a thumbnail, a booking, a fact check, a sponsor deliverable), on a board from Up Next through Scripting, Filming, Editing, Review, and Scheduled to Live.
+- **[Sponsorships](Sponsorships)**: one record per brand deal: the brand, the placement, the rate, the usage, the exclusivity. Offered or In Talks until the creator books or declines it; each video lists the sponsorships it carries.
+- **[Files](Files)**: thumbnails, scripts, b-roll lists, and sponsor decks, each linked to the pages it belongs to, and the Brand Kit's files in a bundle of their own.
 
 ## The one-page docs
 
@@ -21,6 +23,10 @@
 
 ## How to use it
 
-A video's page says what the video **is**: what it does, the hook, the beats, what viewers take away, and what it does not cover. It is not a script and not a task. The `full` page type is the video template; the Formats page holds the rules every video follows. Write the page before the shoot, and keep it true after: a video you shelve stays here, marked `Shelved`, so the reasoning survives.
+A video's page says what the video **is**: what it does, the hook, the beats, what viewers take away, and what it does not cover. It is not a script and not a task. Pick the page that fits (`full` for a video, `short` for a Short, `stream` for a live stream, `episode` for a podcast or interview, `pitch` for an idea not yet greenlit); each starts with only the sections every one needs, and the rest are added when the work earns them. The Formats page holds the rules every video follows.
+
+Write the page before the shoot, and keep it true after. The work of making it (the script draft, the shoot, the edit, the upload) is tasks in Production, each serving the page it is for, and the page lists them. A video you shelve stays here, marked `Shelved`, so the reasoning survives.
+
+Saved views do the everyday looking: **Release Schedule** and **Idea Bank** over Videos, **Thumbnails and Graphics** and **Sponsor Deliverables** over Production.
 
 _Built on Eidos. The page types, the properties each page carries, and the roles live in [`.eidos/`](.eidos); `eidos check` keeps it honest._

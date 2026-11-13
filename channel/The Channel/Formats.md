@@ -28,8 +28,8 @@ _The rules: length, capitalization, what a title promises, what a thumbnail show
 
 ## The Schedule
 
-_How often each format ships, on which days, and what the path from idea to published looks like. The number the Producer holds the channel to._
+_How often each format ships, and on which days. The number the Producer holds the channel to; the work toward it runs on the board in Production, from Up Next to Live._
 
 ## Where It Goes
 
-_The main platform, the Shorts feed, the podcast feed, the written version. What each gets and what it does not._
+_The main platform, the Shorts feed, the live platform, the podcast feeds, the newsletter, the written version. What each gets and what it does not._

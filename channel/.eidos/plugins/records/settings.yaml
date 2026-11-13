@@ -1,0 +1,51 @@
+# Records (records) settings shared by everyone in this project. Edit here, or on the Plugins page.
+types:
+  - name: sponsorships
+    title: Sponsorships
+    mode: file
+    sidebar: true
+    folder: Sponsorships
+    numbering: ids
+    id_prefix: SP
+    statuses:
+      - name: Offered
+        category: open
+      - name: In Talks
+        category: open
+      - name: Booked
+        category: closed
+      - name: Declined
+        category: cancelled
+    sign_off: true
+    listed: true
+    tasks: true
+    fields:
+      - name: brand
+        type: text
+        required: true
+      - name: placement
+        type: list
+        options:
+          - Integration
+          - Dedicated
+          - Pre-roll
+          - Mid-roll
+          - End card
+          - Short
+          - Newsletter
+          - Pinned comment
+        meanings:
+          Integration: a read inside a video that is about something else
+          Dedicated: a whole video about the sponsor's product
+          Pre-roll: a read before the content starts, on a podcast or a stream
+          Mid-roll: a read in a break partway through, on a podcast or a stream
+          End card: the sponsor named or shown in the outro
+          Short: a vertical Short or clip for the sponsor
+          Newsletter: a slot in a newsletter issue
+          Pinned comment: the sponsor's link pinned under a video
+      - name: rate
+        type: number
+      - name: usage
+        type: text
+      - name: exclusivity
+        type: text

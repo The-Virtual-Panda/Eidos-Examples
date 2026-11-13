@@ -20,7 +20,7 @@ _The channels a viewer would also watch, and what each one does that this one do
 
 ## How It Makes Money
 
-_Ads, sponsors, memberships, products, a newsletter: which ones, in what proportion, and which ones the channel refuses. The reason a Sponsor role exists here._
+_Ads, sponsors, memberships, products, a newsletter: which ones, in what proportion, and which ones the channel refuses. Each deal with a sponsor is a sponsorship in Sponsorships, priced from the Rate Card. The reason a Sponsor role exists here._
 
 ## How It Grows
 

@@ -1,7 +1,7 @@
 # The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.13.0
+eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
@@ -36,30 +36,40 @@ folders:
       - { name: market, template: templates/frame.market.md, description: "the niche, the channels next to it, and how it makes money" }
   - name: Videos
     owned_by: "@eidos/collections"
-    description: "One page per video, grouped by series."
+    description: "One page per video, Short, stream, or episode, grouped by series, and a series by season where it runs in seasons."
     variants:
       - { name: full, template: templates/video.full.md, description: "the full page for a video: the video template", default: true }
       - { name: short, template: templates/video.short.md, description: "a Short or a clip: one hook, one beat, vertical" }
       - { name: pitch, template: templates/video.pitch.md, description: "an idea: what it does, the hook, what you would need; grow into full" }
+      - { name: stream, template: templates/video.stream.md, description: "a live stream: the run of show, the segments, what is planned and what is left to chat, and what gets clipped" }
+      - { name: episode, template: templates/video.episode.md, description: "a podcast or interview episode: the guest, why them, the questions, the segments, and the show notes" }
     label: Series
     folder_property: series
-    folders: [] # one entry per series (a recurring format, a playlist), a name and a description, as they accrue
+    folders: [] # one entry per series, a name and a description, as they accrue; a series that runs in seasons holds a folder per season
   - name: Posts
     owned_by: "@eidos/collections"
-    description: "The written side: one page per post, grouped by the same series as the videos."
+    description: "The written side: one page per post or newsletter issue, grouped by the same series as the videos."
     variants:
       - { name: full, template: templates/post.full.md, description: "the full page for a post", default: true }
       - { name: companion, template: templates/post.companion.md, description: "the written twin of a video: what it adds, and the video it goes with" }
+      - { name: newsletter, template: templates/post.newsletter.md, description: "a newsletter issue: the lead, the links, and the one thing it asks the reader to do" }
     label: Series
     folder_property: series
-    folders: [] # the same series as the videos, as they accrue
+    folders: [] # the same series, and seasons, as the videos, as they accrue
   - name: Pages
     owned_by: "@eidos/collections"
     description: "The site: one page each, flat. About, sponsors, merch, the newsletter; the part of the channel that is not on a platform."
     variants:
       - { name: page, template: templates/page.page.md, description: "a page on the site: what it is for, and what a visitor does there", default: true }
   - name: Files
-    description: "Thumbnails, scripts, b-roll lists, brand files, and sponsor decks the pages link to."
+    owned_by: "@assets/files"
+    description: "Thumbnails, scripts, b-roll lists, sponsor decks, and the brand kit, kept by the Assets plugin: each file linked to the videos, posts, and pages it belongs to."
+  - name: Production
+    owned_by: "@backlog/tasks"
+    description: "The production pipeline: one task per piece of work that gets a video, post, or page live (a production, a thumbnail, a booking, a fact check, a sponsor deliverable), on a board from Up Next to Live. The Backlog plugin's."
+  - name: Sponsorships
+    owned_by: "@records/sponsorships"
+    description: "The brand deals: one record per sponsorship (the brand, the placement, the rate, the usage, the exclusivity), Offered or In Talks until the creator books or declines it, and listed on the videos that carry it. The Records plugin's."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -69,46 +79,62 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's; `none` = no template." }
   # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
       type: Text
-      applies_to: all
-      options: [ Idea, Scripted, Shot, Edited, Scheduled, Published, Shelved ]
-      meaning: "Where this stands: Idea, Scripted, Shot, Edited, Scheduled, Published, or Shelved."
+      applies_to:
+        - Videos
+        - Posts
+        - Pages
+      options: [ Idea, Greenlit, In Production, Scheduled, Published, Shelved ]
+      meaning: "Where this stands: Idea (pitched, not committed), Greenlit (it will be made), In Production (its work is on the board in Production), Scheduled (finished, with a date), Published (live), or Shelved (not made, or taken down, the reason kept in Notes and Decisions)."
       canvas:
         show: true
         styles:
-          Draft:
+          Idea:
             color: "#8b9099"
-          Intake:
+          Greenlit:
             color: "#d3a53c"
-          In Progress:
+          In Production:
             color: "#5f80cf"
-          Done:
-            color: "#7fae6c"
-          Archived:
-            color: "#8b9099"
-          Deprecated:
-            color: "#cf7b8f"
-          needs-clarification:
-            color: "#5f80cf"
-          maybe:
-            color: "#e08a63"
-          visionary:
+          Scheduled:
             color: "#4aa39f"
-    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
-    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
+          Published:
+            color: "#7fae6c"
+          Shelved:
+            color: "#cf7b8f"
+    - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once.", eidosmd: { new: today } }
+    - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change.", eidosmd: { new: today } }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
     - { name: series, type: Text, applies_to: [ Videos, Posts ], meaning: "Which series this belongs to. Its folder's path, such as a/b; a value that is not its folder warns." }
     - { name: watch_first, type: List, applies_to: [ Videos, Posts ], meaning: "Videos or posts a viewer should see before this one, as links." }
     - { name: publish_date, type: Date, applies_to: [ Videos, Posts ], meaning: "When it went live, or goes live." }
     - { name: runtime, type: Number, applies_to: [ Videos ], meaning: "How long it runs, in minutes." }
+    - { name: format, type: Text, applies_to: [ Videos ], meaning: "The format it follows, named as the Formats page names it. A video that fits none is a new format or a mistake." }
+    - { name: guests, type: List, applies_to: [ Videos, Posts ], meaning: "Who appears besides the host: a guest, a co-host, a collaborator, by name." }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
-vocabulary: []
+vocabulary:
+  - term: format
+    means: A recurring shape a video takes, with its own beats and runtime, declared on the Formats page.
+    not:
+      - "genre: a genre is the kind of content a niche holds; a format is how one video in it is built"
+    see: ../The Channel/Formats.md
+  - term: series
+    means: A run of videos and posts under one name, a folder of Videos and of Posts, holding a folder per season where it runs in seasons.
+    not:
+      - "playlist: a playlist is the platform's list, and may mix series or hold only part of one"
+  - term: read
+    means: The sponsor's segment inside a video, episode, or stream, written on its page under Sponsor and End Screen.
+    not:
+      - "plug: a plug is a mention the channel gives for nothing; a read is paid for, under a sponsorship"
+  - term: sponsorship
+    means: "One deal with a brand: the placement, the rate, the usage, and the exclusivity, a record in Sponsorships that the videos carrying it list."
+    not:
+      - "brand deal: the same thing, called a sponsorship here so one word finds every one"
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:

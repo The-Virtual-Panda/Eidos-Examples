@@ -4,6 +4,9 @@
 
 _What it says that the videos cannot, and for whom. A short paragraph. If this changes a lot, it is a different post._
 
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->
+
 ## Still to Decide
 
 _What you do not know yet. Kept near the top so it does not get buried._
@@ -11,6 +14,9 @@ _What you do not know yet. Kept near the top so it does not get buried._
 ## The Beats
 
 _What the post says, in order, numbered. Keep each short; the draft lives in Files or on the platform, linked here._
+
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->
 
 1. <!-- the first thing the post establishes -->
 
@@ -21,6 +27,9 @@ _What a reader can do, know, or feel at the end that they could not at the start
 ## Not This Post
 
 _What this post deliberately does not cover, and which post or video does._
+
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->
 
 ## Notes and Decisions
 

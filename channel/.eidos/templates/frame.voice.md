@@ -6,6 +6,9 @@ _How the channel sounds: who the viewer meets on camera, the register, and the r
 
 _The version of you on camera, in a paragraph. What they are like, what they care about, what they never pretend to be._
 
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->
+
 ## How It Sounds
 
 _Casual or precise, warm or dry, fast or slow. The two or three words a viewer would use, and the one they never would._
@@ -17,3 +20,6 @@ _How you address the viewer, what you say in the first ten seconds, what you nev
 ## What the Channel Never Does
 
 _The lines: no rage bait, no faked reactions, no sponsor in the first minute, whatever they are. Short, and kept._
+
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->

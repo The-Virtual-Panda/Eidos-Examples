@@ -4,9 +4,15 @@
 
 _Who lands on it and why: a sponsor deciding, a viewer looking for the merch, a new subscriber finding the newsletter. A short paragraph._
 
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->
+
 ## What Is On It
 
 _The sections, in order, and what each one does. Numbered. Keep each short; the copy lives with the site._
+
+<!-- eidosmd:required -->
+<!-- /eidosmd:required -->
 
 1. <!-- the first thing a visitor sees -->
 
