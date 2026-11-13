@@ -22,6 +22,13 @@ _The facts, as short numbered statements: who leads it, what it holds, what it w
 
 _What it does when the party is not looking: its methods, its pace, what happens if nobody stops it. The engine you run between sessions._
 
+## Secrets
+
+_What the party could find out about this faction, one line each, and whether they have. Each secret is true whether or not it is ever learned, so it is not tied to one scene: it surfaces wherever the party looks. The Player role reads only the ones marked revealed._
+
+<!-- records:section type=secrets -->
+<!-- /records:section -->
+
 ## What the Party Sees
 
 _The faction as players meet it: its face, its symbols, what it says about itself. The part the Player role may read once it is `revealed`._
@@ -34,8 +41,13 @@ _What this faction deliberately is not, and which faction holds that instead. Th
 
 _The places it holds, the people in it, the arcs it drives, the factions it fights. Link the pages rather than naming them._
 
-## Notes and Decisions
+## Rulings
 
-_Notes: the sigil, the naming pattern, the reference. Decisions: one line each, dated, never deleted._
+_The canon rulings that touch this page, each signed off by the GM and overturned rather than deleted, so a retcon is a ruling and not an accident. Listed here from the Rulings folder._
 
-<!-- 2026-03-09: Split the guild from the crown; one faction was doing both jobs. (GM) -->
+<!-- records:section type=rulings -->
+<!-- /records:section -->
+
+## Notes
+
+_The sigil, the naming pattern, the reference, the motto. Link the banner art from Files._

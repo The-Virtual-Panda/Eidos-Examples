@@ -1,0 +1,43 @@
+# Records (records) settings shared by everyone in this project. Edit here, or on the Plugins page.
+types:
+  - name: rulings
+    title: Rulings
+    label: R{n}
+    mode: file
+    sidebar: true
+    folder: Rulings
+    numbering: ids
+    id_prefix: R
+    statuses:
+      - name: Proposed
+        category: open
+      - name: Canon
+        category: closed
+      - name: Overturned
+        category: cancelled
+    sign_off: true
+    listed: true
+    tasks: true
+    fields:
+      - name: kind
+        type: list
+        options:
+          - world
+          - rules
+        required: true
+        meanings:
+          world: "a fact of the world: what is true, changed, or never was, often because
+            of what happened at the table"
+          rules: "how the game's rules are read at this table: a house rule, a call on an
+            edge case"
+      - name: session
+        type: text
+  - name: secrets
+    title: Secrets
+    label: S{n}
+    mode: inline
+    fields:
+      - name: revealed
+        type: checkbox
+      - name: learned
+        type: text

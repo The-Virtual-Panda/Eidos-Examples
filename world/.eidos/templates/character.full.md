@@ -14,13 +14,20 @@ _What you do not know yet. Kept near the top so nothing gets buried._
 
 ## What Is True
 
-_The facts, as short numbered statements: who they are, what they want, what they fear, what they know, what they will never do. If it is not written here, it is not canon yet._
+_The facts, as short numbered statements: who they are, what they want, what they fear, what they will never do. If it is not written here, it is not canon yet._
 
 1. <!-- the first thing that is true of this character -->
 
 ## At the Table
 
 _How to play them: the voice, the bearing, a habit, the line they always say. What they want out of this conversation. The part you read mid-session._
+
+## Secrets
+
+_What the party could find out about this character, one line each, and whether they have. Each secret is true whether or not it is ever learned, so it is not tied to one scene: it surfaces wherever the party looks. The Player role reads only the ones marked revealed._
+
+<!-- records:section type=secrets -->
+<!-- /records:section -->
 
 ## What the Party Sees
 
@@ -34,8 +41,13 @@ _What this person deliberately is not, and who holds that instead. A character w
 
 _Their faction, their places, the arcs they turn up in, the people they love and hate. Link the pages rather than naming them._
 
-## Notes and Decisions
+## Rulings
 
-_Notes: the reference art, where the stat block lives, the voice you are borrowing. Decisions: one line each, dated, never deleted._
+_The canon rulings that touch this page, each signed off by the GM and overturned rather than deleted, so a retcon is a ruling and not an accident. Listed here from the Rulings folder._
 
-<!-- 2026-03-09: She survived the ambush; the players liked her too much to lose her. (GM) -->
+<!-- records:section type=rulings -->
+<!-- /records:section -->
+
+## Notes
+
+_The reference art, where the stat block lives, the voice you are borrowing. Link the portrait from Files._

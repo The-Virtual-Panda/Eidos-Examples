@@ -1,7 +1,7 @@
 # The framework document: the structure this project is written in. See EIDOS.md for what each key means;
 # the `eidos` CLI edits this file. Every path is relative to this folder.
 
-eidos_version: 5.13.0
+eidos_version: 5.14.0
 
 # kebab-case | TitleCase | Title Case. Settled at install; changing it later means renaming files.
 naming: Title Case
@@ -36,10 +36,11 @@ folders:
       - { name: table, template: templates/frame.table.md, description: "who plays, how sessions run, and what the players know" }
   - name: Places
     owned_by: "@eidos/collections"
-    description: "One page per place, grouped by region."
+    description: "One page per place, in folders as deep as the world goes: a land, its regions, their settlements, the sites inside them. A land's or a region's own page sits beside the folder that holds what is in it."
     variants:
       - { name: full, template: templates/place.full.md, description: "the full page for a place", default: true }
       - { name: sketch, template: templates/place.sketch.md, description: "a sketch: why it exists, what is still to decide, what is true; grow into full" }
+      - { name: site, template: templates/place.site.md, description: "a site inside a place, keyed by area: a dungeon, a temple, an inn, a ship" }
     label: Regions
     folder_property: region
     folders: [] # one entry per region, a name and a description, as they accrue
@@ -57,15 +58,23 @@ folders:
       - { name: sketch, template: templates/character.sketch.md, description: "a sketch: why they exist, what is still to decide, what is true; grow into full" }
   - name: Arcs
     owned_by: "@eidos/collections"
-    description: "One page per story arc, grouped by campaign."
+    description: "One page per story arc, in a folder per campaign; the sessions played in an arc sit in a folder of their own beside the arc's page, one page each."
     variants:
       - { name: full, template: templates/arc.full.md, description: "the full page for an arc", default: true }
       - { name: sketch, template: templates/arc.sketch.md, description: "a sketch: why it exists, what is still to decide, the beats; grow into full" }
+      - { name: session, template: templates/arc.session.md, description: "one session as it was played: the recap, what changed, what the party learned, what is left open" }
     label: Campaigns
     folder_property: campaign
     folders: [] # one entry per campaign run in this world, a name and a description, as they accrue
   - name: Files
-    description: "Maps, handouts, reference art, and character sheets the pages link to."
+    owned_by: "@assets/files"
+    description: "Maps, handouts, reference art, and character sheets the pages link to. A map with a player's copy and a GM's copy, or a handout in several pages, is one bundle."
+  - name: Prep
+    owned_by: "@backlog/tasks"
+    description: "Session prep, one task per thing to ready before the table meets: a session to prep, a map to draw, a handout to print. Work, not canon: what a session settles is written into the pages and the rulings."
+  - name: Rulings
+    owned_by: "@records/rulings"
+    description: "Canon rulings, one file each: a call the GM made on what is true in the world or how a rule reads at this table, signed off once it is canon, overturned rather than deleted. Each lists itself on the pages it touches."
 
 # The property contract, one block per owner. A property applies to `all` collections or a list; a required
 # one is generated into every new blueprint and surfaced when missing; `options` closes the value to a set.
@@ -75,7 +84,7 @@ properties:
     - { name: id, type: Text, required: true, meaning: "Stable, unique identity, in any form. Assigned once, never changed." }
     - { name: title, type: Text, required: true, meaning: Human-readable name. }
     - { name: summary, type: Text, meaning: "One line: what this blueprint is. Feeds the index; absent, the index flags it." }
-    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's." }
+    - { name: variant, type: Text, meaning: "Which variant this blueprint follows. Absent = the nearest default on its folder's path, else the collection's; `none` = no template." }
   # Yours. The seed ships defaults; keep, scope, or drop any of them.
   custom:
     - name: status
@@ -86,35 +95,45 @@ properties:
       canvas:
         show: true
         styles:
-          Draft:
+          Seed:
             color: "#8b9099"
-          Intake:
+          Drafted:
             color: "#d3a53c"
-          In Progress:
-            color: "#5f80cf"
-          Done:
+          Canon:
             color: "#7fae6c"
-          Archived:
-            color: "#8b9099"
-          Deprecated:
+          Retired:
             color: "#cf7b8f"
-          needs-clarification:
-            color: "#5f80cf"
-          maybe:
-            color: "#e08a63"
-          visionary:
-            color: "#4aa39f"
     - { name: date_created, type: Date, applies_to: all, meaning: "YYYY-MM-DD. Set once." }
     - { name: date_modified, type: Date, applies_to: all, meaning: "YYYY-MM-DD. The last change." }
     - { name: tags, type: List, applies_to: all, meaning: "Free tags." }
-    - { name: region, type: Text, applies_to: [ Places ], meaning: "Which region the place is in. Its folder's path, such as a/b; a value that is not its folder warns." }
+    - { name: region, type: Text, applies_to: [ Places ], meaning: "Where the place is: its folder's path from the widest land in, such as Ostmark/The Fens/Harrow. A value that is not its folder warns." }
     - { name: needs, type: List, applies_to: [ Places, Factions, Characters, Arcs ], meaning: "Pages this one needs in place to make sense, as links." }
-    - { name: campaign, type: Text, applies_to: [ Arcs ], meaning: "Which campaign the arc belongs to. Its folder's path, such as a/b; a value that is not its folder warns." }
-    - { name: revealed, type: Checkbox, applies_to: [ Places, Factions, Characters, Arcs ], meaning: Have the players met this yet? The Player role reads only what is revealed. }
+    - { name: campaign, type: Text, applies_to: [ Arcs ], meaning: "Which campaign the page belongs to, and for a session which arc: its folder's path, such as The Drowned Crown/The Silted Harbor. A value that is not its folder warns." }
+    - { name: revealed, type: Checkbox, applies_to: [ Places, Factions, Characters, Arcs, top_level ], meaning: "Have the players met this yet? The Player role reads only what is revealed: a page, a top-level doc, a secret." }
 
 # The project's own terms: term, means, not (the near-misses and why), and see (the blueprint that defines it).
 # Starts empty; Eidos declares none.
-vocabulary: []
+vocabulary:
+  - term: canon
+    means: "What is true in the world and holds at the table: a page marked Canon, or a ruling signed off as Canon."
+    not:
+      - "lore: what people in the world believe, which may be wrong; a belief is canon only as a belief"
+      - "headcanon: a guess a player or co-writer holds that no page or ruling settles"
+  - term: ruling
+    means: A call the GM made on what is true in the world or how a rule reads at this table, kept one per file in Rulings and overturned rather than deleted.
+    not:
+      - "decision: rulings are the word here, so a retcon reads as a ruling and not a change of mind"
+      - "house rule: one kind of ruling, kind rules"
+  - term: session
+    means: "One sitting at the table: prepped as a task in Prep, and once played, a page in its arc's folder."
+    not:
+      - "episode: the word for a series; a session is a sitting, whatever it covers"
+  - term: secret
+    means: One thing the party could find out, written on the page it is about, true whether or not it is ever learned, and marked revealed once it is. A clue is how one reaches the party; a secret may have many.
+    not: []
+  - term: revealed
+    means: "Met or learned by the party: a page, a top-level doc, or a secret the Player role may read."
+    not: []
 
 # Generated by `eidos index`; never hand-edited. One list per collection, in the order the markdown index would use.
 index:

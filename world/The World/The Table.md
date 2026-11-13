@@ -24,4 +24,4 @@ _The public version of the world: the handout a new player reads. Anything a pla
 
 ## How a Session Runs
 
-_Prep, the recap, safety tools, downtime, how a session ends and how the next one starts. The habits the game master keeps for the table._
+_How you prep (a Session task in Prep), the recap that opens the table (the last session page's Recap), safety tools, downtime, how a session ends and how the next one starts. The habits the game master keeps for the table._

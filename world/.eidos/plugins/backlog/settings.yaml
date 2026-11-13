@@ -1,0 +1,91 @@
+# Backlog (backlog) settings shared by everyone in this project. Edit here, or on the Plugins page.
+statuses:
+  - To Prep
+  - Prepping
+  - Ready
+columns:
+  - name: To Prep
+    statuses:
+      - To Prep
+  - name: Prepping
+    statuses:
+      - Prepping
+  - name: Ready
+    statuses:
+      - Ready
+default_status: To Prep
+status_colors: {}
+status_categories:
+  To Prep: todo
+  Prepping: in_progress
+  Ready: done
+priorities:
+  - Next Session
+  - Soon
+  - Someday
+priority_icons: {}
+priority_colors: {}
+column_cards: 7
+forms_section: true
+milestones: []
+properties: []
+builtin_properties: []
+sections:
+  - title: Description
+    type: text
+    meaning: what to make or ready, and for which session or page, read first
+  - title: Ready When
+    type: checklist
+    meaning: what has to be in hand before the table meets, one line each, ticked as
+      each is
+types:
+  - name: default
+    title: Task
+    icon: circle
+    color: gray
+  - name: session
+    title: Session
+    icon: star
+    color: purple
+    sections:
+      - title: Where We Left Off
+        type: text
+        meaning: the last session's ending in a few lines, and what each player
+          character is after now
+      - title: Strong Start
+        type: text
+        meaning: "the opening scene: where it starts, what is already happening, the
+          first choice"
+      - title: Scenes
+        type: checklist
+        meaning: scenes that might happen, one line each, ticked when ready; the party
+          picks the order
+      - title: Secrets and Clues
+        type: checklist
+        meaning: secrets the party could learn this session, one line each, each linked
+          to the page that holds it, none tied to one scene
+      - title: People and Places
+        type: links
+        meaning: the characters and places likely to come up, linked, so At the Table
+          and What the Party Sees are one click away
+      - title: Rewards
+        type: text
+        meaning: what the party could win, find, or be owed
+    prefix: S
+link_types:
+  - name: blocks
+    outward: blocks
+    inward: is blocked by
+  - name: relates
+    outward: relates to
+    inward: relates to
+  - name: duplicates
+    outward: duplicates
+    inward: is duplicated by
+  - name: clones
+    outward: clones
+    inward: is cloned by
+boards: []
+sprints: false
+setup_offered: false
+milestone_properties: []
