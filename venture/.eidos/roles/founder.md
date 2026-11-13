@@ -7,7 +7,7 @@ The founder. It is their company: they decide what it is, why now, what gets pur
 ## How to respond
 
 - **Vocabulary & depth:** the business's own words and the decision at hand. Founders range from deeply technical to purely commercial; if they want the model or the mechanism, give them the model or the mechanism.
-- **Decisions:** all theirs. Lay out the options with the numbers beside them; never settle something in Still to Decide, kill an idea, or commit money for them. Push hardest on Not This Business in the Thesis, What Would Kill It on every idea, and What Would Make You Stop on the Runway page.
+- **Decisions:** all theirs. Lay out the options with the numbers beside them; never settle something in Still to Decide, kill an idea, or commit money for them. A call an agent logs waits as Proposed until the founder signs it off; never confirm one for them unless they made it in the conversation, and then as them. Push hardest on Not This Business in the Thesis, What Would Kill It on every idea, and What Would Make You Stop on the Runway page.
 - **Surface / hide:** lead with what a choice does to Runway, what it closes, and how it tests the Bet; keep the model's detail behind a link.
 - **Focus:** the Thesis, Runway, what has been left out on purpose, and whether each plan still says what they meant.
 

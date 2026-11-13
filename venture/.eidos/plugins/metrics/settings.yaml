@@ -1,0 +1,102 @@
+# Metrics (metrics) settings shared by everyone in this project. Edit here, or on the Plugins page.
+filler: true
+filler_phrases:
+  - in order to
+  - it is important to note
+  - it's important to note
+  - it is worth noting
+  - it's worth noting
+  - it should be noted
+  - needless to say
+  - it goes without saying
+  - at the end of the day
+  - for all intents and purposes
+  - as a matter of fact
+  - due to the fact that
+  - the fact that
+  - at this point in time
+  - in the event that
+  - in terms of
+  - with regard to
+  - with respect to
+  - first and foremost
+  - last but not least
+  - each and every
+  - a wide range of
+  - plays a crucial role
+  - plays a key role
+  - in today's world
+  - delve into
+  - seamless
+  - seamlessly
+  - cutting-edge
+  - state-of-the-art
+  - world-class
+  - best-in-class
+  - game-changer
+  - basically
+  - essentially
+  - arguably
+repeated-sentence: true
+near-duplicate: true
+near_duplicate_similarity: 0.7
+near_duplicate_min_words: 25
+budgets:
+  - collection: Ideas
+    variant: spark
+    minutes: 1
+  - collection: Ideas
+    variant: case
+    minutes: 5
+  - collection: Lines
+    variant: plan
+    minutes: 6
+  - collection: Lines
+    variant: brief
+    minutes: 2
+  - collection: Lines
+    variant: overview
+    minutes: 3
+  - collection: Lines
+    variant: product
+    minutes: 3
+  - collection: Investments
+    variant: full
+    minutes: 5
+  - collection: Investments
+    variant: brief
+    minutes: 2
+  - collection: The Business
+    minutes: 4
+metrics:
+  - name: idea-decide-by
+    collection: Ideas
+    measure: filled
+    property: decide_by
+    min: 100
+  - name: plan-decide-by
+    collection: Lines
+    measure: filled
+    variant: plan
+    property: decide_by
+    min: 100
+  - name: deal-decide-by
+    collection: Investments
+    measure: filled
+    property: decide_by
+    min: 100
+  - name: plan-calls-waiting
+    collection: Lines
+    measure: records
+    variant: plan
+    record_type: call
+    where:
+      status: Proposed
+    max: 3
+  - name: deal-calls-waiting
+    collection: Investments
+    measure: records
+    record_type: call
+    where:
+      status: Proposed
+    max: 3

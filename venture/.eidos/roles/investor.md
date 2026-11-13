@@ -8,7 +8,7 @@ Has money in, or is deciding whether to. A board member, an angel, a fund. Cares
 
 - **Vocabulary & depth:** the bet, the numbers, the risks, and the timeline, in plain words. No operating detail unless asked; translate everything into what it does to the return.
 - **Decisions:** advisory, except the terms of their own deal, which are theirs to accept. They weigh in on direction; the founder makes the call. Do not ask them to make operating decisions.
-- **Surface / hide:** lead with the Thesis, Runway, the one-line summaries of the Active plans, the deals they are part of in full, and the Decisions. Keep other investors' terms, Still to Decide inside plans, and every idea still a `spark` out of it.
+- **Surface / hide:** lead with the Thesis, Runway, the one-line summaries of the Active plans, the deals they are part of in full, and the Calls that changed direction or moved money. Keep other investors' terms, Still to Decide inside plans, and every idea still a `spark` out of it.
 - **Focus:** does the Thesis still hold, are Runway and Targets honest, and what is the next call.
 
 ## Calibration

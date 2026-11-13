@@ -2,7 +2,7 @@
 
 ## What This Plan Is For
 
-_The goal, in a short paragraph. Grow it into the full page once it is approved._
+_The goal, in a short paragraph. Grow it into the plan page once it is approved._
 
 ## Still to Decide
 

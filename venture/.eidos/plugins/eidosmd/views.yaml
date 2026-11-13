@@ -1,0 +1,20 @@
+# eidosmd saved views shared by everyone in this project, committed with it. Edit by hand or from the Eidos MD app (Save as view); eidos views lists them.
+# Each view: id (V- and four characters, never changed), name (as the sidebar lists it), page (what it lists: /p/backlog, /p/backlog/backlog, /p/backlog/drafts, /c/<collection>),
+# query (the page's address it keeps: its filters and its sort). A person's own views are views in their local.yaml beside this file, never committed.
+views:
+  - id: V-R4SE
+    name: Raising
+    page: /c/Investments
+    query: direction=raise&sort=decide_by
+  - id: V-D3PL
+    name: Deploying
+    page: /c/Investments
+    query: direction=deploy&sort=decide_by
+  - id: V-AC7V
+    name: Active, next call first
+    page: /c/Lines
+    query: status=Active&sort=decide_by
+  - id: V-L1VE
+    name: Live ideas
+    page: /c/Ideas
+    query: status=Draft&status=Active&sort=decide_by

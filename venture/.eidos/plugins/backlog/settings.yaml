@@ -1,0 +1,89 @@
+# Backlog (backlog) settings shared by everyone in this project. Edit here, or on the Plugins page.
+statuses:
+  - To Do
+  - In Progress
+  - Done
+columns:
+  - name: To Do
+    statuses:
+      - To Do
+  - name: In Progress
+    statuses:
+      - In Progress
+  - name: Done
+    statuses:
+      - Done
+default_status: To Do
+status_colors: {}
+status_categories:
+  To Do: todo
+  In Progress: in_progress
+  Done: done
+priorities:
+  - High
+  - Medium
+  - Low
+priority_icons: {}
+priority_colors: {}
+column_cards: 7
+forms_section: true
+milestones: []
+properties: []
+builtin_properties: []
+sections:
+  - title: Description
+    type: text
+    meaning: what the work is and why, read first
+  - title: Acceptance Criteria
+    type: checklist
+    meaning: what must be true when it is done, one line each, ticked as each is met
+types:
+  - name: default
+    title: Task
+    icon: circle
+    color: gray
+  - name: filing
+    title: Filing
+    icon: bookmark
+    color: blue
+    sections:
+      - title: What to file
+        type: text
+        meaning: the document, where it goes, and by when
+      - title: Requirements
+        type: checklist
+        meaning: what it must meet, one line each, ticked as each is met
+      - title: Confirmation
+        type: text
+        meaning: the reference or receipt that shows it is done
+  - name: contract-review
+    title: Contract review
+    icon: diamond
+    color: purple
+    sections:
+      - title: What to review
+        type: text
+        meaning: the thing to look at, with a link to it
+      - title: Risks
+        type: text
+        meaning: what in it could go wrong, and how much it matters
+      - title: Decision
+        type: text
+        meaning: what was decided, written once it is
+link_types:
+  - name: blocks
+    outward: blocks
+    inward: is blocked by
+  - name: relates
+    outward: relates to
+    inward: relates to
+  - name: duplicates
+    outward: duplicates
+    inward: is duplicated by
+  - name: clones
+    outward: clones
+    inward: is cloned by
+boards: []
+sprints: false
+setup_offered: false
+milestone_properties: []

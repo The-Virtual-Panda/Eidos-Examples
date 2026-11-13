@@ -1,0 +1,40 @@
+# Records (records) settings shared by everyone in this project. Edit here, or on the Plugins page.
+types:
+  - name: call
+    title: Calls
+    mode: file
+    sidebar: true
+    folder: Calls
+    numbering: ids
+    id_prefix: C
+    statuses:
+      - name: Proposed
+        category: open
+      - name: Made
+        category: closed
+      - name: Deferred
+        category: cancelled
+      - name: Overturned
+        category: cancelled
+    default_status: Proposed
+    sign_off: true
+    listed: true
+    tasks: true
+    fields:
+      - name: kind
+        type: list
+        options:
+          - direction
+          - money
+          - people
+          - product
+        required: true
+        meanings:
+          direction: "What the business is and pursues: a line started or closed, an idea
+            killed or taken up, the Thesis or the Runway's limits changed."
+          money: "What money moves and on what terms: a round, a cheque written, a price,
+            a budget, a term accepted or refused."
+          people: "Who is on the team and what they own: a hire, a departure, a role, an
+            equity grant, an advisor or a board seat."
+          product: "What a product does or leaves out: what ships, what is cut, what it
+            costs the customer."
