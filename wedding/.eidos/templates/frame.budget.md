@@ -8,7 +8,7 @@ _The total, and how it splits: what gets the most, what gets the least, what som
 
 ## The Date and the Countdown
 
-_The date, the season, and the deadlines on the way there: venue booked by, invitations out by, final numbers by. The dates vendors will hold you to._
+_The date, the season, and the deadlines on the way there: venue booked by, invitations out by, final numbers by. The dates vendors will hold you to; once the date is set, the Checklist's milestones take theirs from it._
 
 ## What Matters Most
 
@@ -17,3 +17,10 @@ _The two or three things money and attention go to first, in order, and what you
 ## Hard Limits
 
 _The lines you will not cross: a guest count, a debt, a Sunday. Keep it short._
+
+## Decisions
+
+_The trade-offs, one decision each: the bigger venue or the band, the open bar or the second photographer, who pays for what. Open while it is still an argument; marked Decided, with who and when, once the couple settles it._
+
+<!-- records:section type=decision -->
+<!-- /records:section -->

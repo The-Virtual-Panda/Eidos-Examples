@@ -29,3 +29,7 @@ _The next kind, and how their day is different._
 ## What Guests Will Need
 
 _Step-free access, dietary needs, translation, travel help, childcare, a quiet room. Whatever the day has to provide so everyone above can actually be there._
+
+## Decisions
+
+_The calls that shape the crowd, one decision each: the cap on numbers, kids or no kids, plus-ones, the B-list. Settled ones stay, with who and when._

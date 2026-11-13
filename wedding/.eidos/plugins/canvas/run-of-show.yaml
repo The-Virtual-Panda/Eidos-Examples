@@ -1,0 +1,299 @@
+# A canvas, authored in the Eidos MD app. Nodes are sketches, stickies, or blueprints; the canvas holds the flows, frames, and layout, and its comment threads are the Comments plugin's. Documented by `eidos canvas --help`.
+
+title: Run of Show
+pages:
+  - id: night-before
+    title: The Night Before
+    frames:
+      - id: f-rehearsal
+        title: "Rehearsal"
+        x: 0
+        y: 120
+        w: 300
+        h: 348
+        color: sand
+    nodes:
+      - id: note
+        sticky:
+          text: "Moments before the wedding day. Each card is a sketch: promote it into a page in Run of Show/The Night Before once it has a time and a place, and the card reads the page from then on."
+          color: yellow
+      - id: m-the-rehearsal
+        sketch:
+          label: "The Rehearsal"
+          status: Idea
+        frame: f-rehearsal
+      - id: m-the-rehearsal-dinner
+        sketch:
+          label: "The Rehearsal Dinner"
+          status: Idea
+        frame: f-rehearsal
+      - id: m-welcome-drinks
+        sketch:
+          label: "Welcome Drinks"
+          status: Idea
+        frame: f-rehearsal
+    edges:
+      - from: m-the-rehearsal
+        to: m-the-rehearsal-dinner
+      - from: m-the-rehearsal-dinner
+        to: m-welcome-drinks
+    layout:
+      m-the-rehearsal:
+        x: 30
+        y: 170
+      m-the-rehearsal-dinner:
+        x: 30
+        y: 266
+      m-welcome-drinks:
+        x: 30
+        y: 362
+      note:
+        x: 0
+        y: -40
+  - id: wedding-day
+    title: Wedding Day
+    frames:
+      - id: f-getting-ready
+        title: "Getting Ready"
+        x: 0
+        y: 120
+        w: 300
+        h: 444
+        color: sand
+      - id: f-ceremony
+        title: "Ceremony"
+        x: 340
+        y: 120
+        w: 300
+        h: 444
+        color: sky
+      - id: f-cocktail-hour
+        title: "Cocktail Hour"
+        x: 680
+        y: 120
+        w: 300
+        h: 348
+        color: mint
+      - id: f-reception
+        title: "Reception"
+        x: 1020
+        y: 120
+        w: 300
+        h: 732
+        color: rose
+    nodes:
+      - id: note
+        sticky:
+          text: "The day, left to right, one frame per event. Each card is a sketch: promote it into a page in its event's folder of Run of Show once it has a time and a place, and the card reads the page from then on. Cut what is not your wedding; add what is."
+          color: yellow
+      - id: m-hair-and-makeup
+        sketch:
+          label: "Hair and Makeup"
+          status: Idea
+        frame: f-getting-ready
+      - id: m-getting-dressed
+        sketch:
+          label: "Getting Dressed"
+          status: Idea
+        frame: f-getting-ready
+      - id: m-the-first-look
+        sketch:
+          label: "The First Look"
+          status: Idea
+        frame: f-getting-ready
+      - id: m-wedding-party-photos
+        sketch:
+          label: "Wedding Party Photos"
+          status: Idea
+        frame: f-getting-ready
+      - id: m-guests-arrive
+        sketch:
+          label: "Guests Arrive"
+          status: Idea
+        frame: f-ceremony
+      - id: m-the-processional
+        sketch:
+          label: "The Processional"
+          status: Idea
+        frame: f-ceremony
+      - id: m-vows-and-rings
+        sketch:
+          label: "Vows and Rings"
+          status: Idea
+        frame: f-ceremony
+      - id: m-the-recessional
+        sketch:
+          label: "The Recessional"
+          status: Idea
+        frame: f-ceremony
+      - id: m-drinks-and-canap-s
+        sketch:
+          label: "Drinks and Canapés"
+          status: Idea
+        frame: f-cocktail-hour
+      - id: m-family-photos
+        sketch:
+          label: "Family Photos"
+          status: Idea
+        frame: f-cocktail-hour
+      - id: m-turning-the-room
+        sketch:
+          label: "Turning the Room"
+          status: Idea
+        frame: f-cocktail-hour
+      - id: m-the-grand-entrance
+        sketch:
+          label: "The Grand Entrance"
+          status: Idea
+        frame: f-reception
+      - id: m-dinner
+        sketch:
+          label: "Dinner"
+          status: Idea
+        frame: f-reception
+      - id: m-the-toasts
+        sketch:
+          label: "The Toasts"
+          status: Idea
+        frame: f-reception
+      - id: m-the-first-dance
+        sketch:
+          label: "The First Dance"
+          status: Idea
+        frame: f-reception
+      - id: m-cutting-the-cake
+        sketch:
+          label: "Cutting the Cake"
+          status: Idea
+        frame: f-reception
+      - id: m-dancing
+        sketch:
+          label: "Dancing"
+          status: Idea
+        frame: f-reception
+      - id: m-the-send-off
+        sketch:
+          label: "The Send-Off"
+          status: Idea
+        frame: f-reception
+    edges:
+      - from: m-hair-and-makeup
+        to: m-getting-dressed
+      - from: m-getting-dressed
+        to: m-the-first-look
+      - from: m-the-first-look
+        to: m-wedding-party-photos
+      - from: m-wedding-party-photos
+        to: m-guests-arrive
+      - from: m-guests-arrive
+        to: m-the-processional
+      - from: m-the-processional
+        to: m-vows-and-rings
+      - from: m-vows-and-rings
+        to: m-the-recessional
+      - from: m-the-recessional
+        to: m-drinks-and-canap-s
+      - from: m-drinks-and-canap-s
+        to: m-family-photos
+      - from: m-family-photos
+        to: m-turning-the-room
+      - from: m-turning-the-room
+        to: m-the-grand-entrance
+      - from: m-the-grand-entrance
+        to: m-dinner
+      - from: m-dinner
+        to: m-the-toasts
+      - from: m-the-toasts
+        to: m-the-first-dance
+      - from: m-the-first-dance
+        to: m-cutting-the-cake
+      - from: m-cutting-the-cake
+        to: m-dancing
+      - from: m-dancing
+        to: m-the-send-off
+    layout:
+      m-hair-and-makeup:
+        x: 30
+        y: 170
+      m-getting-dressed:
+        x: 30
+        y: 266
+      m-the-first-look:
+        x: 30
+        y: 362
+      m-wedding-party-photos:
+        x: 30
+        y: 458
+      m-guests-arrive:
+        x: 370
+        y: 170
+      m-the-processional:
+        x: 370
+        y: 266
+      m-vows-and-rings:
+        x: 370
+        y: 362
+      m-the-recessional:
+        x: 370
+        y: 458
+      m-drinks-and-canap-s:
+        x: 710
+        y: 170
+      m-family-photos:
+        x: 710
+        y: 266
+      m-turning-the-room:
+        x: 710
+        y: 362
+      m-the-grand-entrance:
+        x: 1050
+        y: 170
+      m-dinner:
+        x: 1050
+        y: 266
+      m-the-toasts:
+        x: 1050
+        y: 362
+      m-the-first-dance:
+        x: 1050
+        y: 458
+      m-cutting-the-cake:
+        x: 1050
+        y: 554
+      m-dancing:
+        x: 1050
+        y: 650
+      m-the-send-off:
+        x: 1050
+        y: 746
+      note:
+        x: 0
+        y: -40
+  - id: morning-after
+    title: The Morning After
+    frames:
+      - id: f-the-morning-after
+        title: "The Morning After"
+        x: 0
+        y: 120
+        w: 300
+        h: 156
+        color: sand
+    nodes:
+      - id: note
+        sticky:
+          text: "The goodbyes. Promote a card into a page in Run of Show/The Morning After when it is planned."
+          color: yellow
+      - id: m-farewell-brunch
+        sketch:
+          label: "Farewell Brunch"
+          status: Idea
+        frame: f-the-morning-after
+    edges: []
+    layout:
+      m-farewell-brunch:
+        x: 30
+        y: 170
+      note:
+        x: 0
+        y: -40

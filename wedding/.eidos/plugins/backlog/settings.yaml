@@ -1,0 +1,104 @@
+# Backlog (backlog) settings shared by everyone in this project. Edit here, or on the Plugins page.
+statuses:
+  - To Do
+  - In Progress
+  - Waiting
+  - Done
+columns:
+  - name: To Do
+    statuses:
+      - To Do
+  - name: In Progress
+    statuses:
+      - In Progress
+  - name: Waiting
+    statuses:
+      - Waiting
+  - name: Done
+    statuses:
+      - Done
+default_status: To Do
+status_colors:
+  Waiting: yellow
+status_categories:
+  To Do: todo
+  In Progress: in_progress
+  Waiting: in_progress
+  Done: done
+priorities:
+  - High
+  - Medium
+  - Low
+priority_icons: {}
+priority_colors: {}
+column_cards: 7
+forms_section: true
+milestones:
+  - name: A Year Out
+  - name: 9 Months Out
+  - name: 6 Months Out
+  - name: 3 Months Out
+  - name: 1 Month Out
+  - name: The Final Week
+  - name: The Day
+  - name: After
+properties: []
+builtin_properties: []
+sections:
+  - title: What and why
+    type: text
+    meaning: what needs doing and which part of the day it is for, read first
+  - title: Done when
+    type: checklist
+    meaning: what has to be true to tick it off, one line each
+types:
+  - name: default
+    title: Task
+    icon: circle
+    color: gray
+  - name: booking
+    title: Booking
+    icon: bookmark
+    color: blue
+    sections:
+      - title: What to book
+        type: text
+        meaning: the vendor or place to find and book, and the moment or page it serves
+      - title: Requirements
+        type: checklist
+        meaning: "what an option has to meet to be booked: the date, the headcount, the
+          budget line, the must-haves"
+      - title: Confirmation
+        type: text
+        meaning: what was booked, with whom, and where the signed contract lives
+  - name: logistics
+    title: Logistics
+    icon: layers
+    color: orange
+    sections:
+      - title: What has to happen
+        type: text
+        meaning: what has to be in place and by when
+      - title: Steps
+        type: checklist
+        meaning: the steps, in order
+      - title: Backup plan
+        type: text
+        meaning: what happens if it falls through
+link_types:
+  - name: blocks
+    outward: blocks
+    inward: is blocked by
+  - name: relates
+    outward: relates to
+    inward: relates to
+  - name: duplicates
+    outward: duplicates
+    inward: is duplicated by
+  - name: clones
+    outward: clones
+    inward: is cloned by
+boards: []
+sprints: false
+setup_offered: false
+milestone_properties: []

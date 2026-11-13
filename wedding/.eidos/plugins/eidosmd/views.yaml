@@ -1,0 +1,20 @@
+# eidosmd saved views shared by everyone in this project, committed with it. Edit by hand or from the Eidos MD app (Save as view); eidos views lists them.
+# Each view: id (V- and four characters, never changed), name (as the sidebar lists it), page (what it lists: /p/backlog, /p/backlog/backlog, /p/backlog/drafts, /c/<collection>),
+# query (the page's address it keeps: its filters and its sort). A person's own views are views in their local.yaml beside this file, never committed.
+views:
+  - id: V-7KQ2
+    name: The Day in Order
+    page: /c/Run%20of%20Show
+    query: group=Wedding+Day%2FGetting+Ready&group=Wedding+Day%2FCeremony&group=Wedding+Day%2FCocktail+Hour&group=Wedding+Day%2FReception&sort=starts
+  - id: V-3MWD
+    name: Shortlist
+    page: /c/Vendors
+    query: status=Idea&status=Planned
+  - id: V-9TBX
+    name: Booked
+    page: /c/Vendors
+    query: status=Booked&status=Confirmed&status=Done
+  - id: V-4HNR
+    name: Still to Book
+    page: /p/backlog/backlog
+    query: type=booking

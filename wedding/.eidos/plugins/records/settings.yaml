@@ -1,0 +1,16 @@
+# Records (records) settings shared by everyone in this project. Edit here, or on the Plugins page.
+types:
+  - name: decision
+    title: Decisions
+    label: D{n}
+    mode: inline
+    sidebar: true
+    statuses:
+      - name: Open
+        category: open
+      - name: Decided
+        category: closed
+      - name: Dropped
+        category: cancelled
+    default_status: Open
+    sign_off: true

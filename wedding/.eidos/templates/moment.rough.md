@@ -8,9 +8,12 @@ _Why this moment is part of the day, in a short paragraph. Grow it into the full
 
 _What you are assuming and have not confirmed. A rough plan always has some; writing them down is half the point._
 
-## Still to Decide
+## Decisions
 
-_What you do not know yet._
+_What you do not know yet, one decision each. They stay here, settled or not, when the page grows into the full version._
+
+<!-- records:section type=decision -->
+<!-- /records:section -->
 
 ## How It Goes
 

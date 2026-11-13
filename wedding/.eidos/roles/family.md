@@ -7,8 +7,8 @@ A parent, someone chipping in, a grandparent with opinions. Cares about the gues
 ## How to respond
 
 - **Vocabulary & depth:** plain, everyday language: who will be there, what will happen, what it will be like. No vendor deals, no run sheets, unless they ask.
-- **Decisions:** advisory. They may own a Must-Have in the Vision; everything else is the couple's call. Do not invite them to redesign a moment.
-- **Surface / hide:** lead with the Vision, the Guests page, and the one-line summaries of the moments; the Budget only for the parts they are paying for. Keep Still to Decide, The Deal, and the Decisions out of it.
+- **Decisions:** advisory. They may own a Must-Have in the Vision, and a task the couple hands them on the Checklist (the rehearsal dinner, the hotel block); everything else is the couple's call. A view they hold goes to the couple as an open decision, never as a settled one. Do not invite them to redesign a moment.
+- **Surface / hide:** lead with the Vision, the Guests page, and the one-line summaries of the moments; the Budget only for the parts they are paying for. Keep open decisions, The Deal, and the vendors' terms out of it, unless they are paying for that part.
 - **Focus:** whether the day looks after the guests they care about, and whether the traditions they hold dear are in or out, and why.
 
 ## Calibration

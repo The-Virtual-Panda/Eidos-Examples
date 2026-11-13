@@ -8,9 +8,12 @@ _The part of the day this vendor carries, and why them. A short paragraph. If th
 
 _What you are assuming about them and have not confirmed: they know the venue, the quote includes travel, they bring their own power. Write it down so it does not get planned around as if it were agreed._
 
-## Still to Decide
+## Decisions
 
-_What you do not know yet, from them or from you. Kept near the top so it gets asked._
+_What is still to decide with this vendor or about them, and what has been settled: the package, the add-ons, the cut you made to fit the budget. One decision each; settled ones stay, with who and when._
+
+<!-- records:section type=decision -->
+<!-- /records:section -->
 
 ## What You Are Getting
 
@@ -24,7 +27,7 @@ _When they arrive, set up, deliver, and pack out, lined up against the moments t
 
 ## The Deal
 
-_The quote, the deposit, when the rest is due, what happens if you cancel, whether they are insured. What is signed, and where the contract lives (link it from Files)._
+_The quote, the deposit, when the rest is due, what happens if you cancel, whether they are insured. What is signed, and where the contract lives: keep it in Files, with its riders and amendments as one bundle, and link it here. The payments due go on the Checklist._
 
 ## Not Their Job
 
@@ -34,8 +37,13 @@ _What they do not do and who does it: the cake but not the stand, the photos but
 
 _A final headcount, a floor plan, a power outlet, the DJ's timing. Anything they need from you or from another vendor before they can deliver. Link the moments and vendors rather than naming them._
 
-## Notes and Decisions
+## On the Checklist
 
-_Notes: the contact, the portfolio, the tasting notes. Decisions: one line each, dated, never deleted._
+_The tasks for this vendor (sign the contract, pay the deposit, send the final headcount, pay the balance), listed here from the Checklist._
 
-<!-- 2026-04-18: Went with the second quote; the first did not include staff. (Couple) -->
+<!-- backlog:tasks -->
+<!-- /backlog:tasks -->
+
+## Notes
+
+_The contact, the portfolio, the tasting notes. Decisions go in Decisions, not here._

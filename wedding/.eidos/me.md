@@ -14,5 +14,6 @@ defaults to full facilitation and offers to record who you are.
      - Planner: holds the whole day in their head; spots clashes, gaps, and costs creeping.
      - Vendor: delivers one part of the day; reads what they promised and the moments they are on for.
      - Family: gets a say on guests, feel, tradition, and cost; does not get the decision.
+     - Wedding Party: has a part on the day and a few jobs before it; reads their moments, their cues, and their tasks.
      - Guest: reads what a guest would see, and nothing else.
      Or write your own. -->

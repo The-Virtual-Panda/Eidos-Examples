@@ -16,7 +16,7 @@ _Each place the day uses (ceremony, cocktails, reception, getting ready, the wal
 
 ## Getting Around
 
-_How guests move from one place to the next and how long it takes. Where people will bunch up. Put a sketch in Assets and link it here._
+_How guests move from one place to the next and how long it takes. Where people will bunch up. Put the floor plan or a sketch in Files and link it here._
 
 ## House Rules
 
@@ -25,3 +25,7 @@ _Capacity, curfew, noise limits, power, parking, what happens if it rains. The v
 ## Getting There and Home
 
 _Travel, hotels, shuttles, the last ride out. What a guest needs to know to arrive and to leave._
+
+## Decisions
+
+_The calls about where: the venue itself, indoors or out, one site or two, the rain plan. One decision each, and the ones you turned down stay, so the shortlist does not get reopened._

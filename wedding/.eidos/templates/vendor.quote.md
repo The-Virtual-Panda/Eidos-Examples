@@ -15,3 +15,10 @@ _The number and the conditions. Enough to compare with the other quotes in this 
 ## Not Included
 
 _What they do not do, as far as you know. The gap you would need another vendor for._
+
+## On the Checklist
+
+_The tasks for this vendor while you decide (book the call, ask for the full quote, go to the tasting), listed here from the Checklist._
+
+<!-- backlog:tasks -->
+<!-- /backlog:tasks -->
