@@ -48,6 +48,19 @@ installed:
     pieces:
       - root
     date: 2026-09-19
+icons:
+  folders:
+    the-brief:
+      icon: lucide:clipboard-list
+    rooms:
+      icon: lucide:door-open
+    the-work:
+      icon: lucide:hammer
+    selections:
+      icon: lucide:palette
+  project:
+    icon: lucide:house
+    color: orange
 ids:
   scheme: adaptive
   padding: 0
