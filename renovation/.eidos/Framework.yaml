@@ -9,7 +9,7 @@ naming: kebab-case
 # Every file at the top of the project, one entry each.
 top_level:
   - title: README
-    path: ../readme.md
+    path: ../README.md
     description: "the map: what this project is for, what goes in each folder, and where to start"
   - title: Schedule
     path: ../schedule.md
